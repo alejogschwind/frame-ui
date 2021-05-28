@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PortfolioCardWrapper = styled.div`
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   opacity: 0.8;
 
   &:hover {
