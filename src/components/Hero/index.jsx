@@ -9,12 +9,14 @@ import {
   MenuIconStyled,
   Logo,
   Header,
-  Menu
+  Menu,
+  ImageBackgroundWrapper,
+  Overlay
 } from './styles';
 
 import video from "../../assets/videos/test.mp4";
 
-const Hero = () => {
+const Hero = ({ image, borderColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => setMenuOpen(true);
@@ -22,6 +24,7 @@ const Hero = () => {
 
   return (
     <HeroWrapper>
+      {/* <img src={marco} alt="marco" /> */}
 
       <Menu menuOpen={menuOpen}>
         <CloseIconStyled onClick={closeMenu} />
@@ -42,27 +45,36 @@ const Hero = () => {
         </MenuList>
       </Menu>
 
-      <VideoPlayerBlur>
-        <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo">
-          {/* <source  type="video/mp4" /> */}
-        </video>
-      </VideoPlayerBlur>
+      {
+        image ?
+          <ImageBackgroundWrapper>
+            <Overlay />
+            <img src={image} alt="background" />
+          </ImageBackgroundWrapper>
+          :
+          <VideoPlayerBlur>
+            <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo">
+              {/* <source  type="video/mp4" /> */}
+            </video>
+          </VideoPlayerBlur>
+      }
 
-      <VideoPlayer>
+
+      <VideoPlayer borderColor={borderColor}>
         <Header>
           <Logo>Frame</Logo>
           <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />
         </Header>
-        <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo">
-          {/* <source  type="video/mp4" /> */}
-        </video>
+        {/* <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo"> */}
+
+        {/* </video> */}
       </VideoPlayer>
 
 
 
 
       {/* </HeroBorder> */}
-    </HeroWrapper>
+    </HeroWrapper >
   );
 };
 
