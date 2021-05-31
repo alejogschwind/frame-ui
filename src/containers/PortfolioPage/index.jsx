@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Hero from '../../components/Hero';
-import FooterClients from '../../components/Footer1';
+import FooterClients from '../../components/FooterClients';
 import PortfolioSection from '../../components/PortfolioSection';
 
 import {

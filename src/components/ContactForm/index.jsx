@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactFormWrapper, Form, InputWrapper, TextareaWrapper } from './styles';
+import { Form, InputWrapper, TextareaWrapper } from './styles';
 
 const ContactForm = () => {
 
@@ -9,29 +9,23 @@ const ContactForm = () => {
   };
 
   return (
-    <ContactFormWrapper>
-      <h2>Trabajemos juntos</h2>
-      <h4>Tu email se mantiene privado. Los campos obligatorios estan marcados con un *</h4>
+    <Form onSubmit={handleSubmit}>
 
-      <Form onSubmit={handleSubmit}>
+      <InputWrapper>
+        <input placeholder="Nombre *" required />
+      </InputWrapper>
 
-        <InputWrapper>
-          <input placeholder="Nombre *" required />
-        </InputWrapper>
+      <InputWrapper>
+        <input placeholder="Email *" required />
+      </InputWrapper>
 
-        <InputWrapper>
-          <input placeholder="Email *" required />
-        </InputWrapper>
+      <TextareaWrapper>
+        <textarea placeholder="Mensaje *" required />
+      </TextareaWrapper>
 
-        <TextareaWrapper>
-          <textarea placeholder="Mensaje *" required />
-        </TextareaWrapper>
+      <button>Enviar</button>
 
-        <button>Enviar</button>
-
-      </Form>
-
-    </ContactFormWrapper>
+    </Form>
   );
 };
 

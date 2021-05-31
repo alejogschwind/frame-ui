@@ -18,21 +18,20 @@ export const FrameLogoSquareStyled = styled(FrameLogoSquare)`
 `;
 
 export const SocialMediaList = styled.div`
-  width: 90%;
+  width: 80%;
   margin: 2rem 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
 export const SocialMediaItem = styled.a`
-  width: auto;
+  width: fit-content;
   height: 22px;
-  margin: 0 2rem;
 
   & > img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 16px;
   }
 `;
 

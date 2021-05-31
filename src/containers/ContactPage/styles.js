@@ -73,3 +73,21 @@ export const PhoneIconStyled = styled(PhoneIcon)`
     stroke: none;
   }
 `;
+
+export const ContactFormWrapper = styled.div`
+  margin: 2rem 0;
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 150px;
+  background: transparent linear-gradient(218deg, #F27044 0%, #A11E7D 100%) 0% 0% no-repeat padding-box;
+  color: white;
+
+  & > h2 {
+    font-size: 22px;
+  }
+  & > h4 {
+    margin: 0.5rem 0;
+    font-size: 14px;
+    font-weight: normal;
+  }
+`;

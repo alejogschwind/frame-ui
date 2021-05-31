@@ -3,9 +3,9 @@ import React from 'react';
 import Hero from "../../components/Hero";
 import Title from "../../components/Title";
 import ContactForm from '../../components/ContactForm';
-import FooterClients from '../../components/Footer1';
+import FooterClients from '../../components/FooterClients';
 
-import { ContactPageWrapper, ContactSection, InfoCard, WordIconStyled, MailIconStyled, PhoneIconStyled } from './styles';
+import { ContactPageWrapper, ContactSection, InfoCard, WordIconStyled, MailIconStyled, PhoneIconStyled, ContactFormWrapper } from './styles';
 
 import imageBackground from "../../assets/images/map.png";
 import Footer from '../../components/Footer';
@@ -29,7 +29,11 @@ const ContactPage = () => {
           Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.
         </p>
 
-        <ContactForm />
+        <ContactFormWrapper>
+          <h2>Trabajemos juntos</h2>
+          <h4>Tu email se mantiene privado. Los campos obligatorios estan marcados con un *</h4>
+          <ContactForm />
+        </ContactFormWrapper>
 
         <InfoCard>
           <WordIconStyled />
@@ -53,7 +57,7 @@ const ContactPage = () => {
 
       <Footer />
 
-    </ContactPageWrapper>
+    </ContactPageWrapper >
   );
 };
 

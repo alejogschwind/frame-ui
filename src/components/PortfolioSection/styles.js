@@ -14,6 +14,7 @@ export const PortfolioSectionWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   & > span {
@@ -32,7 +33,7 @@ export const PortfolioSectionWrapper = styled.div`
 
 export const Filters = styled.div`
   width: 100%;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 
   display: flex;
   flex-wrap: wrap;
