@@ -1,7 +1,14 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
 import { ReactComponent as CloseIcon } from "../../assets/svgs/close.svg";
+
+export const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+`;
 
 export const HeroWrapper = styled.div`
   background: #323232;

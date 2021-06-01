@@ -11,7 +11,8 @@ import {
   Header,
   Menu,
   ImageBackgroundWrapper,
-  Overlay
+  Overlay,
+  StyledLink
 } from './styles';
 
 import video from "../../assets/videos/test.mp4";
@@ -31,17 +32,30 @@ const Hero = ({ image, borderColor }) => {
 
         <MenuList>
           <MenuItem>
-            Home
-            </MenuItem>
+            <StyledLink to="/">
+              Home
+            </StyledLink>
+          </MenuItem>
           <MenuItem>
-            Nosotros
-            </MenuItem>
+            <StyledLink to="/portfolio">
+              Portfolio
+            </StyledLink>
+          </MenuItem>
           <MenuItem>
-            Servicios
-            </MenuItem>
+            <StyledLink to="/nosotros">
+              Nosotros
+            </StyledLink>
+          </MenuItem>
           <MenuItem>
-            Contacto
-            </MenuItem>
+            <StyledLink to="/servicios">
+              Servicios
+            </StyledLink>
+          </MenuItem>
+          <MenuItem>
+            <StyledLink to="/contacto">
+              Contacto
+            </StyledLink>
+          </MenuItem>
         </MenuList>
       </Menu>
 
@@ -62,7 +76,11 @@ const Hero = ({ image, borderColor }) => {
 
       <VideoPlayer borderColor={borderColor}>
         <Header>
-          <Logo>Frame</Logo>
+          <Logo>
+            <StyledLink to="/">
+              Frame
+            </StyledLink>
+          </Logo>
           <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />
         </Header>
         {/* <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo"> */}

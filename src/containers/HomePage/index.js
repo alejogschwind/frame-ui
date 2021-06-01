@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import ServiceCard from "../../components/ServiceCard";
@@ -37,36 +38,48 @@ const HomePage = () => {
 
       <ServiceSection>
         <h1>SERVICIOS</h1>
-        <ServiceCard
-          text={"Desarrollo de contenido digital multiplataforma"}
-          image={imagePosition1}
-          position={1}
-        />
-        <ServiceCard
-          text={"Desarrollo y producción de formatos"}
-          image={imagePosition2}
-          position={2}
-        />
-        <ServiceCard
-          text={"Marketing digital"}
-          image={imagePosition3}
-          position={3}
-        />
-        <ServiceCard
-          text={"Branding TV"}
-          image={imagePosition4}
-          position={4}
-        />
-        <ServiceCard
-          text={"Estudio Técnica"}
-          image={imagePosition5}
-          position={5}
-        />
-        <ServiceCard
-          text={"Post producción"}
-          image={imagePosition6}
-          position={6}
-        />
+        <Link to="/servicio/desarollo">
+          <ServiceCard
+            text={"Desarrollo de contenido digital multiplataforma"}
+            image={imagePosition1}
+            position={1}
+          />
+        </Link>
+        <Link to="/servicio/produccion">
+          <ServiceCard
+            text={"Desarrollo y producción de formatos"}
+            image={imagePosition2}
+            position={2}
+          />
+        </Link>
+        <Link to="/servicio/marketing">
+          <ServiceCard
+            text={"Marketing digital"}
+            image={imagePosition3}
+            position={3}
+          />
+        </Link>
+        <Link to="/servicio/brandingTV">
+          <ServiceCard
+            text={"Branding TV"}
+            image={imagePosition4}
+            position={4}
+          />
+        </Link>
+        <Link to="/servicio/estudio">
+          <ServiceCard
+            text={"Estudio Técnica"}
+            image={imagePosition5}
+            position={5}
+          />
+        </Link>
+        <Link to="/servicio/post-produccion">
+          <ServiceCard
+            text={"Post producción"}
+            image={imagePosition6}
+            position={6}
+          />
+        </Link>
       </ServiceSection>
 
       <PortfolioSection />

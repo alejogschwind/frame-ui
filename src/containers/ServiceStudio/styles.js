@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ServiceDevelopmentPageWrapper = styled.div`
+export const ServiceStudioWrapper = styled.div`
+
 `;
 
 export const Title = styled.h1`
