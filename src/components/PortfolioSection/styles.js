@@ -23,6 +23,10 @@ export const PortfolioSectionWrapper = styled.div`
     display: flex;
     justify-content:  center;
     
+    & > a {
+      color: #323232;
+    }
+    
     &:hover {
       cursor: pointer;
       text-decoration: underline;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import PortfolioCard from '../PortfolioCard';
 import { PortfolioSectionWrapper, Filters, FilterItem } from './styles';
+import { Link } from 'react-router-dom';
 
 const PortfolioSection = ({ displayFilter }) => {
   return (
@@ -25,7 +26,9 @@ const PortfolioSection = ({ displayFilter }) => {
       <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
       <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
       <span>
-        VER MÁS &gt;
+        <Link to="/portfolio">
+          VER MÁS &gt;
+        </Link>
       </span>
     </PortfolioSectionWrapper>
   );

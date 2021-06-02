@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 
 import Hero from '../../components/Hero';
 import FooterClients from '../../components/FooterClients';
@@ -9,6 +9,11 @@ import {
 } from "./styles";
 
 const PortfolioPage = () => {
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <PortfolioPageWrapper>
 
