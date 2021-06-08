@@ -10,6 +10,7 @@ import ServiceMarketingDigital from "./containers/ServiceMarketingDigital";
 import ServiceBrandingTV from "./containers/ServiceBrandingTV";
 import ServiceStudio from "./containers/ServiceStudio";
 import ServicePostProduction from "./containers/ServicePostProduction";
+import PortfolioDetailPage from "./containers/PortfolioDetailPage";
 
 const routes = () => (
   <BrowserRouter>
@@ -22,6 +23,7 @@ const routes = () => (
     <Route exact path="/servicio/brandingTV" component={ServiceBrandingTV} />
     <Route exact path="/servicio/estudio" component={ServiceStudio} />
     <Route exact path="/servicio/post-produccion" component={ServicePostProduction} />
+    <Route exact path="/portfolio/id" component={PortfolioDetailPage} />
   </BrowserRouter>
 );
 
