@@ -41,4 +41,8 @@ export const ServiceSection = styled.div`
     -webkit-text-fill-color: transparent;
     text-align: center;
   }
+
+  & > a {
+    width: 100%;
+  }
 `;
