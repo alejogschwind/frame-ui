@@ -6,11 +6,11 @@ export const PortfolioDetailPageWrapper = styled.div`
 
 export const MainSection = styled.section`
   width: 100vw;
-  min-height: 85vh;
+  min-height: fit-content;
 `;
 
 export const ImageWrapper = styled.div`
-  height: 85vh;
+  height: calc(100vh - 24px - 5.2rem);
   width: 100%;
   & > img {
     height: 100%;
