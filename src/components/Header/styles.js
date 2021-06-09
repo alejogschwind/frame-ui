@@ -1,16 +1,24 @@
 import styled from "styled-components";
 
+import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
+
 export const HeaderWrapper = styled.header`
-  height: 5rem;
+  height: fit-content;
   width: 100vw;
-  padding: 0 1rem;
+  padding: 2.6rem 2.4rem;
   background: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   & > svg {
-    height: 80%;
+    height: 100%;
     width: 30%;
   }
+`;
+
+export const MenuIconStyled = styled(MenuIcon)`
+  display: ${props => props.menuOpen ? "none" : "block"};
+  height: 24px;
+  width: 24px;
 `;

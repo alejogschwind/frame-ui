@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import {
   HeroWrapper,
-  CloseIconStyled,
-  MenuList,
-  MenuItem,
   VideoPlayerBlur,
   VideoPlayer,
   MenuIconStyled,
   Logo,
   Header,
-  Menu,
   ImageBackgroundWrapper,
   Overlay,
   StyledLink
 } from './styles';
 
 import video from "../../assets/videos/test.mp4";
+import ResponsiveMenu from '../ResponsiveMenu';
 
 const Hero = ({ image, borderColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,37 +24,10 @@ const Hero = ({ image, borderColor }) => {
     <HeroWrapper>
       {/* <img src={marco} alt="marco" /> */}
 
-      <Menu menuOpen={menuOpen}>
-        <CloseIconStyled onClick={closeMenu} />
-
-        <MenuList>
-          <MenuItem>
-            <StyledLink to="/">
-              Home
-            </StyledLink>
-          </MenuItem>
-          <MenuItem>
-            <StyledLink to="/portfolio">
-              Portfolio
-            </StyledLink>
-          </MenuItem>
-          <MenuItem>
-            <StyledLink to="/nosotros">
-              Nosotros
-            </StyledLink>
-          </MenuItem>
-          <MenuItem>
-            <StyledLink to="/servicios">
-              Servicios
-            </StyledLink>
-          </MenuItem>
-          <MenuItem>
-            <StyledLink to="/contacto">
-              Contacto
-            </StyledLink>
-          </MenuItem>
-        </MenuList>
-      </Menu>
+      <ResponsiveMenu
+        menuOpen={menuOpen}
+        closeMenu={closeMenu}
+      />
 
       {
         image ?
