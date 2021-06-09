@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
 
 export const HeaderWrapper = styled.header`
-  height: fit-content;
+  height: 15vh;
   width: 100vw;
   padding: 2.6rem 2.4rem;
   background: #000;

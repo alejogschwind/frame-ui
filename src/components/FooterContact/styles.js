@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.svg";
 
 export const FooterContactWrapper = styled.div`
-
+  border-top: 2px solid white;
 `;
 
 export const Gradient = styled.div`
@@ -11,6 +11,7 @@ export const Gradient = styled.div`
 `;
 
 export const TopSection = styled.div`
+  border-top: 2px solid white;
   padding: 2rem 1rem 2rem 1rem;
   background: transparent;
   /* min-height: 200px; */
