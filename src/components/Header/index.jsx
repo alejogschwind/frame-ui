@@ -8,6 +8,7 @@ import {
 } from './styles';
 
 import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = React.useState(true);
@@ -24,7 +25,9 @@ const Header = () => {
         closeMenu={closeMenu}
       />
 
-      <FrameLogo />
+      <Link to="/">
+        <FrameLogo />
+      </Link>
 
       <div>
         <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />

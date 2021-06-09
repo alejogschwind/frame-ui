@@ -11,9 +11,14 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  & > svg {
+  & > a {
     height: 100%;
     width: 30%;
+    
+    & > svg {
+      height: 100%;
+      width: 100%;
+    }
   }
 `;
 
