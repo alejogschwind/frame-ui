@@ -23,6 +23,10 @@ export const AboutUsSection = styled.div`
       text-decoration: underline;
     }
   }
+
+  @media only screen and (min-width: 767px) {
+    margin: 2rem 10%;
+  }
 `;
 
 export const ServiceSection = styled.div`
@@ -44,5 +48,26 @@ export const ServiceSection = styled.div`
 
   & > a {
     width: 100%;
+  }
+
+`;
+
+export const Grid = styled.div`
+  @media only screen and (min-width: 767px) {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6rem;
+
+    & > a {
+      /* margin-top: 4rem; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > div {
+      height: 6rem;
+    }
   }
 `;

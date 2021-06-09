@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const PortfolioSectionWrapper = styled.div`
   padding: 2rem 0rem;
   background: white;
+  border-bottom: 2px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   & > h1 {
     width: fit-content;
     background: transparent linear-gradient(90deg, #521E7B 2%, #5B4F76 13%, #637C73 26%, #699C70 37%, #6DB06E 46%, #6FB86E 52%, #6DB06F 59%, #699B72 68%, #637977 80%, #5A4A7E 93%, #552F83 100%) 0% 0% no-repeat padding-box;
@@ -32,6 +33,21 @@ export const PortfolioSectionWrapper = styled.div`
       text-decoration: underline;
     }
   }
+
+`;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (min-width: 767px) {
+    margin: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+  }
 `;
 
 
@@ -54,9 +70,15 @@ export const Filters = styled.div`
 `;
 
 export const FilterItem = styled.h4`
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 2rem;
   padding: 1rem 0;
   font-size: 16px;
   text-align:  center;
+  color: #323232;
+  cursor: pointer;
   /* grid-area: "filter2"; */
+
+  &:hover {
+    color: grey;
+  }
 `;

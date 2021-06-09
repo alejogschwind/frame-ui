@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import ContactForm from '../../components/ContactForm';
 import FooterClients from '../../components/FooterClients';
 
-import { ContactPageWrapper, ContactSection, InfoCard, WordIconStyled, MailIconStyled, PhoneIconStyled, ContactFormWrapper } from './styles';
+import { ContactPageWrapper, ContactSection, InfoCard, WordIconStyled, MailIconStyled, PhoneIconStyled, ContactFormWrapper, Left, Row } from './styles';
 
 import imageBackground from "../../assets/images/map.png";
 import Footer from '../../components/Footer';
@@ -29,29 +29,35 @@ const ContactPage = () => {
           Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.
         </p>
 
-        <ContactFormWrapper>
-          <h2>Trabajemos juntos</h2>
-          <h4>Tu email se mantiene privado. Los campos obligatorios estan marcados con un *</h4>
-          <ContactForm />
-        </ContactFormWrapper>
+        <Row>
 
-        <InfoCard>
-          <WordIconStyled />
-          <h3>Nuestra Dirección</h3>
-          <h5>Tronador 671 (c1427CRM) CABA, Argentina</h5>
-        </InfoCard>
+          <ContactFormWrapper>
+            <h2>Trabajemos juntos</h2>
+            <h4>Tu email se mantiene privado. Los campos obligatorios estan marcados con un *</h4>
+            <ContactForm />
+          </ContactFormWrapper>
 
-        <InfoCard>
-          <MailIconStyled />
-          <h3>Nuestro Correo</h3>
-          <h5>info@frame.com.ar</h5>
-        </InfoCard>
+          <Left>
+            <InfoCard>
+              <WordIconStyled />
+              <h3>Nuestra Dirección</h3>
+              <h5>Tronador 671 (c1427CRM) CABA, Argentina</h5>
+            </InfoCard>
 
-        <InfoCard>
-          <PhoneIconStyled />
-          <h3>Nuestro Teléfono</h3>
-          <h5>011 4553-7188</h5>
-        </InfoCard>
+            <InfoCard>
+              <MailIconStyled />
+              <h3>Nuestro Correo</h3>
+              <h5>info@frame.com.ar</h5>
+            </InfoCard>
+
+            <InfoCard>
+              <PhoneIconStyled />
+              <h3>Nuestro Teléfono</h3>
+              <h5>011 4553-7188</h5>
+            </InfoCard>
+          </Left>
+        </Row>
+
 
       </ContactSection>
 

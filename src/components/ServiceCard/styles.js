@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ServiceCardWrapper = styled.div`
   /* background: blue; */
   width: 100%;
+  max-width: 450px;
   position: relative;
   display: flex;
   justify-content: ${props => {
@@ -45,7 +46,7 @@ export const ServiceCardWrapper = styled.div`
 
   & > img {
     width: ${props => {
-    if (props.position === 1) return "75%";
+    if (props.position === 1) return "55%";
     if (props.position === 2) return "50%";
     if (props.position === 3) return "100%";
     if (props.position === 4) return "50%";
@@ -64,7 +65,7 @@ export const ServiceCardWrapper = styled.div`
     if (props.position === 5) return "left";
     if (props.position === 6) return "right";
   }};
-    opacity: 0.5;
+    opacity: 0.2;
   }
 `;
 

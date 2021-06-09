@@ -5,6 +5,7 @@ import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.
 export const FooterClientsWrapper = styled.section`
   width: 100%;
   /* padding: 2rem 1rem; */
+  border-top: 10px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +14,7 @@ export const FooterClientsWrapper = styled.section`
 `;
 
 export const TopSection = styled.div`
+  /* border: 2px solid white; */
   padding: 2rem 1rem;
   width: 100%;
   /* height: 100px; */
@@ -34,6 +36,11 @@ export const TopSection = styled.div`
   & .slider-wrapper {
     width: 80%;
   }
+  @media only screen and (min-width: 767px) {
+    & > div {
+      max-width: 50vw;
+    }
+  }
 `;
 
 export const BottomSection = styled.div`
@@ -50,6 +57,9 @@ export const CarouselItem = styled.div`
   grid-gap: 1rem 2rem;
   grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
+  @media only screen and (min-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -80,6 +90,10 @@ export const SocialMediaList = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (min-width: 767px) {
+    max-width: 20vw;
+  }
 `;
 
 export const SocialMediaItem = styled.a`

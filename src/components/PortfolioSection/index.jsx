@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PortfolioCard from '../PortfolioCard';
-import { PortfolioSectionWrapper, Filters, FilterItem } from './styles';
+import { PortfolioSectionWrapper, Filters, FilterItem, Grid } from './styles';
 import { Link } from 'react-router-dom';
 
 const PortfolioSection = ({ displayFilter }) => {
@@ -20,11 +20,12 @@ const PortfolioSection = ({ displayFilter }) => {
         </Filters>
       }
 
-      <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-      <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-      <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-      <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-      <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+      <Grid>
+        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+      </Grid>
       <span>
         <Link to="/portfolio">
           VER MÁS &gt;

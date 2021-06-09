@@ -23,6 +23,10 @@ export const ContactSection = styled.div`
     font-size: 18px;
     text-align: center;
   }
+
+  @media only screen and (min-width: 767px) {
+    margin: 0 10%;
+  }
 `;
 
 export const InfoCard = styled.div`
@@ -41,6 +45,9 @@ export const InfoCard = styled.div`
   }
   & > h5 {
     font-weight: normal;
+  }
+  @media only screen and (min-width: 767px) {
+    align-items: flex-start;
   }
 `;
 
@@ -81,6 +88,9 @@ export const ContactFormWrapper = styled.div`
   min-height: 150px;
   background: transparent linear-gradient(218deg, #F27044 0%, #A11E7D 100%) 0% 0% no-repeat padding-box;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   & > h2 {
     font-size: 22px;
@@ -89,5 +99,28 @@ export const ContactFormWrapper = styled.div`
     margin: 0.5rem 0;
     font-size: 14px;
     font-weight: normal;
+  }
+  @media only screen and (min-width: 767px) {
+    margin: 0;
+    width: 50%;
+  }
+`;
+
+export const Row = styled.div`
+  width: 100%;
+  @media only screen and (min-width: 767px) {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+`;
+
+export const Left = styled.div`
+  @media only screen and (min-width: 767px) {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
