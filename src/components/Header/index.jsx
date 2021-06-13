@@ -14,8 +14,14 @@ import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
 const Header = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const openMenu = () => setMenuOpen(true);
-  const closeMenu = () => setMenuOpen(false);
+  const openMenu = () => {
+    setMenuOpen(true);
+    document.querySelector("body").style = "overflow: hidden;";
+  };
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.querySelector("body").style = "overflow: inital;";
+  };
 
   return (
     <HeaderWrapper>

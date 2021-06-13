@@ -7,10 +7,11 @@ import { ReactComponent as BackIcon } from "../../assets/svgs/BackIcon.svg";
 export const ResponsiveMenuWrapper = styled.div`
   /* width: 100vw; */
   /* height: 100vh; */
+  height: 100vh;
   
   display: ${props => props.menuOpen ? "block" : "none"};
-  background: black;
-  opacity: 0.8;
+  background: rgba(0,0,0,0.8);
+  /* opacity: 0.8; */
   position: absolute;
   top: 0;
   left: 0;
@@ -19,10 +20,18 @@ export const ResponsiveMenuWrapper = styled.div`
   z-index: 1000;
 `;
 
+export const MenuContent = styled.div`
+  height: 100vh;
+  z-index: 1001;
+  width: 100vw;
+  position: relative;
+
+`;
+
 export const CloseIconStyled = styled(CloseIcon)`
   height: 24px;
   width: 24px;
-  z-index: 1001;
+  z-index: 2002;
   position: absolute;
   right: 2.4rem;
   top: 2.6rem;
@@ -31,7 +40,7 @@ export const CloseIconStyled = styled(CloseIcon)`
 export const BackIconStyled = styled(BackIcon)`
   height: 28px;
   width: 28px;
-  z-index: 1001;
+  z-index: 2002;
   position: absolute;
   left: 2.4rem;
   top: 2.6rem;
@@ -44,8 +53,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const MenuList = styled.ul`
-  z-index: 1001;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,4 +75,41 @@ export const MenuItem = styled.li`
     background: black;
     opacity: 0.2;
   } */
+  @media only screen and (max-width: 360px) {
+    font-size: 18px;
+  }
+`;
+
+export const TogglesGroup = styled.div`
+  position: absolute;
+  bottom: 0;
+  margin: 1rem 0;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 360px) {
+    height: 18%;
+  }
+`;
+
+export const SwitchWrapper = styled.div`
+  margin: 0.8rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 360px) {
+    margin: 0.5rem 0;
+  }
+`;
+
+
+export const Span = styled.span`
+  margin: 0 0.5rem;
+  color: white;
+  font-weight: 400;
 `;

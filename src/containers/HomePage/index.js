@@ -6,6 +6,7 @@ import ServiceCard from "../../components/ServiceCard";
 import FooterClients from "../../components/FooterClients";
 import Hero from "../../components/Hero";
 import PortfolioSection from "../../components/PortfolioSection";
+import Switch from "../../components/Switch";
 
 import {
   HomePageWrapper,

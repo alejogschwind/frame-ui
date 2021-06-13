@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 
+import Switch from "../Switch";
+
 import {
   ResponsiveMenuWrapper,
   CloseIconStyled,
   BackIconStyled,
   MenuList,
   MenuItem,
-  StyledLink
+  StyledLink,
+  TogglesGroup,
+  MenuContent,
+  Span,
+  SwitchWrapper
 } from './styles';
 
 const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
@@ -20,69 +26,86 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
       }
       <CloseIconStyled onClick={closeMenu} />
 
-      {
-        !subMenuOpen ?
-          <MenuList>
-            <MenuItem>
-              <StyledLink to="/">
-                Home
+      <MenuContent>
+
+        {
+          !subMenuOpen ?
+            <MenuList>
+              <MenuItem>
+                <StyledLink to="/">
+                  Home
           </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/portfolio">
-                Portfolio
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/portfolio">
+                  Portfolio
           </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/nosotros">
-                Nosotros
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/nosotros">
+                  Nosotros
           </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink onClick={() => setSubMenuOpen(true)}>
-                Servicios
+              </MenuItem>
+              <MenuItem>
+                <StyledLink onClick={() => setSubMenuOpen(true)}>
+                  Servicios
           </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/contacto">
-                Contacto
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/contacto">
+                  Contacto
           </StyledLink>
-            </MenuItem>
-          </MenuList>
-          :
-          <MenuList>
-            <MenuItem>
-              <StyledLink to="/servicio/desarollo">
-                Desarrollo
+              </MenuItem>
+            </MenuList>
+            :
+            <MenuList>
+              <MenuItem>
+                <StyledLink to="/servicio/desarollo">
+                  Desarrollo
               </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/servicio/brandingTV">
-                Branding TV
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/servicio/brandingTV">
+                  Branding TV
               </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/servicio/marketing">
-                Marketing Digital
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/servicio/marketing">
+                  Marketing Digital
               </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/servicio/post-produccion">
-                Post Producción
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/servicio/post-produccion">
+                  Post Producción
               </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/servicio/produccion">
-                Producción
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/servicio/produccion">
+                  Producción
           </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink to="/servicio/estudio">
-                Estudio
+              </MenuItem>
+              <MenuItem>
+                <StyledLink to="/servicio/estudio">
+                  Estudio
               </StyledLink>
-            </MenuItem>
-          </MenuList>
-      }
+              </MenuItem>
+            </MenuList>
+        }
+
+        <TogglesGroup>
+          <SwitchWrapper>
+            <Span>Light</Span>
+            <Switch />
+            <Span>Dark</Span>
+          </SwitchWrapper>
+          <SwitchWrapper>
+            <Span>ES</Span>
+            <Switch />
+            <Span>EN</Span>
+          </SwitchWrapper>
+        </TogglesGroup>
+      </MenuContent>
+
     </ResponsiveMenuWrapper>
   );
 };
