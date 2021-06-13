@@ -6,7 +6,7 @@ import { ServicePostProductionWrapper, Title, Description } from './styles';
 
 const ServicePostProduction = () => {
   useLayoutEffect(() => {
-    window.scrollTo(0, window.innerHeight);
+    window.scrollTo(0, 0);
   });
 
   return (
