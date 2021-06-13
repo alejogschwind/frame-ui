@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ServiceWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,5 +22,9 @@ export const ContentWrapper = styled.div`
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-size: 20px;
+  }
+
+  @media only screen and (min-width: 767px) {
+    margin: 2rem 10%;
   }
 `;

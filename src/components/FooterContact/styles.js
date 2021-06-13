@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.svg";
 
 export const FooterContactWrapper = styled.div`
+  width: 100%;
   border-top: 2px solid white;
 `;
 

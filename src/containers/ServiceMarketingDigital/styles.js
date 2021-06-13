@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ServiceMarketingDigitalWrapper = styled.div`
-
+  width: 100%;
 `;
 
 export const Title = styled.h1`
