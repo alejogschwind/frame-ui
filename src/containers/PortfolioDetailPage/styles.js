@@ -5,7 +5,7 @@ export const PortfolioDetailPageWrapper = styled.div`
 `;
 
 export const MainSection = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: fit-content;
 `;
 
@@ -41,7 +41,11 @@ export const Info = styled.h4`
 `;
 
 export const Description = styled.p`
-
+  @media only screen and (min-width: 767px) {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const LinksGroup = styled.div`
@@ -55,5 +59,25 @@ export const LinksGroup = styled.div`
     font-weight: 600;
     color: #323232;
     text-decoration: none;
+
+    &:hover {
+      color: gray;
+    }
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+  
+`;
+
+export const Left = styled.div`
+  @media only screen and (min-width: 767px) {
+    width: 30%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 `;

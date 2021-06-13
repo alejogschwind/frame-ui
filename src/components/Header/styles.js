@@ -4,7 +4,7 @@ import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
 
 export const HeaderWrapper = styled.header`
   height: calc(5.2rem + 24px);
-  width: 100vw;
+  width: 100%;
   /* padding: 0rem 2.4rem; */
   background: #000;
   display: flex;

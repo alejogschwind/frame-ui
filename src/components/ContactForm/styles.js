@@ -17,6 +17,7 @@ export const Form = styled.form`
     font-size: 16px;
     border: none;
     outline: none;
+    cursor: pointer;
   }
 `;
 

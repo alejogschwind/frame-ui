@@ -35,6 +35,11 @@ export const MiddleSection = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media only screen and (min-width: 767px) {
+    & > form {
+      width: 80%;
+    }
+  }
 `;
 
 export const BottomSection = styled.div`

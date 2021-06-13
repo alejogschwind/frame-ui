@@ -12,7 +12,7 @@ import {
 import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = React.useState(true);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   const openMenu = () => setMenuOpen(true);
   const closeMenu = () => setMenuOpen(false);
