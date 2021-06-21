@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import useRequest from "../../hooks/useRequest";
 
 import ServiceCard from "../../components/ServiceCard";
 import FooterClients from "../../components/FooterClients";
 import Hero from "../../components/Hero";
 import PortfolioSection from "../../components/PortfolioSection";
-import Switch from "../../components/Switch";
 
 import {
   HomePageWrapper,
@@ -22,7 +22,26 @@ import imagePosition4 from "../../assets/images/afa.png";
 import imagePosition5 from "../../assets/images/estudio.JPG";
 import imagePosition6 from "../../assets/images/post.jpg";
 
+import ProjectsContext from "../../context/projects";
+
+import generateURL from "../../urls";
+import HeadersContext from "../../context/headers";
+
 const HomePage = () => {
+  const { data, error, loading } = useRequest(generateURL(1));
+
+  const { projects, setProjects } = useContext(ProjectsContext);
+  const { headers, setHeaders } = useContext(HeadersContext);
+
+  useEffect(() => {
+    console.log(data);
+    if (data) {
+      setProjects([...Object.values(data.proyectos)]);
+      setHeaders([data.encabezado_vimeo]);
+    }
+    console.log("H", headers);
+  }, [data]);
+
   return (
     <HomePageWrapper>
 
@@ -94,7 +113,7 @@ const HomePage = () => {
         </Grid>
       </ServiceSection>
 
-      <PortfolioSection />
+      <PortfolioSection projects={projects} />
 
       <FooterClients />
 

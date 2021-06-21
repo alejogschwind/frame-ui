@@ -4,7 +4,7 @@ import PortfolioCard from '../PortfolioCard';
 import { PortfolioSectionWrapper, Filters, FilterItem, Grid } from './styles';
 import { Link } from 'react-router-dom';
 
-const PortfolioSection = ({ displayFilter }) => {
+const PortfolioSection = ({ projects, displayFilter }) => {
   return (
     <PortfolioSectionWrapper>
       <h1>PORTFOLIO</h1>
@@ -21,10 +21,14 @@ const PortfolioSection = ({ displayFilter }) => {
       }
 
       <Grid>
+        {
+          projects.map((project) => (
+            <PortfolioCard {...project} />
+          ))
+        }
+        {/* <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
         <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
+        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" /> */}
       </Grid>
       <span>
         <Link to="/portfolio">

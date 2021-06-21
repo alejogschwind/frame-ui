@@ -2,12 +2,12 @@ import React from "react";
 
 import { PortfolioCardWrapper, Title, Subtitle } from "./styled";
 
-const PortfolioCard = ({ title, subtitle }) => {
+const PortfolioCard = ({ titulo, subtitle, imagen }) => {
   return (
     <PortfolioCardWrapper>
-      <img src={"https://thumbs.dreamstime.com/b/smart-college-students-networking-laptop-library-doing-homework-together-smart-college-students-networking-laptop-169781950.jpg"} alt={title} />
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      <img src={imagen} alt={titulo} />
+      <Title>{titulo}</Title>
+      <Subtitle>{subtitle ? subtitle : ""}</Subtitle>
     </PortfolioCardWrapper>
   );
 };

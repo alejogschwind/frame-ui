@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   HeroWrapper,
   VideoPlayerBlur,
@@ -13,9 +13,12 @@ import {
 
 import video from "../../assets/videos/test.mp4";
 import ResponsiveMenu from '../ResponsiveMenu';
+import HeadersContext from '../../context/headers';
+import ReactPlayer from 'react-player';
 
 const Hero = ({ image, borderColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { headers } = useContext(HeadersContext);
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -41,12 +44,15 @@ const Hero = ({ image, borderColor }) => {
             <Overlay />
             <img src={image} alt="background" />
           </ImageBackgroundWrapper>
-          :
+          : null
+      }
+      {
+        headers.length ?
           <VideoPlayerBlur>
-            <video src={video} autoPlay="autoPlay" loop="loop" muted id="heroVideo">
-              {/* <source  type="video/mp4" /> */}
-            </video>
+            <iframe src="https://player.vimeo.com/video/361095455?autoplay=1&mute=1&loop=1" webkitallowfullscreen mozallowfullscreen allowfullscreen controls={false}>
+            </iframe>
           </VideoPlayerBlur>
+          : null
       }
 
 

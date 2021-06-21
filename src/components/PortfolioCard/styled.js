@@ -15,6 +15,8 @@ export const PortfolioCardWrapper = styled.div`
 
   & > img {
     width: 100%;
+    max-height: 250px;
+    object-fit: cover;
     margin: 0.5rem 0;
   }
 `;
