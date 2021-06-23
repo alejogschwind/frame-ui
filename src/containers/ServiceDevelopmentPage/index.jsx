@@ -2,17 +2,23 @@ import React, { useLayoutEffect } from 'react';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 
+import useRequest from '../../hooks/useRequest';
+import generateURL from '../../urls';
+
 import { ServiceDevelopmentPageWrapper, Description, Title } from "./styles";
 
 const ServiceDevelopmentPage = () => {
+  const { data, error, loading } = useRequest(generateURL(3));
+  const projects = data ? Object.values(data.proyectos) : [];
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
   return (
-    <ServiceDevelopmentPageWrapper>
+    <ServiceDevelopmentPageWrapper >
 
-      <ServicesPageWrapper>
+      <ServicesPageWrapper projects={projects}>
 
         <Title>Desarrollo de contenido digital multiplataforma</Title>
         <Description>

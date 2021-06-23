@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Header from "../../components/Header";
 import FooterContact from '../../components/FooterContact';
+
+import useRequest from '../../hooks/useRequest';
+import generateURL from '../../urls';
 
 import {
   PortfolioDetailPageWrapper,
@@ -15,30 +19,51 @@ import {
   Row,
   Left
 } from './styles';
-
 import image from "../../assets/images/portfolioDetail.jpg";
-import { Link } from 'react-router-dom';
 
-function PortfolioDetailPage() {
+
+function PortfolioDetailPage({ match }) {
+  const { url } = match.params;
+  const { data, error, loading } = useRequest(generateURL(7, url));
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  console.log(data);
+  if (!data) {
+    return <div>Loading</div>;
+  }
   return (
     <PortfolioDetailPageWrapper>
       <Header />
       <MainSection>
         <ImageWrapper>
-          <img src={image} alt="Detail" />
+          {/* <img src={image} alt="Detail" /> */}
+          {/* {
+            Object.keys(data.proyecto?.videos) > 0 &&
+            <iframe src={Object.values(data.proyecto?.videos)[0]} webkitallowfullscreen mozallowfullscreen allowfullscreen>
+            </iframe>
+          } */}
+          {
+            Object.values(data.proyecto?.videos).map(video => (
+              <iframe src={video} webkitallowfullscreen mozallowfullscreen allowfullscreen>
+              </iframe>
+            ))
+          }
         </ImageWrapper>
 
         <ProjectDetail>
           <Row>
             <Left>
-              <Title>Nombre del proyecto</Title>
-              <Info><span>Cliente:</span>Nickelodeon</Info>
+              <Title>{data.proyecto?.titulo}</Title>
+              <Info><span>Cliente:</span>{data.proyecto?.cliente}</Info>
               <Info><span>Fecha:</span>12/03/2021</Info>
               <Info><span>Tarea:</span>Desarrollo de plataforma</Info>
             </Left>
 
             <Description>
-              Frame es una productora de contenido audiovisual con más de 15 años en el mercado, que brinda soluciones inteas calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
+              {data.proyecto?.descripcion}
             </Description>
           </Row>
 

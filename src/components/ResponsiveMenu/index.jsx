@@ -32,17 +32,17 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
           !subMenuOpen ?
             <MenuList>
               <MenuItem>
-                <StyledLink to="/">
+                <StyledLink to="/" onClick={closeMenu}>
                   Home
           </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/portfolio">
+                <StyledLink to="/portfolio" onClick={closeMenu}>
                   Portfolio
           </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/nosotros">
+                <StyledLink to="/nosotros" onClick={closeMenu}>
                   Nosotros
           </StyledLink>
               </MenuItem>
@@ -52,7 +52,7 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
           </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/contacto">
+                <StyledLink to="/contacto" onClick={closeMenu}>
                   Contacto
           </StyledLink>
               </MenuItem>
@@ -60,32 +60,32 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
             :
             <MenuList>
               <MenuItem>
-                <StyledLink to="/servicio/desarollo">
+                <StyledLink to="/servicio/desarollo" onClick={closeMenu}>
                   Desarrollo
               </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/servicio/brandingTV">
+                <StyledLink to="/servicio/brandingTV" onClick={closeMenu}>
                   Branding TV
               </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/servicio/marketing">
+                <StyledLink to="/servicio/marketing" onClick={closeMenu}>
                   Marketing Digital
               </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/servicio/post-produccion">
+                <StyledLink to="/servicio/post-produccion" onClick={closeMenu}>
                   Post Producción
               </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/servicio/produccion">
+                <StyledLink to="/servicio/produccion" onClick={closeMenu}>
                   Producción
           </StyledLink>
               </MenuItem>
               <MenuItem>
-                <StyledLink to="/servicio/estudio">
+                <StyledLink to="/servicio/estudio" onClick={closeMenu}>
                   Estudio
               </StyledLink>
               </MenuItem>

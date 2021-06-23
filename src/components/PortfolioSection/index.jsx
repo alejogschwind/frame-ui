@@ -4,7 +4,8 @@ import PortfolioCard from '../PortfolioCard';
 import { PortfolioSectionWrapper, Filters, FilterItem, Grid } from './styles';
 import { Link } from 'react-router-dom';
 
-const PortfolioSection = ({ projects, displayFilter }) => {
+const PortfolioSection = ({ projects = [], displayFilter }) => {
+
   return (
     <PortfolioSectionWrapper>
       <h1>PORTFOLIO</h1>

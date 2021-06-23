@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { PortfolioCardWrapper, Title, Subtitle } from "./styled";
 
-const PortfolioCard = ({ titulo, subtitle, imagen }) => {
+const PortfolioCard = ({ titulo, subtitle, imagen, url }) => {
   return (
-    <PortfolioCardWrapper>
-      <img src={imagen} alt={titulo} />
-      <Title>{titulo}</Title>
-      <Subtitle>{subtitle ? subtitle : ""}</Subtitle>
-    </PortfolioCardWrapper>
+    <Link to={`/portfolio/${url}`}>
+      <PortfolioCardWrapper>
+        <img src={imagen} alt={titulo} />
+        <Title>{titulo}</Title>
+        <Subtitle>{subtitle ? subtitle : ""}</Subtitle>
+      </PortfolioCardWrapper>
+    </Link>
   );
 };
 

@@ -6,7 +6,7 @@ import FooterContact from '../FooterContact';
 
 import { ServiceWrapper, ContentWrapper } from './styles';
 
-const Service = ({ children }) => {
+const Service = ({ projects = [], children }) => {
   return (
     <ServiceWrapper>
 
@@ -18,7 +18,7 @@ const Service = ({ children }) => {
         {children}
       </ContentWrapper>
 
-      <PortfolioSection />
+      <PortfolioSection projects={projects} />
 
       <FooterContact />
 

@@ -23,7 +23,7 @@ const routes = () => (
     <Route exact path="/servicio/brandingTV" component={ServiceBrandingTV} />
     <Route exact path="/servicio/estudio" component={ServiceStudio} />
     <Route exact path="/servicio/post-produccion" component={ServicePostProduction} />
-    <Route exact path="/portfolio/id" component={PortfolioDetailPage} />
+    <Route exact path="/portfolio/:url" component={PortfolioDetailPage} />
   </BrowserRouter>
 );
 
