@@ -9,8 +9,8 @@ import { ServiceProductionWrapper, Title, Description } from './styles';
 
 const ServiceProduction = () => {
   const { data, error, loading } = useRequest(generateURL(3));
-  console.log(data);
   const projects = data ? Object.values(data.proyectos) : [];
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });

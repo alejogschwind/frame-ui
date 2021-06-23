@@ -8,7 +8,7 @@ import generateURL from '../../urls';
 import { ServiceDevelopmentPageWrapper, Description, Title } from "./styles";
 
 const ServiceDevelopmentPage = () => {
-  const { data, error, loading } = useRequest(generateURL(3));
+  const { data, error, loading } = useRequest(generateURL(2));
   const projects = data ? Object.values(data.proyectos) : [];
 
   useLayoutEffect(() => {

@@ -2,9 +2,15 @@ import React, { useLayoutEffect } from 'react';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 
+import useRequest from '../../hooks/useRequest';
+import generateURL from '../../urls';
+
 import { ServiceBrandingTVWrapper, Title, Description } from './styles';
 
 const ServiceBrandingTV = () => {
+  const { data, error, loading } = useRequest(generateURL(5));
+  const projects = data ? Object.values(data.proyectos) : [];
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -12,7 +18,7 @@ const ServiceBrandingTV = () => {
   return (
     <ServiceBrandingTVWrapper>
 
-      <ServicesPageWrapper>
+      <ServicesPageWrapper projects={projects}>
 
         <Title>Branding TV</Title>
         <Description>
