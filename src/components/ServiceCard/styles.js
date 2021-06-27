@@ -15,7 +15,7 @@ export const ServiceCardWrapper = styled.div`
     if (props.position === 6) return "flex-end";
   }};
   align-items: center;
-  margin: 1rem 0;
+  margin: 4rem 0;
 
   &:hover {
     cursor: pointer;

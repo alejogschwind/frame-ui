@@ -72,10 +72,7 @@ const HomePage = () => {
 
           <Link
             to="/servicio/produccion"
-            style={{
-              position: "relative",
-              bottom: "-8rem"
-            }}
+            className={"pos1"}
           >
             <ServiceCard
               text={"Desarrollo y producción de formatos"}
@@ -110,10 +107,7 @@ const HomePage = () => {
 
           <Link
             to="/servicio/estudio"
-            style={{
-              position: "relative",
-              top: "-8rem",
-            }}
+            className={"pos2"}
           >
             <ServiceCard
               text={"Estudio Técnica"}

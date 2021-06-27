@@ -120,6 +120,9 @@ const FooterClients = () => {
       <TopSection>
         <h2>CLIENTES</h2>
         <Carousel
+          style={{
+            margin: "4rem",
+          }}
           autoPlay
           infiniteLoop
           renderIndicator={() => null}

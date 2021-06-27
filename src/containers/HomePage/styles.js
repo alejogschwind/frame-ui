@@ -53,11 +53,30 @@ export const ServiceSection = styled.div`
 `;
 
 export const Grid = styled.div`
+
+  & .pos1 {
+    bottom: 0;
+  }
+
+  & .pos2 {
+    top: 0;
+  }
+
   @media only screen and (min-width: 767px) {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 6rem;
+
+    & .pos1 {
+      position: relative;
+      bottom: -12rem;
+    }
+
+    & .pos2 {
+      position: relative;
+      top: -12rem;
+    }
 
     & > a {
       /* margin-top: 4rem; */
