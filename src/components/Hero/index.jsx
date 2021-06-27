@@ -67,27 +67,27 @@ const Hero = ({ image, borderColor }) => {
         </Overlay>
 
         <VideoPlayer>
-          {
-            headers.length ?
-              <VimeoWrapper>
+          {/* {
+            headers.length ? */}
+          <VimeoWrapper>
 
-                <ReactPlayer
-                  loop={true}
-                  playing={playing}
-                  onPlay={() => setLoading(false)}
-                  // onReady={() => setLoading(false)}
-                  url="https://player.vimeo.com/video/361095455"
-                />
-                {/* <iframe
+            <ReactPlayer
+              loop={true}
+              playing={playing}
+              onPlay={() => setLoading(false)}
+              // onReady={() => setLoading(false)}
+              url="https://player.vimeo.com/video/361095455"
+            />
+            {/* <iframe
                 frameborder="0"
                 loop
                 play={playing}
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen>
               </iframe> */}
-              </VimeoWrapper>
-              : null
-          }
+          </VimeoWrapper>
+          {/* : null
+          } */}
         </VideoPlayer>
       </HeroWrapper >
     </>

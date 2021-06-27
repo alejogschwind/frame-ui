@@ -70,7 +70,13 @@ const HomePage = () => {
             />
           </Link>
 
-          <Link to="/servicio/produccion">
+          <Link
+            to="/servicio/produccion"
+            style={{
+              position: "relative",
+              bottom: "-8rem"
+            }}
+          >
             <ServiceCard
               text={"Desarrollo y producción de formatos"}
               image={imagePosition2}
@@ -94,8 +100,6 @@ const HomePage = () => {
             />
           </Link>
 
-
-
           <Link to="/servicio/post-produccion">
             <ServiceCard
               text={"Post producción"}
@@ -104,7 +108,13 @@ const HomePage = () => {
             />
           </Link>
 
-          <Link to="/servicio/estudio">
+          <Link
+            to="/servicio/estudio"
+            style={{
+              position: "relative",
+              top: "-8rem",
+            }}
+          >
             <ServiceCard
               text={"Estudio Técnica"}
               image={imagePosition5}
