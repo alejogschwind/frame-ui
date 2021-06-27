@@ -5,6 +5,7 @@ import useRequest from "../../hooks/useRequest";
 
 import ServiceCard from "../../components/ServiceCard";
 import FooterClients from "../../components/FooterClients";
+import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import PortfolioSection from "../../components/PortfolioSection";
 
@@ -113,7 +114,7 @@ const HomePage = () => {
         </Grid>
       </ServiceSection>
 
-      <PortfolioSection projects={projects} />
+      <PortfolioSection projects={projects} displayAll={false} />
 
       <FooterClients />
 

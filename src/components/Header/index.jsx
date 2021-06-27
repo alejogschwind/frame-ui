@@ -6,10 +6,15 @@ import ResponsiveMenu from '../ResponsiveMenu';
 import {
   HeaderWrapper,
   MenuIconStyled,
-  Position
+  Position,
+  ResponsiveMenuWrapper,
+  HMenuWrappre,
+  Menu,
+  FrameLogoStyled,
+  SubMenu,
+  SubMenuButton
 } from './styles';
 
-import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -25,21 +30,73 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
+      {/* 1024 */}
+      <ResponsiveMenuWrapper>
+        <ResponsiveMenu
+          menuOpen={menuOpen}
+          openMenu={openMenu}
+          closeMenu={closeMenu}
+        />
+      </ResponsiveMenuWrapper>
 
-      <ResponsiveMenu
-        menuOpen={menuOpen}
-        openMenu={openMenu}
-        closeMenu={closeMenu}
-      />
+
 
       <Position>
         <Link to="/">
-          <FrameLogo />
+          <FrameLogoStyled />
         </Link>
 
-        <div>
+        <HMenuWrappre>
           <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />
-        </div>
+        </HMenuWrappre>
+        <Menu>
+          <ul>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <SubMenuButton>
+              <li>Servicios</li>
+              <SubMenu>
+                <Link to="/servicio/desarollo">
+                  <li>
+                    Desarrollo de contenido digital multiplataforma
+                  </li>
+                </Link>
+                <Link to="/servicio/brandingTV">
+                  <li>
+                    Branding Tv
+                  </li>
+                </Link>
+                <Link to="/servicio/marketing">
+                  <li>
+                    Marketing digital
+                  </li>
+                </Link>
+                <Link to="/servicio/post-produccion">
+                  <li>
+                    Servicio de post producción
+                  </li>
+                </Link>
+                <Link to="/servicio/produccion">
+                  <li>
+                    Desarrollo y producción de formatos
+                  </li>
+                </Link>
+                <Link to="/servicio/estudio">
+                  <li>
+                    Estudio y técnica
+                  </li>
+                </Link>
+              </SubMenu>
+            </SubMenuButton>
+            <Link to="/portfolio">
+              <li>Portfolio</li>
+            </Link>
+            <Link to="/contacto">
+              <li>Contacto</li>
+            </Link>
+          </ul>
+        </Menu>
       </Position>
     </HeaderWrapper>
   );

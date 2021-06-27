@@ -18,7 +18,7 @@ const Service = ({ projects = [], children }) => {
         {children}
       </ContentWrapper>
 
-      <PortfolioSection projects={projects} />
+      <PortfolioSection projects={projects} displayAll={false} />
 
       <FooterContact />
 

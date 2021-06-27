@@ -38,7 +38,7 @@ const PortfolioPage = () => {
 
       <Hero />
 
-      <PortfolioSection projects={projects} displayFilter />
+      <PortfolioSection projects={projects} displayFilter displayAll={true} />
 
       <FooterClients />
 

@@ -1,21 +1,14 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
-
-import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
-
-export const StyledLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-`;
 
 export const HeroWrapper = styled.div`
-  background: #323232;
+  background: black;
   padding: 1rem;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0,0,0);
 
-  position: relative;
+  /* position: relative; */
 
   & > img {
     height: 100vh;
@@ -28,26 +21,99 @@ export const HeroWrapper = styled.div`
   }
 `;
 
-export const MenuIconStyled = styled(MenuIcon)`
-  display: ${props => props.menuOpen ? "none" : "block"};
-  height: 24px;
-  width: 24px;
-`;
+
 
 export const VideoPlayerBlur = styled.div`
- /* filter: blur(8px); */
- position: absolute;
- top: 0;
- bottom: 0;
- right: 0;
- left: 0;
- 
- 
- & > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  /* overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; */
+
+  & iframe {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export const Border = styled.div`
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  position: relative;
+  background: transparent;
+  border: 0.4rem solid transparent;
+  z-index: 4000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${props => props.borderColor ? (
+    `
+    -moz-border-image: -moz-${props.borderColor};
+    -webkit-border-image: -webkit-${props.borderColor};
+    border-image: ${props.borderColor};
+    `
+  ) : (`
+    -moz-border-image: -moz-linear-gradient(left, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
+    -webkit-border-image: -webkit-linear-gradient(left, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
+    border-image: linear-gradient(to right, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
+  `)}
+  border-image-slice: 1;
+`;
+
+export const VideoPlayer = styled.div`
+  
+
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  z-index: 1; */
+
+  & iframe {
+    width: 100vw !important;
+    height: 56.25vw !important;
+    min-height: 100vh !important;
+    min-width: 177.77vh !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
   }
+  
+  
+ 
+  /* border-image: ${props => !props.pageColor ? `
+    linear-gradient(to right, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
+  `: "linear-gradient(to right,#F27044 0%,#A11E7D 100%);"}; */
+
+`;
+
+export const VimeoWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
 `;
 
 export const Overlay = styled.div`
@@ -57,9 +123,24 @@ export const Overlay = styled.div`
   right: 0;
   left: 0;
 
-  background: #000000 0% 0% no-repeat padding-box;
-  mix-blend-mode: multiply;
-  opacity: 0.4;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 3000;
+`;
+
+export const PlayButton = styled.div`
+  height: 100px;
+  width: 100px;
+  background: red;
+  z-index: 6001;
+  cursor: pointer;
+`;
+
+export const PauseButton = styled.div`
+  height: 100px;
+  width: 100px;
+  background: green;
+  z-index: 6001;
+  cursor: pointer;
 `;
 
 export const ImageBackgroundWrapper = styled.div`
@@ -74,66 +155,4 @@ export const ImageBackgroundWrapper = styled.div`
     width: 100%;
     object-fit: cover;
   }
-`;
-
-export const VideoPlayer = styled.div`
-  height: 100%;
-  width: 100%;
-  position: relative;
-  background: transparent;
-  border: 0.4rem solid transparent;
-  
-  
-  ${props => props.borderColor ? (
-    `
-    -moz-border-image: -moz-${props.borderColor};
-    -webkit-border-image: -webkit-${props.borderColor};
-    border-image: ${props.borderColor};
-    `
-  ) : (`
-    -moz-border-image: -moz-linear-gradient(left, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
-    -webkit-border-image: -webkit-linear-gradient(left, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
-    border-image: linear-gradient(to right, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
-  `)}
-  border-image-slice: 1;
-  /* border-image: ${props => !props.pageColor ? `
-    linear-gradient(to right, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
-  `: "linear-gradient(to right,#F27044 0%,#A11E7D 100%);"}; */
-
-  & iframe {
-  height: 100%;
-  width: 100%;
-  border: none;
-  object-fit: cover;
-  padding: 5px;
-  /* background: transparent linear-gradient(90deg, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%) 0% 0% no-repeat padding-box; */
-  position: absolute;
-  top: 0;
-  }
-`;
-
-export const Header = styled.div`
-  /* background: red; */
-  /* position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem; */
-
-  padding: 1rem;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Logo = styled.div`
-  color: white;
-  font-size: 28px;
-  font-weight: 700;
-`;
-
-export const HamburgerMenu = styled.div`
-  width: 30px;
-  height: 30px;
-  background: white;
 `;
