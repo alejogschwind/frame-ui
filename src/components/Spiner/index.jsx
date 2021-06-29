@@ -2,9 +2,9 @@ import React from 'react';
 
 import { SpinerWrapper } from "./styles";
 
-const Spiner = () => {
+const Spiner = ({ dark }) => {
   return (
-    <SpinerWrapper>
+    <SpinerWrapper dark={dark}>
 
     </SpinerWrapper>
   );

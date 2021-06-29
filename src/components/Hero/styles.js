@@ -77,6 +77,12 @@ export const Border = styled.div`
     border-image: linear-gradient(to right, #FFFFFF 0%, #DFEFD7 0%, #C3E0B3 0%, #A9D392 0%, #94C877 0%, #83BF61 0%, #76B950 0%, #6CB444 0%, #67B13D 0%, #66B13C 0%, #5CC2CD 0%, #5CC3D6 0%, #6FC7BC 8%, #A0D17B 24%, #EFE214 47%, #FFE600 51%, #FCD309 55%, #E01169 100%, #E01169 100%);
   `)}
   border-image-slice: 1;
+
+  ${props => props.dark && `
+    & > svg > path {
+      fill: #000;
+    }
+  `}
 `;
 
 export const VideoPlayer = styled.div`

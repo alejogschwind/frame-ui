@@ -7,6 +7,14 @@ export const FrameLogoStyled = styled(FrameLogo)`
   &:hover path {
     fill: black;
   }
+  ${props => props.dark && `
+    & path {
+      fill: black;
+    }
+    &:hover path {
+      fill: white;
+    }
+  `}
 `;
 
 export const HeaderWrapper = styled.header`
@@ -93,6 +101,15 @@ export const Menu = styled.div`
       color: black;
     }
   }
+
+  ${props => props.dark && `
+    & > ul > a > li, & > ul > div > li {
+      color: #000;
+      &:hover {
+      color: #fff;
+    }
+    }
+  `}
 `;
 
 export const SubMenuButton = styled.div`
@@ -127,6 +144,17 @@ export const SubMenu = styled.div`
     background: white;
     /* color: white; */
   }
+
+  ${props => !props.dark && `
+    & > a > li {
+      color: #000;
+      background: white;
+      &:hover {
+        background: black;
+        color: white;
+    }
+    }
+  `}
 `;
 
 export const SwitchWrapper = styled.div`
@@ -137,6 +165,11 @@ export const SwitchWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  ${props => props.dark && `
+    & span {
+      color: #000;
+    }
+  `}
 
   @media only screen and (max-width: 360px) {
     margin: 0.5rem 0;

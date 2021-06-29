@@ -48,20 +48,20 @@ const Header = ({ solid }) => {
 
       <Position>
         <Link to="/">
-          <FrameLogoStyled />
+          <FrameLogoStyled dark={dark} />
         </Link>
 
         <HMenuWrappre>
           <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />
         </HMenuWrappre>
-        <Menu>
+        <Menu dark={dark}>
           <ul>
             <Link to="/">
               <li>Home</li>
             </Link>
             <SubMenuButton>
               <li>Servicios</li>
-              <SubMenu>
+              <SubMenu dark={dark}>
                 <Link to="/servicio/desarollo">
                   <li>
                     Desarrollo de contenido digital multiplataforma
@@ -100,7 +100,7 @@ const Header = ({ solid }) => {
             <Link to="/contacto">
               <li>Contacto</li>
             </Link>
-            <SwitchWrapper>
+            <SwitchWrapper dark={dark}>
               <Span>Light</Span>
               <Switch
                 isToggled={dark}

@@ -55,7 +55,7 @@ const Hero = ({ image, borderColor }) => {
             : null
         }
 
-        <Border borderColor={borderColor} onClick={() => {
+        <Border dark={dark} borderColor={borderColor} onClick={() => {
           if (!playing) {
             setLoading(true);
           }
@@ -72,7 +72,7 @@ const Hero = ({ image, borderColor }) => {
           }
           {
             loading && <SpinerWrapper>
-              <Spiner />
+              <Spiner dark={dark} />
             </SpinerWrapper>
           }
         </Border>
@@ -89,8 +89,9 @@ const Hero = ({ image, borderColor }) => {
               loop={true}
               playing={playing}
               onPlay={() => setLoading(false)}
-              onReady={() => {
-                // setLoading(true);
+              onStart={() => {
+                setLoading(false);
+                setPlaying(true);
               }}
               url={headers[0]}
             />
