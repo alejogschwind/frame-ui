@@ -11,6 +11,9 @@ export const ResponsiveMenuWrapper = styled.div`
   
   display: ${props => props.menuOpen ? "block" : "none"};
   background: rgba(0,0,0,0.8);
+  ${props => !props.dark && `
+    background: rgba(255,255,255,0.8);
+  `}
   /* opacity: 0.8; */
   position: absolute;
   top: 0;
@@ -35,6 +38,12 @@ export const CloseIconStyled = styled(CloseIcon)`
   position: absolute;
   right: 2.4rem;
   top: 2.6rem;
+
+  ${props => !props.dark && `
+    & path {
+      fill: #000;
+    }
+  `}
 `;
 
 export const BackIconStyled = styled(BackIcon)`
@@ -44,12 +53,22 @@ export const BackIconStyled = styled(BackIcon)`
   position: absolute;
   left: 2.4rem;
   top: 2.6rem;
+
+  ${props => !props.dark && `
+    & path {
+      fill: #000;
+    }
+  `}
 `;
 
 export const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   cursor: pointer;
+
+  ${props => !props.dark && `
+    color: black;
+  `}
 `;
 
 export const MenuList = styled.ul`
@@ -58,13 +77,19 @@ export const MenuList = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items:  center;
+
+  ${props => props.dark && `
+    & a {
+      color: white;
+    }
+  `}
 `;
 
 export const MenuItem = styled.li`
   /* background: red; */
   width: 90vw;
   padding: 0.2rem 0;
-  color: white;
+  color: black;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -101,6 +126,12 @@ export const SwitchWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${props => !props.dark && `
+    & span {
+      color: black;
+    }
+  `}
 
   @media only screen and (max-width: 360px) {
     margin: 0.5rem 0;

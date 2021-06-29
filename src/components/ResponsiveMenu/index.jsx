@@ -22,22 +22,22 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
   const { dark, setDark } = useContext(DarkContext);
 
   return (
-    <ResponsiveMenuWrapper menuOpen={menuOpen}>
+    <ResponsiveMenuWrapper dark={dark} menuOpen={menuOpen}>
       {
         subMenuOpen &&
-        <BackIconStyled onClick={() => setSubMenuOpen(false)} />
+        <BackIconStyled dark={dark} onClick={() => setSubMenuOpen(false)} />
       }
-      <CloseIconStyled onClick={closeMenu} />
+      <CloseIconStyled dark={dark} onClick={closeMenu} />
 
       <MenuContent>
 
         {
           !subMenuOpen ?
-            <MenuList>
+            <MenuList dark={dark}>
               <MenuItem>
                 <StyledLink to="/" onClick={closeMenu}>
                   Home
-          </StyledLink>
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/portfolio" onClick={closeMenu}>
@@ -61,7 +61,7 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
               </MenuItem>
             </MenuList>
             :
-            <MenuList>
+            <MenuList dark={dark}>
               <MenuItem>
                 <StyledLink to="/servicio/desarollo" onClick={closeMenu}>
                   Desarrollo
@@ -96,7 +96,7 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
         }
 
         <TogglesGroup>
-          <SwitchWrapper>
+          <SwitchWrapper dark={dark}>
             <Span>Light</Span>
             <Switch
               isToggled={dark}
@@ -104,7 +104,7 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
             />
             <Span>Dark</Span>
           </SwitchWrapper>
-          <SwitchWrapper>
+          <SwitchWrapper dark={dark}>
             <Span>ES</Span>
             <Switch />
             <Span>EN</Span>
