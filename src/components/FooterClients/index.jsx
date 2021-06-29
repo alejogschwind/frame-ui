@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import {
   FooterClientsWrapper,
@@ -28,6 +28,7 @@ import {
 // import Logo14 from "../../assets/images/logo14.png";
 // import Logo15 from "../../assets/images/logo15.png";
 // import Logo16 from "../../assets/images/logo16.png";
+import DarkContext from '../../context/dark';
 
 import LNLogo from "../../assets/svgs/ln.png";
 import CocaColaLogo from "../../assets/svgs/cocacola.svg";
@@ -43,6 +44,7 @@ import TwitterLogo from "../../assets/svgs/twitter.svg";
 import YoutubeLogo from "../../assets/svgs/youtube.svg";
 
 const FooterClients = () => {
+  const { dark } = useContext(DarkContext);
 
   const logos = [
     [
@@ -116,8 +118,8 @@ const FooterClients = () => {
   ];
 
   return (
-    <FooterClientsWrapper>
-      <TopSection>
+    <FooterClientsWrapper dark={dark}>
+      <TopSection dark={dark}>
         <h2>CLIENTES</h2>
         <Carousel
           style={{

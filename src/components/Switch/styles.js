@@ -17,7 +17,7 @@ export const Input = styled.input`
   }
 
   &:checked + .slider {
-    background: #363636;
+    background: #222222;
   }
 `;
 

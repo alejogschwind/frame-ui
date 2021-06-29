@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const ServiceBrandingTVWrapper = styled.div`
-
+  & h1 , p {
+    ${props => props.dark && `
+      color: white;
+    `}
+  }
 `;
 
 export const Title = styled.h1`

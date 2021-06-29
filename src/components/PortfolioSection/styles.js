@@ -8,6 +8,14 @@ export const PortfolioSectionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Dark */
+  ${props => props.dark && (
+    `
+      border-bottom: 2px solid #000;
+      background: black;
+      color: white;
+    `
+  )}
   
   & > h1 {
     width: fit-content;
@@ -15,7 +23,8 @@ export const PortfolioSectionWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    margin-bottom: 1rem;
+
+    margin-bottom: 2rem;
   }
 
   & > span {
@@ -26,6 +35,10 @@ export const PortfolioSectionWrapper = styled.div`
     
     & > a {
       color: #323232;
+      /* Dark */
+      ${props => props.dark && (`
+          color: white;
+      `)}
     }
     
     &:hover {
@@ -59,6 +72,11 @@ export const Filters = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  color: #323232;
+  /* Dark */
+  ${props => props.dark && `
+    color: #fff;
+  `}
 
   /* display: grid;
   grid-template-columns: repeat(1fr, 6);
@@ -74,7 +92,6 @@ export const FilterItem = styled.h4`
   padding: 1rem 0;
   font-size: 16px;
   text-align:  center;
-  color: #323232;
   cursor: pointer;
   /* grid-area: "filter2"; */
 

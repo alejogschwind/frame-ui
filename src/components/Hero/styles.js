@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
+import { ReactComponent as IconPause } from "../../assets/svgs/pause.svg";
+import { ReactComponent as IconPlay } from "../../assets/svgs/play.svg";
+
 export const HeroWrapper = styled.div`
-  background: black;
   padding: 1rem;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: rgba(0,0,0);
+  background-color: white;
+  ${props => props.dark && `
+    background: black;
+  `}
 
   /* position: relative; */
 
@@ -56,9 +61,9 @@ export const Border = styled.div`
   border: 0.4rem solid transparent;
   z-index: 4000;
 
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   ${props => props.borderColor ? (
     `
@@ -127,20 +132,46 @@ export const Overlay = styled.div`
   z-index: 3000;
 `;
 
-export const PlayButton = styled.div`
-  height: 100px;
-  width: 100px;
-  background: red;
+export const PlayButton = styled(IconPlay)`
+  height: 6rem;
+  width: 6rem;
   z-index: 6001;
   cursor: pointer;
+  filter: opacity(0.3);
+
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+
+  &:hover {
+    filter: opacity(1);
+  }
 `;
 
-export const PauseButton = styled.div`
-  height: 100px;
-  width: 100px;
-  background: green;
+export const PauseButton = styled(IconPause)`
+  height: 6rem;
+  width: 6rem;
   z-index: 6001;
   cursor: pointer;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  filter: opacity(0.3);
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+
+  &:hover {
+    filter: opacity(1);
+  }
+`;
+
+export const SpinerWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const ImageBackgroundWrapper = styled.div`

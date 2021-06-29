@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const ServiceWrapper = styled.div`
   /* width: 100%; */
   min-height: 100vh;
+
+  ${props => props.dark && `
+    background: #000;
+  `}
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +19,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: transparent;
 
   & > h3 {
     width: fit-content;

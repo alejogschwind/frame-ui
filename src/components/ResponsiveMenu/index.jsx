@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import DarkContext from '../../context/dark';
 
 import Switch from "../Switch";
 
@@ -17,6 +18,8 @@ import {
 
 const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
+
+  const { dark, setDark } = useContext(DarkContext);
 
   return (
     <ResponsiveMenuWrapper menuOpen={menuOpen}>
@@ -95,7 +98,10 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
         <TogglesGroup>
           <SwitchWrapper>
             <Span>Light</Span>
-            <Switch />
+            <Switch
+              isToggled={dark}
+              onToggle={() => setDark(!dark)}
+            />
             <Span>Dark</Span>
           </SwitchWrapper>
           <SwitchWrapper>

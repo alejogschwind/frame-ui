@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Title from "../../components/Title";
 import ContactForm from '../ContactForm';
@@ -19,8 +19,11 @@ import FacebookLogo from "../../assets/svgs/face.svg";
 import InstagramLogo from "../../assets/svgs/insta.svg";
 import TwitterLogo from "../../assets/svgs/twitter.svg";
 import YoutubeLogo from "../../assets/svgs/youtube.svg";
+import DarkContext from '../../context/dark';
 
 const FooterContact = () => {
+  const { dark } = useContext(DarkContext);
+
   return (
     <FooterContactWrapper>
 
@@ -31,7 +34,7 @@ const FooterContact = () => {
       </TopSection>
 
       <Gradient>
-        <MiddleSection>
+        <MiddleSection dark={dark}>
 
           <ContactForm />
 

@@ -11,7 +11,8 @@ import {
   Border,
   VimeoWrapper,
   PlayButton,
-  PauseButton
+  PauseButton,
+  SpinerWrapper
 } from './styles';
 
 import video from "../../assets/videos/test.mp4";
@@ -19,26 +20,29 @@ import ResponsiveMenu from '../ResponsiveMenu';
 import HeadersContext from '../../context/headers';
 import ReactPlayer from 'react-player';
 import Header from '../Header';
+import DarkContext from '../../context/dark';
+import Spiner from '../Spiner';
 
 const Hero = ({ image, borderColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
   const { headers } = useContext(HeadersContext);
+  const { dark } = useContext(DarkContext);
 
   const openMenu = () => {
     setMenuOpen(true);
-    document.querySelector("body").style = "overflow: hidden;";
+    document.querySelector("body").style += "overflow: hidden;";
   };
   const closeMenu = () => {
     setMenuOpen(false);
-    document.querySelector("body").style = "overflow: inital;";
+    document.querySelector("body").style += "overflow: inital;";
   };
 
   return (
     <>
-      <Header />
-      <HeroWrapper>
+      <Header solid={false} />
+      <HeroWrapper dark={dark}>
         {/* <img src={marco} alt="marco" /> */}
 
 
@@ -51,15 +55,25 @@ const Hero = ({ image, borderColor }) => {
             : null
         }
 
-        <Border borderColor={borderColor}>
+        <Border borderColor={borderColor} onClick={() => {
+          if (!playing) {
+            setLoading(true);
+          }
+          setPlaying(!playing);
+        }}>
           {
             playing ?
               <PauseButton onClick={() => setPlaying(false)} />
               :
-              <PlayButton onClick={() => { setPlaying(true); setLoading(true); }} />
+              <PlayButton onClick={() => {
+                setPlaying(true);
+                setLoading(true);
+              }} />
           }
           {
-            loading && <h1>Loading ...</h1>
+            loading && <SpinerWrapper>
+              <Spiner />
+            </SpinerWrapper>
           }
         </Border>
         <Overlay>
@@ -75,8 +89,10 @@ const Hero = ({ image, borderColor }) => {
               loop={true}
               playing={playing}
               onPlay={() => setLoading(false)}
-              // onReady={() => setLoading(false)}
-              url="https://player.vimeo.com/video/361095455"
+              onReady={() => {
+                // setLoading(true);
+              }}
+              url={headers[0]}
             />
             {/* <iframe
                 frameborder="0"

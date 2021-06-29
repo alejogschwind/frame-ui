@@ -13,7 +13,10 @@ export const HeaderWrapper = styled.header`
   height: calc(5.2rem + 24px);
   width: 100%;
   /* padding: 0rem 2.4rem; */
-  background: rgba(0,0,0,0.0);
+  background: rgba(0,0,0,0);
+  ${props => props.solid && `
+    background: rgba(0,0,0,1);
+  `}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,4 +127,25 @@ export const SubMenu = styled.div`
     background: white;
     /* color: white; */
   }
+`;
+
+export const SwitchWrapper = styled.div`
+  /* margin: 0.8rem 0; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  @media only screen and (max-width: 360px) {
+    margin: 0.5rem 0;
+  }
+`;
+
+export const Span = styled.span`
+  margin: 0 1rem;
+  display: block;
+  color: white;
+  font-weight: 400;
 `;

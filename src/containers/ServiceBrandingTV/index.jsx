@@ -1,6 +1,7 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
+import DarkContext from '../../context/dark';
 
 import useRequest from '../../hooks/useRequest';
 import generateURL from '../../urls';
@@ -10,13 +11,14 @@ import { ServiceBrandingTVWrapper, Title, Description } from './styles';
 const ServiceBrandingTV = () => {
   const { data, error, loading } = useRequest(generateURL(5));
   const projects = data ? Object.values(data.proyectos) : [];
+  const { dark } = useContext(DarkContext);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
   return (
-    <ServiceBrandingTVWrapper>
+    <ServiceBrandingTVWrapper dark={dark}>
 
       <ServicesPageWrapper projects={projects}>
 

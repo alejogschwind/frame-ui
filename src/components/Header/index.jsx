@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import DarkContext from '../../context/dark';
 
 import ResponsiveMenu from '../ResponsiveMenu';
+import Switch from '../Switch';
 
 import {
   HeaderWrapper,
@@ -12,24 +14,27 @@ import {
   Menu,
   FrameLogoStyled,
   SubMenu,
-  SubMenuButton
+  SubMenuButton,
+  SwitchWrapper,
+  Span
 } from './styles';
 
 
-const Header = () => {
+const Header = ({ solid }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const { dark, setDark } = useContext(DarkContext);
 
   const openMenu = () => {
     setMenuOpen(true);
-    document.querySelector("body").style = "overflow: hidden;";
+    document.querySelector("body").style.setProperty("overflow", "hidden");
   };
   const closeMenu = () => {
     setMenuOpen(false);
-    document.querySelector("body").style = "overflow: inital;";
+    document.querySelector("body").style.setProperty("overflow", "initial");
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper solid={solid}>
       {/* 1024 */}
       <ResponsiveMenuWrapper>
         <ResponsiveMenu
@@ -95,6 +100,14 @@ const Header = () => {
             <Link to="/contacto">
               <li>Contacto</li>
             </Link>
+            <SwitchWrapper>
+              <Span>Light</Span>
+              <Switch
+                isToggled={dark}
+                onToggle={() => setDark(!dark)}
+              />
+              <Span>Dark</Span>
+            </SwitchWrapper>
           </ul>
         </Menu>
       </Position>

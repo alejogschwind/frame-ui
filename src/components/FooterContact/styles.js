@@ -4,7 +4,7 @@ import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.
 
 export const FooterContactWrapper = styled.div`
   width: 100%;
-  border-top: 2px solid white;
+  border-top: 20px solid transparent;
 `;
 
 export const Gradient = styled.div`
@@ -12,7 +12,7 @@ export const Gradient = styled.div`
 `;
 
 export const TopSection = styled.div`
-  border-top: 2px solid white;
+  border-top: 10px solid transparent;
   padding: 2rem 1rem 2rem 1rem;
   background: transparent;
   /* min-height: 200px; */
@@ -30,6 +30,9 @@ export const TopSection = styled.div`
 
 export const MiddleSection = styled.div`
   background: transparent linear-gradient(180deg, #fff 0%, #80808000 30%) 0% 0% no-repeat padding-box;
+  ${props => props.dark && `
+    background: transparent linear-gradient(180deg, #000 0%, #80808000 30%) 0% 0% no-repeat padding-box;
+  `}
   padding: 5rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: column;

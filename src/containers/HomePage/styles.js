@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 export const HomePageWrapper = styled.div`
   min-height: 100vh;
+  /* Dark */
+  ${props => props.dark && (
+    `
+    background: black;
+    color: white;
+    `
+  )}
 `;
 
 export const AboutUsSection = styled.div`
@@ -9,6 +16,15 @@ export const AboutUsSection = styled.div`
   color: #292853;
   text-align: center;
   margin: 2rem 1rem;
+  /* Dark */
+  ${props => props.dark && (
+    `
+    background: black;
+    color: white;
+    `
+  )}
+  
+  
   & > p {
     font: normal 300 18px Montserrat;
     letter-spacing: 0px;
@@ -37,7 +53,13 @@ export const ServiceSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  /* Dark */
+  ${props => props.dark && (
+    `
+    background: transparent linear-gradient(180deg, #000000 0%, #363636 50%, #000000 100%) 0% 0% no-repeat padding-box;
+    color: white;
+    `
+  )}
   & > h1 {
     width: fit-content;
     background: transparent linear-gradient(90deg, #A33C8E 0%, #A33C8E 0%, #9F4A93 3%, #8479AD 18%, #6EA1C3 32%, #60B9D1 43%, #5CC3D6 50%, #5CC2CD 56%, #5EBFB6 65%, #61BB90 77%, #65B55C 90%, #69B130 100%) 0% 0% no-repeat padding-box;

@@ -27,12 +27,14 @@ import ProjectsContext from "../../context/projects";
 
 import generateURL from "../../urls";
 import HeadersContext from "../../context/headers";
+import DarkContext from "../../context/dark";
 
 const HomePage = () => {
   const { data, error, loading } = useRequest(generateURL(1));
 
   const { projects, setProjects } = useContext(ProjectsContext);
   const { headers, setHeaders } = useContext(HeadersContext);
+  const { dark } = useContext(DarkContext);
 
   useEffect(() => {
     console.log(data);
@@ -44,11 +46,11 @@ const HomePage = () => {
   }, [data]);
 
   return (
-    <HomePageWrapper>
+    <HomePageWrapper dark={dark}>
 
       <Hero />
 
-      <AboutUsSection>
+      <AboutUsSection dark={dark}>
         <p>
           <strong>Frame</strong> es una productora de contenido audiovisual con más
          de <strong>15 años</strong> en el mercado, que brinda soluciones integrales de alta calidad
@@ -58,7 +60,7 @@ const HomePage = () => {
         </span>
       </AboutUsSection>
 
-      <ServiceSection>
+      <ServiceSection dark={dark}>
         <h1>SERVICIOS</h1>
 
         <Grid>

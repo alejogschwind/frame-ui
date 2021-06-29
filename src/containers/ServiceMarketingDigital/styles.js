@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const ServiceMarketingDigitalWrapper = styled.div`
   width: 100%;
+  & h1 , p {
+    ${props => props.dark && `
+      color: white;
+    `}
+  }
 `;
 
 export const Title = styled.h1`

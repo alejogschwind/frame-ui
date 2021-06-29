@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import PortfolioCard from '../PortfolioCard';
 import { PortfolioSectionWrapper, Filters, FilterItem, Grid } from './styles';
 import { Link } from 'react-router-dom';
+import DarkContext from '../../context/dark';
 
 const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
+  const { dark } = useContext(DarkContext);
 
   return (
-    <PortfolioSectionWrapper>
+    <PortfolioSectionWrapper dark={dark}>
       <h1>PORTFOLIO</h1>
 
       {
         displayFilter &&
-        <Filters>
+        <Filters dark={dark}>
           <FilterItem>Multiplataforma</FilterItem>
           <FilterItem>Formatos</FilterItem>
           <FilterItem>Marketing</FilterItem>

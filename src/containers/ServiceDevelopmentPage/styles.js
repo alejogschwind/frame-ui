@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const ServiceDevelopmentPageWrapper = styled.div`
+
+  & h1 , p {
+    ${props => props.dark && `
+      color: white;
+    `}
+  }
 `;
 
 export const Title = styled.h1`

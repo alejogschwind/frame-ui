@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import DarkContext from "../../context/dark";
 
 import { PortfolioCardWrapper, Title, Subtitle } from "./styled";
 
-const PortfolioCard = ({ titulo, subtitle, imagen, url }) => {
+const PortfolioCard = ({ titulo, servicios, imagen, url }) => {
+  const { dark } = useContext(DarkContext);
+
   return (
-    <Link to={`/portfolio/${url}`}>
+    <Link to={`/portfolio/${url}`} style={{ textDecoration: "none" }}>
       <PortfolioCardWrapper>
         <img src={imagen} alt={titulo} />
-        <Title>{titulo}</Title>
-        <Subtitle>{subtitle ? subtitle : ""}</Subtitle>
+        <Title dark={dark}>{titulo}</Title>
+        <Subtitle dark={dark}>{servicios?.length ? servicios[0] : ""}</Subtitle>
       </PortfolioCardWrapper>
     </Link>
   );

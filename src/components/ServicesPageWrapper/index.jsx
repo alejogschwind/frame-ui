@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Hero from "../../components/Hero";
 import PortfolioSection from "../../components/PortfolioSection";
+import DarkContext from '../../context/dark';
 import FooterContact from '../FooterContact';
 
 import { ServiceWrapper, ContentWrapper } from './styles';
 
 const Service = ({ projects = [], children }) => {
+  const { dark } = useContext(DarkContext);
+
   return (
-    <ServiceWrapper>
+    <ServiceWrapper dark={dark}>
 
       <Hero />
 
@@ -18,7 +21,10 @@ const Service = ({ projects = [], children }) => {
         {children}
       </ContentWrapper>
 
-      <PortfolioSection projects={projects} displayAll={false} />
+      {
+        projects.length ?
+          <PortfolioSection projects={projects} displayAll={false} /> : null
+      }
 
       <FooterContact />
 

@@ -4,7 +4,7 @@ import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.
 
 export const FooterWrapper = styled.div`
   background: transparent linear-gradient(209deg, #F27044 -50%, #A11E7D 100%) 0% 0% no-repeat padding-box;
-  padding: 2rem;
+  background: transparent linear-gradient(210deg, #F27044 -50%, #A11E7D 100%) 0% 0% no-repeat padding-box;  padding: 2rem;
   width: 100%;
   display: flex;
   flex-direction: column;

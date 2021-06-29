@@ -1,6 +1,9 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useContext, useEffect, useLayoutEffect } from 'react';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
+import DarkContext from '../../context/dark';
+import HeadersContext from '../../context/headers';
+import ProjectsContext from '../../context/projects';
 
 import useRequest from '../../hooks/useRequest';
 import generateURL from '../../urls';
@@ -9,14 +12,23 @@ import { ServiceProductionWrapper, Title, Description } from './styles';
 
 const ServiceProduction = () => {
   const { data, error, loading } = useRequest(generateURL(3));
-  const projects = data ? Object.values(data.proyectos) : [];
+  const { dark } = useContext(DarkContext);
+  const { projects, setProjects } = useContext(ProjectsContext);
+  const { setHeaders } = useContext(HeadersContext);
+
+  useEffect(() => {
+    if (data) {
+      setProjects([...Object.values(data.proyectos)]);
+      setHeaders([data.encabezado_vimeo]);
+    }
+  }, [data]);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
   return (
-    <ServiceProductionWrapper>
+    <ServiceProductionWrapper dark={dark}>
 
       <ServicesPageWrapper projects={projects}>
         <Title>Desarrollo y producción de formatos</Title>

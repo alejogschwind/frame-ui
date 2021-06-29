@@ -19,10 +19,17 @@ export const ServiceCardWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    filter: grayscale(0%);
+    /* filter: grayscale(none); */
+    & div {
+      /* background: rgba(255,255,255,0.9); */
+      -moz-border-image: -moz-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
+      -webkit-border-image: -webkit-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
+      border-image: linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
+      border-image-slice: 1;
+    }
 
     & > img {
-      opacity: 1;
+      opacity: 0.9;
     }
 
     & > div {
@@ -36,7 +43,7 @@ export const ServiceCardWrapper = styled.div`
       bottom: 5px;
       right: 5px;
       left: 5px;
-      color: #292853;
+      /* color: #292853; */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -57,7 +64,7 @@ export const ServiceCardWrapper = styled.div`
     if (props.position === 4) return "360px";
     return "180px";
   }};;
-    filter: grayscale(100%);
+    filter: opacity(0.7);
     object-fit: cover;
     object-position: ${props => {
     if (props.position === 1) return "right";
@@ -86,16 +93,14 @@ export const TitleWrapper = styled.div`
     text-align: center;
     font-size: 16px;
     color: #292853;
+    
     /* z-index: 200; */
   }
-
-  &:hover {
-    background: rgba(255,255,255,0.9);
-    -moz-border-image: -moz-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
-    -webkit-border-image: -webkit-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
-    border-image: linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
-    border-image-slice: 1;
-  }
+  ${props => props.dark && `
+      & > h2 {
+        color: white;
+      }
+  `}
 `;
 
-// background: transparent linear-gradient(69deg, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%) 0% 0% no-repeat padding-box;
+// background: transparent linear-gradient(69deg, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%) 0% 0% no-repeat padding-box;;

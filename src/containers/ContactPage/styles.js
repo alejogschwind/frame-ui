@@ -6,7 +6,11 @@ import { ReactComponent as PhoneIcon } from "../../assets/svgs/phoneLight.svg";
 
 
 export const ContactPageWrapper = styled.div`
-
+  ${props => props.dark && `
+    background: #000;
+    color: white;
+  `}
+  /* background: transparent linear-gradient(180deg, #000000 80%, #80808000 150%) 0% 0% no-repeat padding-box; */
 `;
 
 export const ContactSection = styled.div`
@@ -17,6 +21,12 @@ export const ContactSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${props => props.dark && `
+    background: #000;
+    color: white;
+  `}
+  background: transparent;
 
   & > p {
     margin-top: 1.5rem;
@@ -117,6 +127,17 @@ export const Row = styled.div`
 `;
 
 export const Left = styled.div`
+  & div {
+    ${props => props.dark && `
+      color: white;
+    `}
+  }
+  & .a {
+    ${props => props.dark && `
+      fill: white;
+      stroke: none;
+    `}
+  }
   @media only screen and (min-width: 767px) {
     width: 40%;
     display: flex;

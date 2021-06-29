@@ -9,7 +9,7 @@ export const PortfolioCardWrapper = styled.div`
     opacity: 1;
 
     h3 {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
@@ -23,9 +23,23 @@ export const PortfolioCardWrapper = styled.div`
 
 export const Title = styled.h3`
   margin: 0 1rem;
-  `;
+  color: #000;
+  text-decoration: none;
+  /* Dark */
+  ${props => props.dark && `
+    color: white
+    `
+  }
+`;
 
 export const Subtitle = styled.h4`
   margin: 0rem 1rem;
+  color: #323232;
   font-weight: 300;
+  font-size: 16px;
+  /* Dark */
+  ${props => props.dark && `
+    color: white
+    `
+  }
 `;

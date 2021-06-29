@@ -18,15 +18,13 @@ const PortfolioPage = () => {
   const { data, error, loading } = useRequest(generateURL(6));
 
   const { projects, setProjects } = useContext(ProjectsContext);
-  const { headers, setHeaders } = useContext(HeadersContext);
+  const { setHeaders } = useContext(HeadersContext);
 
   useEffect(() => {
-    console.log(data);
     if (data) {
       setProjects([...Object.values(data.proyectos)]);
       setHeaders([data.encabezado_vimeo]);
     }
-    console.log("H", headers);
   }, [data]);
 
   useLayoutEffect(() => {
