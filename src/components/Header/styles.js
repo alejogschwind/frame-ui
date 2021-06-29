@@ -22,7 +22,10 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   /* padding: 0rem 2.4rem; */
   background: rgba(0,0,0,0);
-  ${props => props.solid && `
+  ${props => props.solid && props.dark && `
+    background: rgba(255,255,255, 1);
+  `}
+  ${props => props.solid && !props.dark && `
     background: rgba(0,0,0,1);
   `}
   display: flex;
@@ -53,6 +56,11 @@ export const MenuIconStyled = styled(MenuIcon)`
   display: ${props => props.menuOpen ? "none" : "block"};
   height: 24px;
   width: 24px;
+  ${props => props.dark && `
+    & line {
+      stroke: black;
+    }
+  `}
 `;
 
 export const ResponsiveMenuWrapper = styled.div`

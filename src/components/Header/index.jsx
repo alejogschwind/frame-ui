@@ -34,7 +34,7 @@ const Header = ({ solid }) => {
   };
 
   return (
-    <HeaderWrapper solid={solid}>
+    <HeaderWrapper solid={solid} dark={dark}>
       {/* 1024 */}
       <ResponsiveMenuWrapper>
         <ResponsiveMenu
@@ -52,7 +52,7 @@ const Header = ({ solid }) => {
         </Link>
 
         <HMenuWrappre>
-          <MenuIconStyled menuOpen={menuOpen} onClick={openMenu} />
+          <MenuIconStyled dark={dark} menuOpen={menuOpen} onClick={openMenu} />
         </HMenuWrappre>
         <Menu dark={dark}>
           <ul>
