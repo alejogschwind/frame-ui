@@ -1,5 +1,5 @@
 const generateURL = (section, url, language) => {
-  const BASE_URL = "http://www.frame.com.ar/dbfeed/json.php";
+  const BASE_URL = "https://www.frame.com.ar/dbfeed/json.php";
 
   let urlGenerated = BASE_URL + `?seccion=${section}`;
 
