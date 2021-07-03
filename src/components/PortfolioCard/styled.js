@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PortfolioCardWrapper = styled.div`
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   opacity: 0.8;
 
   &:hover {
@@ -15,16 +15,16 @@ export const PortfolioCardWrapper = styled.div`
 
   & > img {
     width: 100%;
-    max-height: 250px;
+    max-height: 350px;
     object-fit: cover;
     margin: 0.5rem 0;
   }
 `;
 
 export const Title = styled.h3`
-  margin: 0 1rem;
   color: #000;
   text-decoration: none;
+  font-size: 16px;
   /* Dark */
   ${props => props.dark && `
     color: white
@@ -33,10 +33,9 @@ export const Title = styled.h3`
 `;
 
 export const Subtitle = styled.h4`
-  margin: 0rem 1rem;
   color: #323232;
-  font-weight: 300;
   font-size: 16px;
+  font-weight: 300;
   /* Dark */
   ${props => props.dark && `
     color: white

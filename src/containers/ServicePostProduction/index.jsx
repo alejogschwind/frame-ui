@@ -30,7 +30,7 @@ const ServicePostProduction = () => {
   return (
     <ServicePostProductionWrapper dark={dark}>
 
-      <ServicesPageWrapper projects={projects}>
+      <ServicesPageWrapper projects={projects} loading={loading}>
         <Title>Post producción</Title>
         <Description>
           Brindamos servicio de post-producción integral contando con una gran infraestructura. Diseñamos el workflow necesario para cada cliente, pensándolo en conjunto y utilizando herramientas de gestión online como Trello y Sony Ci para agilizar tiempos y lograr los objetivos de una manera clara y sencilla.

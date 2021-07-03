@@ -7,13 +7,13 @@ import FooterContact from '../FooterContact';
 
 import { ServiceWrapper, ContentWrapper } from './styles';
 
-const Service = ({ projects = [], children }) => {
+const Service = ({ projects = [], children, loading }) => {
   const { dark } = useContext(DarkContext);
 
   return (
     <ServiceWrapper dark={dark}>
 
-      <Hero />
+      <Hero loadingData={loading} />
 
       <ContentWrapper>
         <h3>Servicios</h3>

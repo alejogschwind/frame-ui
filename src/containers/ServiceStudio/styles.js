@@ -42,7 +42,7 @@ export const StudioCard = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  height: 250px;
+  height: 400px;
   width: 100%;
   background: #323232;
 
@@ -50,12 +50,13 @@ export const ImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: bottom;
   }
 `;
 
 export const Border = styled.div`
   width: calc(100% - 2rem);
-  height: 300px;
+  height: 450px;
   position: absolute;
   top: -25px;
   left: 1rem;

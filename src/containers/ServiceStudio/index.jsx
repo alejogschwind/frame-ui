@@ -27,6 +27,7 @@ const ServiceStudio = () => {
   const { setHeaders } = useContext(HeadersContext);
 
   useEffect(() => {
+    console.log(data);
     if (data) {
       setHeaders([data.encabezado_vimeo]);
     }
@@ -39,10 +40,11 @@ const ServiceStudio = () => {
   return (
     <ServiceStudioWrapper dark={dark}>
 
-      <ServicesPageWrapper>
+      <ServicesPageWrapper loading={loading}>
         <Title>Estudio y técnica</Title>
         <Description>
-          En los últimos años hemos enfocado nuestra creatividad y estrategia de producción en la creación de contenidos short forms para medios digitales. Nuestro contenido original en YouTube alcanzó + de 11M de suscriptores y + de 200M de vistas en 3 años. Somos 1 de las 10 Youtube Network que existen en Argentina y service provider de Google en la región.
+          Ubicado en una zona estratégica de la Ciudad de Buenos Aires, contamos con uno de los estudios más amplios del país. Grandes producciones y reconocidos artistas han pasado por nuestro lugar.
+          Complementamos el servicio con la provisión de equipamiento técnico de avanzada, cubriendo de forma completa las necesidades y requerimientos para cualquier tipo de servicio de producción.
         </Description>
 
         <StudioCardsWrapper>

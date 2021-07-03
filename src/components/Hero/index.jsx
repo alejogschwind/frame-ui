@@ -23,7 +23,7 @@ import Header from '../Header';
 import DarkContext from '../../context/dark';
 import Spiner from '../Spiner';
 
-const Hero = ({ image, borderColor }) => {
+const Hero = ({ image, borderColor, loadingData }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -38,6 +38,9 @@ const Hero = ({ image, borderColor }) => {
     setMenuOpen(false);
     document.querySelector("body").style += "overflow: inital;";
   };
+
+  console.log("Loading Video", loadingData);
+  console.log("Hero Video", headers);
 
   return (
     <>
@@ -80,32 +83,28 @@ const Hero = ({ image, borderColor }) => {
 
         </Overlay>
 
-        <VideoPlayer>
-          {/* {
-            headers.length ? */}
-          <VimeoWrapper>
+        {
+          !loadingData ? (
+            <VideoPlayer>
+              <VimeoWrapper>
+                <ReactPlayer
+                  loop={true}
+                  playing={playing}
+                  onPlay={() => setLoading(false)}
+                  onStart={() => {
+                    setLoading(false);
+                    setPlaying(true);
+                  }}
+                  url={headers[0]}
+                />
+              </VimeoWrapper>
+            </VideoPlayer>
+          ) :
+            <SpinerWrapper>
+              <Spiner dark={dark} />
+            </SpinerWrapper>
+        }
 
-            <ReactPlayer
-              loop={true}
-              playing={playing}
-              onPlay={() => setLoading(false)}
-              onStart={() => {
-                setLoading(false);
-                setPlaying(true);
-              }}
-              url={headers[0]}
-            />
-            {/* <iframe
-                frameborder="0"
-                loop
-                play={playing}
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-              </iframe> */}
-          </VimeoWrapper>
-          {/* : null
-          } */}
-        </VideoPlayer>
       </HeroWrapper >
     </>
   );

@@ -30,7 +30,7 @@ const ServiceMarketingDigital = () => {
   return (
     <ServiceMarketingDigitalWrapper dark={dark}>
 
-      <ServicesPageWrapper projects={projects}>
+      <ServicesPageWrapper projects={projects} loading={loading}>
 
         <Title>Marketing digital</Title>
         <Description>
