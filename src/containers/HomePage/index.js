@@ -52,8 +52,8 @@ const HomePage = () => {
 
       <AboutUsSection dark={dark}>
         <p>
-          <strong>Frame</strong> es una productora de contenido audiovisual con más
-         de <strong>15 años</strong> en el mercado, que brinda soluciones integrales de alta calidad
+          <strong>Frame</strong> es una productora de contenido audiovisual con más de <strong>15 años</strong> en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
+          <br /> <br />Cubrimos en forma integrales las necesidades de nuestros clientes, ofreciendo servicios creativos, de producción, realización y postproducción.
         </p>
         <span>
           CONOCENOS &gt;
