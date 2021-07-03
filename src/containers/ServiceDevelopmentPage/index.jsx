@@ -30,7 +30,7 @@ const ServiceDevelopmentPage = () => {
   return (
     <ServiceDevelopmentPageWrapper dark={dark}>
 
-      <ServicesPageWrapper projects={projects}>
+      <ServicesPageWrapper projects={projects} loading={loading}>
 
         <Title>Desarrollo de contenido digital multiplataforma</Title>
         <Description>

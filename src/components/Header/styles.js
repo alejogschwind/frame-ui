@@ -133,7 +133,7 @@ export const SubMenu = styled.div`
   position: absolute;
   padding-top: 0.5rem;
   right: 0;
-  padding-right: 1.5rem;
+  padding-right: 0rem;
 
   & li{
     color: white;

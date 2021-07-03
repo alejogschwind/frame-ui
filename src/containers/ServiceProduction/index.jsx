@@ -30,7 +30,7 @@ const ServiceProduction = () => {
   return (
     <ServiceProductionWrapper dark={dark}>
 
-      <ServicesPageWrapper projects={projects}>
+      <ServicesPageWrapper projects={projects} loading={loading}>
         <Title>Desarrollo y producción de formatos</Title>
         <Description>
           Disney Channel, El Gourmet, Netflix, Canal Encuentro, LN+, son algunos de los importantes y variados clientes que confiaron en nosotros a la hora de desarrollar y producir formatos de manera integral. Contamos con profesionales de amplia experiencia en el medio en todas las áreas para llevar adelante la creatividad, la pre-producción, realización y post-producción.

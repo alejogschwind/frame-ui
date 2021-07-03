@@ -48,7 +48,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper dark={dark}>
 
-      <Hero />
+      <Hero loadingData={loading} />
 
       <AboutUsSection dark={dark}>
         <p>

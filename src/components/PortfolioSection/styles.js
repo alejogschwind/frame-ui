@@ -59,7 +59,7 @@ export const Grid = styled.div`
     margin: 0 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 4rem;
+    grid-gap: 1rem 4rem;
   }
 `;
 

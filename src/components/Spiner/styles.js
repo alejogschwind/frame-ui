@@ -5,7 +5,7 @@ export const SpinerWrapper = styled.div`
   width: 3rem;
 
   border-color: transparent #ffffffaa #ffffffcc white;
-  ${props => props.dark && `
+  ${props => !props.dark && `
     border-color: transparent #000000aa #000000cc black;
   `}
   border-width: 6px;

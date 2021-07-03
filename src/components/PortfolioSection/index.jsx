@@ -26,7 +26,7 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
       <Grid>
         {
           projects.map((project) => (
-            <PortfolioCard {...project} />
+            <PortfolioCard {...project} key={project.url} />
           ))
         }
         {/* <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
@@ -34,13 +34,15 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
         <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" /> */}
       </Grid>
       {!displayAll ?
-        <span>
+        <span style={{
+          marginTop: "2rem"
+        }}>
           <Link to="/portfolio">
             VER MÁS &gt;
         </Link>
-        </span> : null
+        </span > : null
       }
-    </PortfolioSectionWrapper>
+    </PortfolioSectionWrapper >
   );
 };
 
