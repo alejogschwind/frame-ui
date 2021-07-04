@@ -44,11 +44,11 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
                   Portfolio
           </StyledLink>
               </MenuItem>
-              <MenuItem>
+              {/* <MenuItem>
                 <StyledLink to="/nosotros" onClick={closeMenu}>
                   Nosotros
           </StyledLink>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem>
                 <StyledLink onClick={() => setSubMenuOpen(true)}>
                   Servicios

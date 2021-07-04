@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ServiceWrapper = styled.div`
   /* width: 100%; */
-  min-height: 100vh;
+  height: 100%;
 
   ${props => props.dark && `
     background: #000;
@@ -14,7 +14,7 @@ export const ServiceWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  margin: 2rem 1rem 0rem 1rem;
+  /* margin: 2rem 1rem 0rem 1rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;

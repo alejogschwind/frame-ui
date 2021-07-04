@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const ServiceStudioWrapper = styled.div`
+  height: 100%;
+
   & h1 , p {
     ${props => props.dark && `
       color: white;

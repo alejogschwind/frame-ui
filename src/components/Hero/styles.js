@@ -6,18 +6,21 @@ import { ReactComponent as IconPlay } from "../../assets/svgs/play.svg";
 export const HeroWrapper = styled.div`
   padding: 1rem;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   background-color: white;
   ${props => props.dark && `
     background: black;
   `}
 
-  /* position: relative; */
+  background-image: url(${props => props.image});
+
+  position: absolute;
 
   & > img {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 
     position: absolute;
     z-index: 99;
@@ -58,8 +61,8 @@ export const Border = styled.div`
   width: 100%;
   position: relative;
   background: transparent;
-  border: 0.4rem solid transparent;
-  z-index: 4000;
+  border: 0.4rem solid white;
+  z-index: 100;
 
   /* display: flex;
   justify-content: center;
@@ -88,9 +91,7 @@ export const Border = styled.div`
 `;
 
 export const VideoPlayer = styled.div`
-  
-
-  /* position: absolute;
+    /* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -136,7 +137,7 @@ export const Overlay = styled.div`
   right: 0;
   left: 0;
 
-  background-color: rgba(0,0,0,0.1);
+  background: transparent linear-gradient(45deg, #A11E7D55 0%, #F2704455 50%, #A11E7D55 100%) 0% 0% no-repeat padding-box;
   z-index: 3000;
 `;
 
@@ -188,10 +189,20 @@ export const ImageBackgroundWrapper = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
+  background-image: url(${props => props.image});
 
   & > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+`;
+
+export const ResponsiveMenuWrapper = styled.div`
+  display: block;
+  height: 100%;
+  width: 100%;
+  @media only screen and (min-width: 1025px) {
+    display: none;
   }
 `;

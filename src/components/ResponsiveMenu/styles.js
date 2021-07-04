@@ -6,8 +6,9 @@ import { ReactComponent as BackIcon } from "../../assets/svgs/BackIcon.svg";
 
 export const ResponsiveMenuWrapper = styled.div`
   /* width: 100vw; */
-  /* height: 100vh; */
-  height: 100vh;
+  height: 100%;
+  /* height: 100%; */
+  
   
   display: ${props => props.menuOpen ? "block" : "none"};
   background: rgba(0,0,0,0.8);
@@ -20,11 +21,11 @@ export const ResponsiveMenuWrapper = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 9000;
 `;
 
 export const MenuContent = styled.div`
-  height: 100vh;
+  height: 100%;
   z-index: 1001;
   width: 100vw;
   position: relative;
@@ -95,13 +96,14 @@ export const MenuItem = styled.li`
   text-align: center;
   margin: 0.8rem;
   list-style: none;
-
+  
   /* &:hover {
     background: black;
     opacity: 0.2;
   } */
   @media only screen and (max-width: 360px) {
-    font-size: 18px;
+    font-size: 15px;
+    margin: 0.5rem;
   }
 `;
 
@@ -109,7 +111,7 @@ export const TogglesGroup = styled.div`
   position: absolute;
   bottom: 0;
   margin: 1rem 0;
-  height: 20%;
+  height: 15%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -122,6 +124,7 @@ export const TogglesGroup = styled.div`
 
 export const SwitchWrapper = styled.div`
   margin: 0.8rem 0;
+  height: 50px;
   width: 100%;
   display: flex;
   justify-content: center;

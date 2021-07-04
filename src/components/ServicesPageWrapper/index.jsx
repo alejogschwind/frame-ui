@@ -12,7 +12,6 @@ const Service = ({ projects = [], children, loading }) => {
 
   return (
     <ServiceWrapper dark={dark}>
-
       <Hero loadingData={loading} />
 
       <ContentWrapper>

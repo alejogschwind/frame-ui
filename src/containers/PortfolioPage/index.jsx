@@ -34,7 +34,7 @@ const PortfolioPage = () => {
   return (
     <PortfolioPageWrapper>
 
-      <Hero />
+      <Hero loadingData={loading} />
 
       <PortfolioSection projects={projects} displayFilter displayAll={true} />
 
