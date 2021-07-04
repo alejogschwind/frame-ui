@@ -20,28 +20,29 @@ const ContactPage = () => {
 
   useEffect(() => {
     setHeaders([]);
-  });
+  }, []);
 
   return (
     <ContactPageWrapper dark={dark}>
       <Hero
         image={imageBackground}
         borderColor={borderColor}
+        loadingData={false}
       />
 
       <ContactSection dark={dark}>
 
-        <Title type={1}>Contact Page</Title>
+        <Title type={1}>Contacto</Title>
 
         <p>
-          Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.
+          Llámenos o visítenos en cualquier momento, nos esforzamos por responder a todas las consultas dentro de las 24 horas los días hábiles. Estaremos encantados de responder a sus preguntas.
         </p>
 
         <Row>
 
           <ContactFormWrapper>
             <h2>Trabajemos juntos</h2>
-            <h4>Tu email se mantiene privado. Los campos obligatorios estan marcados con un *</h4>
+            <h4>Tu email se mantiene privado. <br /> Los campos obligatorios estan marcados con un *</h4>
             <ContactForm />
           </ContactFormWrapper>
 
@@ -49,7 +50,9 @@ const ContactPage = () => {
             <InfoCard>
               <WordIconStyled />
               <h3>Nuestra Dirección</h3>
-              <h5>Tronador 671 (c1427CRM) CABA, Argentina</h5>
+              <h5>Tronador 671, Buenos Aires.</h5>
+              <h5>Ruiz Huidobro 4365, Buenos Aires.</h5>
+              <h5>18459, Pines Blvd, Pembroke Pines, Miami.</h5>
             </InfoCard>
 
             <InfoCard>

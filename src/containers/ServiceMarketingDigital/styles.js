@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ServiceMarketingDigitalWrapper = styled.div`
-  width: 100%;
+  height: 100%;
   & h1 , p {
     ${props => props.dark && `
       color: white;

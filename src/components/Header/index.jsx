@@ -20,32 +20,12 @@ import {
 } from './styles';
 
 
-const Header = ({ solid }) => {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+const Header = ({ solid, menuOpen, openMenu }) => {
   const { dark, setDark } = useContext(DarkContext);
-
-  const openMenu = () => {
-    setMenuOpen(true);
-    document.querySelector("body").style.setProperty("overflow", "hidden");
-  };
-  const closeMenu = () => {
-    setMenuOpen(false);
-    document.querySelector("body").style.setProperty("overflow", "initial");
-  };
 
   return (
     <HeaderWrapper solid={solid} dark={dark}>
       {/* 1024 */}
-      <ResponsiveMenuWrapper>
-        <ResponsiveMenu
-          menuOpen={menuOpen}
-          openMenu={openMenu}
-          closeMenu={closeMenu}
-        />
-      </ResponsiveMenuWrapper>
-
-
-
       <Position>
         <Link to="/">
           <FrameLogoStyled dark={dark} />

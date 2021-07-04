@@ -4,7 +4,7 @@ export const SwitchWrapper = styled.label`
   position: relative;
   display: inline-block;
   width: 4rem;
-  height: 2rem;
+  height: 1.8rem;
 `;
 
 export const Input = styled.input`
@@ -36,8 +36,8 @@ export const Slider = styled.span`
   &::before {
     content: "";
     position: absolute;
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.4rem;
+    width: 1.4rem;
     left: 0.2rem;
     bottom: 0.2rem;
     background: white;

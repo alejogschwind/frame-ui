@@ -33,7 +33,7 @@ export const HeaderWrapper = styled.header`
   align-items: center;
 
   position: absolute;
-  z-index: 5000;
+  z-index: 9000;
 `;
 
 export const Position = styled.div`
@@ -61,13 +61,6 @@ export const MenuIconStyled = styled(MenuIcon)`
       stroke: black;
     }
   `}
-`;
-
-export const ResponsiveMenuWrapper = styled.div`
-    display: block;
-  @media only screen and (min-width: 1025px) {
-    display: none;
-  }
 `;
 
 export const HMenuWrappre = styled.div`

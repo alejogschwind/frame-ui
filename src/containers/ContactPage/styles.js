@@ -6,6 +6,7 @@ import { ReactComponent as PhoneIcon } from "../../assets/svgs/phoneLight.svg";
 
 
 export const ContactPageWrapper = styled.div`
+  height: 100%;
   ${props => props.dark && `
     background: #000;
     color: white;
@@ -30,7 +31,7 @@ export const ContactSection = styled.div`
 
   & > p {
     margin-top: 1.5rem;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
   }
 
@@ -50,11 +51,12 @@ export const InfoCard = styled.div`
 
   & > h3 {
     margin: 1rem 0;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
   }
   & > h5 {
     font-weight: normal;
+    margin: 0.2rem 0;
   }
   @media only screen and (min-width: 767px) {
     align-items: flex-start;
@@ -103,11 +105,11 @@ export const ContactFormWrapper = styled.div`
   justify-content: center;
 
   & > h2 {
-    font-size: 22px;
+    font-size: 36px;
   }
   & > h4 {
     margin: 0.5rem 0;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: normal;
   }
   @media only screen and (min-width: 767px) {

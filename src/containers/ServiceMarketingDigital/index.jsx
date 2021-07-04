@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
+import Hero from '../../components/Hero';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
