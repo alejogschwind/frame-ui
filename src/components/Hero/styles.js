@@ -83,7 +83,7 @@ export const Border = styled.div`
   `)}
   border-image-slice: 1;
 
-  ${props => props.dark && `
+  ${props => !props.dark && `
     & > svg > path {
       fill: #000;
     }

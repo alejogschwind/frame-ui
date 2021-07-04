@@ -4,15 +4,18 @@ import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
 
 export const FrameLogoStyled = styled(FrameLogo)`
-  &:hover path {
+  & path {
     fill: black;
+  }
+  &:hover path {
+    fill: white;
   }
   ${props => props.dark && `
     & path {
-      fill: black;
+      fill: white;
     }
     &:hover path {
-      fill: white;
+      fill: black;
     }
   `}
 `;
@@ -23,10 +26,10 @@ export const HeaderWrapper = styled.header`
   /* padding: 0rem 2.4rem; */
   background: rgba(0,0,0,0);
   ${props => props.solid && props.dark && `
-    background: rgba(255,255,255, 1);
+    background: rgba(0,0,0, 1);
   `}
   ${props => props.solid && !props.dark && `
-    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,1);
   `}
   display: flex;
   justify-content: space-between;
@@ -56,9 +59,12 @@ export const MenuIconStyled = styled(MenuIcon)`
   display: ${props => props.menuOpen ? "none" : "block"};
   height: 24px;
   width: 24px;
+  & line {
+    stroke: black;
+  }
   ${props => props.dark && `
     & line {
-      stroke: black;
+      stroke: white;
     }
   `}
 `;
@@ -103,12 +109,18 @@ export const Menu = styled.div`
     }
   }
 
-  ${props => props.dark && `
-    & > ul > a > li, & > ul > div > li {
-      color: #000;
-      &:hover {
+  & > ul > a > li, & > ul > div > li {
+    color: #000;
+    &:hover {
       color: #fff;
     }
+  }
+  ${props => props.dark && `
+    & > ul > a > li, & > ul > div > li {
+      color: #fff;
+      &:hover {
+        color: #000;
+      }
     }
   `}
 `;
@@ -146,13 +158,21 @@ export const SubMenu = styled.div`
     /* color: white; */
   }
 
+  & > a > li {
+    color: #fff;
+    background: black;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
   ${props => !props.dark && `
     & > a > li {
-      color: #000;
-      background: white;
+      color: #fff;
+      background: black;
       &:hover {
-        background: black;
-        color: white;
+        background: white;
+        color: black;
     }
     }
   `}
@@ -166,9 +186,12 @@ export const SwitchWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  & span {
+    color: #000;
+  }
   ${props => props.dark && `
     & span {
-      color: #000;
+      color: #fff;
     }
   `}
 
