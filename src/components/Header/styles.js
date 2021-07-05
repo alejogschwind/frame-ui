@@ -101,8 +101,16 @@ export const Menu = styled.div`
     margin: 0 1.5rem;
     cursor: pointer;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+
+    & img {
+      height: 30px;
+      width: 30px;
+      object-fit: cover;
+      border-radius: 30px;
+      margin-right: 1rem;
+    }
 
     &:hover {
       color: black;
@@ -174,6 +182,12 @@ export const SubMenu = styled.div`
         background: white;
         color: black;
     }
+    }
+  `}
+
+  ${props => props.lan && `
+    & li {
+      width: 12rem;
     }
   `}
 `;

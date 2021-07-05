@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
@@ -14,6 +15,7 @@ const ServiceBrandingTV = () => {
   const projects = data ? Object.values(data.proyectos) : [];
   const { dark } = useContext(DarkContext);
   const { setHeaders } = useContext(HeadersContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     console.log(data);
@@ -31,9 +33,9 @@ const ServiceBrandingTV = () => {
 
       <ServicesPageWrapper projects={projects} loading={loading}>
 
-        <Title>Branding TV</Title>
+        <Title>{t("Branding TV")}</Title>
         <Description>
-          Desarrollamos contenido y producimos piezas promocionales, especiales, intersticiales, institucionales, trailers, teasers, video clips, campañas integrales. Contamos con la infraestructura profesional y técnica para llevar adelante producciones promocionales de gran volumen, optimizando tiempos y superando objetivos. Nuestros pilares se centran en la coordinación de equipo, selección de profesionales y recursos técnicos propios, para alcanzar con éxito las necesidades del cliente.
+          {t("Frame is an audiovisual")}
         </Description>
 
       </ServicesPageWrapper>

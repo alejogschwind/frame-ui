@@ -15,7 +15,7 @@ export const PortfolioCardWrapper = styled.div`
 
   & > img {
     width: 100%;
-    max-height: 350px;
+    height: 350px;
     object-fit: cover;
     margin: 0.5rem 0;
   }

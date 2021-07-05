@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { useTranslation } from 'react-i18next';
 import {
   FooterClientsWrapper,
   TopSection,
@@ -12,22 +13,6 @@ import {
   FrameLogoSquareStyled
 } from './styled';
 
-// import Logo1 from "../../assets/images/logo1.png";
-// import Logo2 from "../../assets/images/logo2.png";
-// import Logo3 from "../../assets/images/logo3.png";
-// import Logo4 from "../../assets/images/logo4.png";
-// import Logo5 from "../../assets/images/logo5.png";
-// import Logo6 from "../../assets/images/logo6.png";
-// import Logo7 from "../../assets/images/logo7.png";
-// import Logo8 from "../../assets/images/logo8.png";
-// import Logo9 from "../../assets/images/logo9.png";
-// import Logo10 from "../../assets/images/logo10.png";
-// import Logo11 from "../../assets/images/logo11.png";
-// import Logo12 from "../../assets/images/logo12.png";
-// // import Logo13 from "../../assets/images/logo13.png";
-// import Logo14 from "../../assets/images/logo14.png";
-// import Logo15 from "../../assets/images/logo15.png";
-// import Logo16 from "../../assets/images/logo16.png";
 import DarkContext from '../../context/dark';
 
 import LNLogo from "../../assets/svgs/ln.png";
@@ -52,6 +37,7 @@ import YoutubeLogo from "../../assets/svgs/youtube.png";
 
 const FooterClients = () => {
   const { dark } = useContext(DarkContext);
+  const { t } = useTranslation();
 
   const logos = [
     [
@@ -127,7 +113,7 @@ const FooterClients = () => {
   return (
     <FooterClientsWrapper dark={dark}>
       <TopSection dark={dark}>
-        <h2>CLIENTES</h2>
+        <h2>{t("Clients").toUpperCase()}</h2>
         <Carousel
           items
           style={{
@@ -164,7 +150,7 @@ const FooterClients = () => {
             <img src={TwitterLogo} alt="Facebook" />
           </SocialMediaItem>
           <SocialMediaItem href="#">
-            <img src={YoutubeLogo} alt="Facebook" />
+            <img src={YoutubeLogo} alt="You Tube" />
           </SocialMediaItem>
         </SocialMediaList>
         <CopyRight>

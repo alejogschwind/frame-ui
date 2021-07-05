@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
@@ -20,11 +21,14 @@ import estudio2 from "../../assets/images/estudio2.jpg";
 import generateURL from '../../urls';
 import useRequest from '../../hooks/useRequest';
 import HeadersContext from '../../context/headers';
+import LanguagesContext from '../../context/language';
 
 const ServiceStudio = () => {
-  const { data, error, loading } = useRequest(generateURL(8));
+  const { lan } = useContext(LanguagesContext);
+  const { data, error, loading } = useRequest(generateURL(8, "", lan));
   const { dark } = useContext(DarkContext);
   const { setHeaders } = useContext(HeadersContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     console.log(data);
@@ -41,10 +45,9 @@ const ServiceStudio = () => {
     <ServiceStudioWrapper dark={dark}>
 
       <ServicesPageWrapper loading={loading}>
-        <Title>Estudio y técnica</Title>
+        <Title>{t("Studio").toUpperCase()}</Title>
         <Description>
-          Ubicado en una zona estratégica de la Ciudad de Buenos Aires, contamos con uno de los estudios más amplios del país. Grandes producciones y reconocidos artistas han pasado por nuestro lugar.
-          Complementamos el servicio con la provisión de equipamiento técnico de avanzada, cubriendo de forma completa las necesidades y requerimientos para cualquier tipo de servicio de producción.
+          {t("In recent years")}
         </Description>
 
         <StudioCardsWrapper>
@@ -54,7 +57,7 @@ const ServiceStudio = () => {
               <img src={estudio1} alt={"Nuestras instalaciones"} />
             </ImageWrapper>
             <StudioTitle dark={dark}>
-              Nuestras instalaciones
+              {t("Our Facilities").toUpperCase()}
             </StudioTitle>
             <StudioDescription style={{
               marginBottom: "4rem"
@@ -79,7 +82,7 @@ const ServiceStudio = () => {
             <StudioTitle dark={dark} style={{
               textAlign: "right"
             }}>
-              Estudio Tronador
+              {t("Tronador Studio").toUpperCase()}
             </StudioTitle>
             <StudioDescription style={{
               textAlign: "right"

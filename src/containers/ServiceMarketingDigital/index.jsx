@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
-import Hero from '../../components/Hero';
+import { useTranslation } from 'react-i18next';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
 import HeadersContext from '../../context/headers';
+import LanguagesContext from '../../context/language';
 import ProjectsContext from '../../context/projects';
 
 import useRequest from '../../hooks/useRequest';
@@ -12,10 +13,12 @@ import generateURL from '../../urls';
 import { ServiceMarketingDigitalWrapper, Title, Description } from './styles';
 
 const ServiceMarketingDigital = () => {
-  const { data, error, loading } = useRequest(generateURL(4));
+  const { lan } = useContext(LanguagesContext);
+  const { data, error, loading } = useRequest(generateURL(4, "", lan));
   const { dark } = useContext(DarkContext);
   const { projects, setProjects } = useContext(ProjectsContext);
   const { setHeaders } = useContext(HeadersContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (data) {
@@ -33,9 +36,9 @@ const ServiceMarketingDigital = () => {
 
       <ServicesPageWrapper projects={projects} loading={loading}>
 
-        <Title>Marketing digital</Title>
+        <Title>{t("Marketing").toUpperCase()}</Title>
         <Description>
-          Diversas marcas nos buscaron para realizar acciones y desarrollar contenidos digitales para sus productos. Experiencias 360°, Shows musicales, productplacement en contenidos original, desarrollo de campañas transmedia, son algunas de los formatos que realizamos para Hewlett Packard, Movistar, Foreo, Faber Castel, entre otras.
+          {t("Various brands")}
         </Description>
 
       </ServicesPageWrapper>

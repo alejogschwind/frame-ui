@@ -13,9 +13,11 @@ import {
 
 import ProjectsContext from '../../context/projects';
 import HeadersContext from '../../context/headers';
+import LanguagesContext from '../../context/language';
 
 const PortfolioPage = () => {
-  const { data, error, loading } = useRequest(generateURL(6));
+  const { lan } = useContext(LanguagesContext);
+  const { data, error, loading } = useRequest(generateURL(6, "", lan));
 
   const { projects, setProjects } = useContext(ProjectsContext);
   const { setHeaders } = useContext(HeadersContext);

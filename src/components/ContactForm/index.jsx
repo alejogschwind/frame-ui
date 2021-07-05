@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Form, InputWrapper, TextareaWrapper } from './styles';
 
 const ContactForm = () => {
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,18 +14,18 @@ const ContactForm = () => {
     <Form onSubmit={handleSubmit}>
 
       <InputWrapper>
-        <input placeholder="Nombre *" required />
+        <input placeholder={t("Name *")} required />
       </InputWrapper>
 
       <InputWrapper>
-        <input placeholder="Email *" required />
+        <input placeholder={t("Email *")} required />
       </InputWrapper>
 
       <TextareaWrapper>
-        <textarea placeholder="Mensaje *" required />
+        <textarea placeholder={t("Message *")} required />
       </TextareaWrapper>
 
-      <button>Enviar</button>
+      <button>{t("Send")}</button>
 
     </Form>
   );

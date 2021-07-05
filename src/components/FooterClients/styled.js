@@ -40,7 +40,7 @@ export const TopSection = styled.div`
     text-align: center;
     margin: 8rem 0;
     opacity: 1;
-    font-size: 2em;
+    font-size: 48px;
   }
 
   & .slider-wrapper {
@@ -54,6 +54,11 @@ export const TopSection = styled.div`
   @media only screen and (min-width: 767px) {
     & > div {
       max-width: 80vw;
+    }
+  }
+  @media only screen and (max-width: 980px) {
+    & > h2 {
+      font-size: 38px;
     }
   }
 `;

@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import DarkContext from '../../context/dark';
 
-import ResponsiveMenu from '../ResponsiveMenu';
 import Switch from '../Switch';
 
 import {
   HeaderWrapper,
   MenuIconStyled,
   Position,
-  ResponsiveMenuWrapper,
   HMenuWrappre,
   Menu,
   FrameLogoStyled,
@@ -19,9 +18,16 @@ import {
   Span
 } from './styles';
 
+import Ar from "../../assets/images/ar.png";
+import Us from "../../assets/images/us.png";
+import LanguagesContext from '../../context/language';
+
 
 const Header = ({ solid, menuOpen, openMenu }) => {
   const { dark, setDark } = useContext(DarkContext);
+  const { languages, lan, setLan } = useContext(LanguagesContext);
+  const { t } = useTranslation();
+
 
   return (
     <HeaderWrapper solid={solid} dark={dark}>
@@ -37,57 +43,80 @@ const Header = ({ solid, menuOpen, openMenu }) => {
         <Menu dark={dark}>
           <ul>
             <Link to="/">
-              <li>Home</li>
+              <li>{t("Home")}</li>
             </Link>
             <SubMenuButton>
-              <li>Servicios</li>
+              <li>{t("Servicies")}</li>
               <SubMenu dark={dark}>
                 <Link to="/servicio/desarollo">
                   <li>
-                    Desarrollo de contenido digital multiplataforma
+                    {t("Development")}
                   </li>
                 </Link>
                 <Link to="/servicio/brandingTV">
                   <li>
-                    Branding Tv
+                    {t("Branding")}
                   </li>
                 </Link>
                 <Link to="/servicio/marketing">
                   <li>
-                    Marketing digital
+                    {t("Marketing")}
                   </li>
                 </Link>
                 <Link to="/servicio/post-produccion">
                   <li>
-                    Servicio de post producción
+                    {t("PostProduction")}
                   </li>
                 </Link>
                 <Link to="/servicio/produccion">
                   <li>
-                    Desarrollo y producción de formatos
+                    {t("Production")}
                   </li>
                 </Link>
                 <Link to="/servicio/estudio">
                   <li>
-                    Estudio y técnica
+                    {t("Studio")}
                   </li>
                 </Link>
               </SubMenu>
             </SubMenuButton>
             <Link to="/portfolio">
-              <li>Portfolio</li>
+              <li>{t("Portfolio")}</li>
             </Link>
             <Link to="/contacto">
-              <li>Contacto</li>
+              <li>{t("Contact")}</li>
             </Link>
+            <SubMenuButton>
+              <li>
+                {
+                  lan === languages[0] ?
+                    <img src={Ar} alt={"Idioma Español"} /> :
+                    <img src={Us} alt={"Idioma Ingles"} />
+                }
+                {lan === languages[0] ? t("Spanish") : t("English")}
+              </li>
+              <SubMenu lan dark={dark}>
+                <Link onClick={() => { }}>
+                  <li onClick={() => setLan(languages[0] === lan ? languages[1] : languages[0])}>
+                    {
+                      lan === languages[0] ?
+                        <img src={Us} alt={"Idioma Ingles"} /> :
+                        <img src={Ar} alt={"Idioma Español"} />
+                    }
+                    {lan === languages[0] ? t("English") : t("Spanish")}
+                  </li>
+                </Link>
+              </SubMenu>
+            </SubMenuButton>
             <SwitchWrapper dark={dark}>
-              <Span>Light</Span>
+              <Span>{t("Light")}</Span>
               <Switch
                 isToggled={dark}
                 onToggle={() => setDark(!dark)}
               />
-              <Span>Dark</Span>
+              <Span>{t("Dark")}</Span>
             </SwitchWrapper>
+
           </ul>
         </Menu>
       </Position>

@@ -23,7 +23,7 @@ export const PortfolioSectionWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-
+    font-size: 48px;
     margin-bottom: 2rem;
   }
 
@@ -46,7 +46,11 @@ export const PortfolioSectionWrapper = styled.div`
       text-decoration: underline;
     }
   }
-
+  @media only screen and (max-width: 980px) {
+    & > h1 {
+      font-size: 38px;
+    }
+  }
 `;
 
 export const Grid = styled.div`

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Title from "../../components/Title";
 import ContactForm from '../ContactForm';
@@ -18,19 +19,19 @@ import {
 import FacebookLogo from "../../assets/svgs/face.svg";
 import InstagramLogo from "../../assets/svgs/insta.svg";
 import TwitterLogo from "../../assets/svgs/twitter.svg";
-import YoutubeLogo from "../../assets/svgs/youtube.svg";
+import YoutubeLogo from "../../assets/svgs/youtube.png";
 import DarkContext from '../../context/dark';
 
 const FooterContact = () => {
   const { dark } = useContext(DarkContext);
+  const { t } = useTranslation();
 
   return (
     <FooterContactWrapper>
 
       <TopSection>
-        <Title type={1}>Contact</Title>
-
-        <p>Nuestro equipo está a tu disposición para cualquier duda. Completá el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        <Title type={1}>{t("Contact").toUpperCase()}</Title>
+        <p>{t("Our team is")}</p>
       </TopSection>
 
       <Gradient>

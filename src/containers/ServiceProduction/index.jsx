@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
 import HeadersContext from '../../context/headers';
+import LanguagesContext from '../../context/language';
 import ProjectsContext from '../../context/projects';
 
 import useRequest from '../../hooks/useRequest';
@@ -11,10 +13,12 @@ import generateURL from '../../urls';
 import { ServiceProductionWrapper, Title, Description } from './styles';
 
 const ServiceProduction = () => {
-  const { data, error, loading } = useRequest(generateURL(3));
+  const { lan } = useContext(LanguagesContext);
+  const { data, error, loading } = useRequest(generateURL(3, "", lan));
   const { dark } = useContext(DarkContext);
   const { projects, setProjects } = useContext(ProjectsContext);
   const { setHeaders } = useContext(HeadersContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (data) {
@@ -31,9 +35,9 @@ const ServiceProduction = () => {
     <ServiceProductionWrapper dark={dark}>
 
       <ServicesPageWrapper projects={projects} loading={loading}>
-        <Title>Desarrollo y producción de formatos</Title>
+        <Title>{t("Production").toUpperCase()}</Title>
         <Description>
-          Disney Channel, El Gourmet, Netflix, Canal Encuentro, LN+, son algunos de los importantes y variados clientes que confiaron en nosotros a la hora de desarrollar y producir formatos de manera integral. Contamos con profesionales de amplia experiencia en el medio en todas las áreas para llevar adelante la creatividad, la pre-producción, realización y post-producción.
+          {t("Disney Channel")}
         </Description>
       </ServicesPageWrapper>
 

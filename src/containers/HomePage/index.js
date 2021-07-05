@@ -1,4 +1,5 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useLayoutEffect, useRef } from "react";
+import { useTranslation, Trans } from 'react-i18next';
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import useRequest from "../../hooks/useRequest";
@@ -28,13 +29,19 @@ import ProjectsContext from "../../context/projects";
 import generateURL from "../../urls";
 import HeadersContext from "../../context/headers";
 import DarkContext from "../../context/dark";
+import LanguagesContext from "../../context/language";
 
 const HomePage = () => {
-  const { data, error, loading } = useRequest(generateURL(1));
+  const { lan } = useContext(LanguagesContext);
+  const { data, error, loading, reRequest } = useRequest(generateURL(1, "", lan));
 
   const { projects, setProjects } = useContext(ProjectsContext);
   const { headers, setHeaders } = useContext(HeadersContext);
   const { dark } = useContext(DarkContext);
+
+  const { t } = useTranslation();
+
+  const firstUpdate = useRef(true);
 
   useEffect(() => {
     console.log(data);
@@ -42,8 +49,15 @@ const HomePage = () => {
       setProjects([...Object.values(data.proyectos)]);
       setHeaders([data.encabezado_vimeo]);
     }
-    console.log("H", headers);
   }, [data]);
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+    } else {
+      reRequest();
+    }
+  }, [lan]);
 
   return (
     <HomePageWrapper dark={dark}>
@@ -52,21 +66,20 @@ const HomePage = () => {
 
       <AboutUsSection dark={dark}>
         <p>
-          <strong>Frame</strong> es una productora de contenido audiovisual con más de <strong>15 años</strong> en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
-          <br /> <br />Cubrimos en forma integrales las necesidades de nuestros clientes, ofreciendo servicios creativos, de producción, realización y postproducción.
+          <Trans components={{ bold: <strong />, break: <br /> }}>What it is Frame?</Trans>
         </p>
         <span>
-          CONOCENOS &gt;
+          {t("KnowUs").toUpperCase()} &gt;
         </span>
       </AboutUsSection>
 
       <ServiceSection dark={dark}>
-        <h1>SERVICIOS</h1>
+        <h1>{t("Servicies")}</h1>
 
         <Grid>
           <Link to="/servicio/desarollo">
             <ServiceCard
-              text={"Desarrollo de contenido digital multiplataforma"}
+              text={t("Development")}
               image={imagePosition1}
               position={1}
             />
@@ -77,7 +90,7 @@ const HomePage = () => {
             className={"pos1"}
           >
             <ServiceCard
-              text={"Desarrollo y producción de formatos"}
+              text={t("Production")}
               image={imagePosition2}
               position={2}
             />
@@ -85,7 +98,7 @@ const HomePage = () => {
 
           <Link to="/servicio/brandingTV">
             <ServiceCard
-              text={"Branding TV"}
+              text={t("Branding")}
               image={imagePosition4}
               position={4}
             />
@@ -93,7 +106,7 @@ const HomePage = () => {
 
           <Link to="/servicio/marketing">
             <ServiceCard
-              text={"Marketing digital"}
+              text={t("Marketing")}
               image={imagePosition3}
               position={3}
             />
@@ -101,7 +114,7 @@ const HomePage = () => {
 
           <Link to="/servicio/post-produccion">
             <ServiceCard
-              text={"Post producción"}
+              text={t("PostProduction")}
               image={imagePosition6}
               position={6}
             />
@@ -112,7 +125,7 @@ const HomePage = () => {
             className={"pos2"}
           >
             <ServiceCard
-              text={"Estudio Técnica"}
+              text={t("Studio")}
               image={imagePosition5}
               position={5}
             />
@@ -125,7 +138,6 @@ const HomePage = () => {
       <FooterClients />
 
     </HomePageWrapper >
-
   );
 };
 
