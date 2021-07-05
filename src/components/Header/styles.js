@@ -8,14 +8,14 @@ export const FrameLogoStyled = styled(FrameLogo)`
     fill: black;
   }
   &:hover path {
-    fill: white;
+    fill: gray;
   }
   ${props => props.dark && `
     & path {
       fill: white;
     }
     &:hover path {
-      fill: black;
+      fill: gray;
     }
   `}
 `;
@@ -112,14 +112,14 @@ export const Menu = styled.div`
   & > ul > a > li, & > ul > div > li {
     color: #000;
     &:hover {
-      color: #fff;
+      color: gray;
     }
   }
   ${props => props.dark && `
     & > ul > a > li, & > ul > div > li {
       color: #fff;
       &:hover {
-        color: #000;
+        color: gray;
       }
     }
   `}

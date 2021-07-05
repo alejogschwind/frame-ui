@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const ServiceCardWrapper = styled.div`
   /* background: blue; */
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
+  height: 80%;
   position: relative;
   display: flex;
   justify-content: ${props => {
@@ -16,7 +17,6 @@ export const ServiceCardWrapper = styled.div`
   }};
   align-items: center;
   margin: 4rem 0;
-
   &:hover {
     cursor: pointer;
     /* filter: grayscale(none); */
@@ -36,7 +36,7 @@ export const ServiceCardWrapper = styled.div`
 
       & > h2 {
       /* opacity: 1; */
-      /* font-size: 14px; */
+      /* font-size: 32px; */
       padding: 0.2rem 0.5rem;
       position: absolute;
       top: 5px;
@@ -47,6 +47,7 @@ export const ServiceCardWrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      
       }
     }
   }
@@ -58,11 +59,11 @@ export const ServiceCardWrapper = styled.div`
     if (props.position === 3) return "100%";
     if (props.position === 4) return "50%";
     if (props.position === 5) return "75%";
-    if (props.position === 6) return "50%";
+    if (props.position === 6) return "60%";
   }};
     height: ${props => {
-    if (props.position === 4) return "360px";
-    return "180px";
+    if (props.position === 4) return "460px";
+    return "280px";
   }};;
     filter: opacity(0.7);
     object-fit: cover;
@@ -91,10 +92,15 @@ export const TitleWrapper = styled.div`
 
   & > h2 {
     text-align: center;
-    font-size: 16px;
+    font-size: 26px;
     color: #292853;
     
     /* z-index: 200; */
+  }
+  @media only screen and (max-width: 980px) {
+    &  > h2 {
+      font-size: 22px;
+    }
   }
   ${props => props.dark && `
       & > h2 {

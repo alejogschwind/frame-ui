@@ -7,8 +7,8 @@ import { ReactComponent as PhoneIcon } from "../../assets/svgs/phoneLight.svg";
 
 export const ContactPageWrapper = styled.div`
   height: 100%;
+  background: white;
   ${props => props.dark && `
-    background: #000;
     color: white;
   `}
   /* background: transparent linear-gradient(180deg, #000000 80%, #80808000 150%) 0% 0% no-repeat padding-box; */
@@ -16,27 +16,36 @@ export const ContactPageWrapper = styled.div`
 
 export const ContactSection = styled.div`
   /* width: 100%; */
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  ${props => props.dark && `
-    background: #000;
-    color: white;
-  `}
-  background: transparent;
+  position: relative;
+  z-index: 100;
 
+  background: transparent linear-gradient(180deg, #fff 60%, #80808000 100%) 0% 0% no-repeat padding-box;
+  
+  ${props => props.dark && `
+    color: white;
+    background: transparent linear-gradient(180deg, #000000 60%, #80808000 100%) 0% 0% no-repeat padding-box;
+  `}
+
+
+& > p {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+  font-size: 18px;
+  text-align: center;
+}
+@media only screen and (min-width: 980px) {
+  padding: 2rem 10%;
   & > p {
-    margin-top: 1.5rem;
     font-size: 22px;
     text-align: center;
   }
-
-  @media only screen and (min-width: 767px) {
-    margin: 0 10%;
   }
 `;
 
@@ -58,7 +67,7 @@ export const InfoCard = styled.div`
     font-weight: normal;
     margin: 0.2rem 0;
   }
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 980px) {
     align-items: flex-start;
   }
 `;
@@ -94,9 +103,9 @@ export const PhoneIconStyled = styled(PhoneIcon)`
 `;
 
 export const ContactFormWrapper = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   padding: 1.5rem;
-  width: 100%;
+  width: calc(100% -2rem);
   min-height: 150px;
   background: transparent linear-gradient(218deg, #F27044 0%, #A11E7D 100%) 0% 0% no-repeat padding-box;
   color: white;
@@ -112,15 +121,27 @@ export const ContactFormWrapper = styled.div`
     font-size: 18px;
     font-weight: normal;
   }
-  @media only screen and (min-width: 767px) {
-    margin: 0;
+  
+  @media only screen and (max-width: 1324px) {
+    & > h2 {
+      font-size: 28px;
+    }
+    & > h4 {
+      margin: 0.5rem 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+  }
+  @media only screen and (min-width: 980px) {
+    margin: 2rem 1rem;
     width: 50%;
   }
 `;
 
 export const Row = styled.div`
   width: 100%;
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 980px) {
     margin: 2rem 0;
     display: flex;
     flex-direction: row-reverse;
@@ -134,13 +155,19 @@ export const Left = styled.div`
       color: white;
     `}
   }
-  & .a {
+  & .a,.b {
     ${props => props.dark && `
-      fill: white;
+      fill: white !important;
       stroke: none;
     `}
   }
-  @media only screen and (min-width: 767px) {
+  @media only screen and (max-width: 980px) {
+    background: transparent linear-gradient(180deg, #fff 40%, #80808000 100%) 0% 0% no-repeat padding-box;
+    ${props => props.dark && `
+      background: transparent linear-gradient(180deg, #000 40%, #80808000 100%) 0% 0% no-repeat padding-box;
+    `}
+  }
+  @media only screen and (min-width: 980px) {
     width: 40%;
     display: flex;
     flex-direction: column;

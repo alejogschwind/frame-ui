@@ -28,6 +28,7 @@ const ContactPage = () => {
         image={imageBackground}
         borderColor={borderColor}
         loadingData={false}
+        contact={true}
       />
 
       <ContactSection dark={dark}>

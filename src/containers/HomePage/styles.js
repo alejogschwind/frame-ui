@@ -65,6 +65,7 @@ export const ServiceSection = styled.div`
     width: fit-content;
     background: transparent linear-gradient(90deg, #A33C8E 0%, #A33C8E 0%, #9F4A93 3%, #8479AD 18%, #6EA1C3 32%, #60B9D1 43%, #5CC3D6 50%, #5CC2CD 56%, #5EBFB6 65%, #61BB90 77%, #65B55C 90%, #69B130 100%) 0% 0% no-repeat padding-box;
     -webkit-background-clip: text;
+    font-size: 48px;
     -webkit-text-fill-color: transparent;
     text-align: center;
   }
@@ -73,6 +74,11 @@ export const ServiceSection = styled.div`
     width: 100%;
   }
 
+  @media only screen and (max-width: 980px) {
+    & > h1 {
+      font-size: 38px;
+    }
+  }
 `;
 
 export const Grid = styled.div`

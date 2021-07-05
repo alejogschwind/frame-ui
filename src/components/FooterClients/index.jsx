@@ -37,11 +37,18 @@ import Canal13Logo from "../../assets/svgs/canal13.png";
 import DiscoveryLogo from "../../assets/svgs/discovery.svg";
 import DisneyLogo from "../../assets/svgs/disney.svg";
 import LegoLogo from "../../assets/svgs/lego.svg";
+import HaH from "../../assets/svgs/hah.png";
+import NikeLogo from "../../assets/svgs/nike.svg";
+import PanaLogo from "../../assets/svgs/pana.svg";
+import SpaceLogo from "../../assets/svgs/space.svg";
+import StarLogo from "../../assets/svgs/star.svg";
+import WarnerLogo from "../../assets/svgs/warner.svg";
+import YouTubeLogo2 from "../../assets/svgs/youtube.svg";
 
 import FacebookLogo from "../../assets/svgs/face.svg";
 import InstagramLogo from "../../assets/svgs/insta.svg";
 import TwitterLogo from "../../assets/svgs/twitter.svg";
-import YoutubeLogo from "../../assets/svgs/youtube.svg";
+import YoutubeLogo from "../../assets/svgs/youtube.png";
 
 const FooterClients = () => {
   const { dark } = useContext(DarkContext);
@@ -60,22 +67,22 @@ const FooterClients = () => {
         title: "National Geographic Channel",
         image: NationalGeographicLogo
       },
-      // {
-      //   title: "H&H",
-      //   image: Logo4
-      // },
-      // {
-      //   title: "Nike",
-      //   image: Logo5
-      // },
-      // {
-      //   title: "Netflix",
-      //   image: Logo6
-      // },
-      // {
-      //   title: "Nickelodeon",
-      //   image: Logo7
-      // },
+      {
+        title: "H&H",
+        image: HaH
+      },
+      {
+        title: "Nike",
+        image: NikeLogo
+      },
+      {
+        title: "Start Channel",
+        image: StarLogo
+      },
+      {
+        title: "You Tube",
+        image: YouTubeLogo2
+      },
       {
         title: "El Trece",
         image: Canal13Logo
@@ -98,22 +105,22 @@ const FooterClients = () => {
         title: "Instagram",
         image: InstagramLogo
       },
-      // // {
-      // //   title: "Marriott",
-      // //   image: Logo13
-      // // },
-      // {
-      //   title: "You Tube",
-      //   image: Logo14
-      // },
+      {
+        title: "Panasonic",
+        image: PanaLogo
+      },
+      {
+        title: "Space",
+        image: SpaceLogo
+      },
       // {
       //   title: "Lego",
       //   image: Logo15
       // },
-      // {
-      //   title: "WB",
-      //   image: Logo16
-      // },
+      {
+        title: "WB",
+        image: WarnerLogo
+      },
     ]
   ];
 
@@ -122,6 +129,7 @@ const FooterClients = () => {
       <TopSection dark={dark}>
         <h2>CLIENTES</h2>
         <Carousel
+          items
           style={{
             margin: "4rem",
           }}

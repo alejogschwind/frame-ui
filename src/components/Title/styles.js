@@ -7,4 +7,8 @@ export const TitleWrapper = styled.h1`
   -webkit-text-fill-color: transparent;
   text-align: center;
   font-size: 64px;
+  
+  @media only screen and (max-width: 980px) {
+    font-size: 42px;
+  }
 `;

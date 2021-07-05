@@ -66,6 +66,8 @@ export const Grid = styled.div`
 
 export const Filters = styled.div`
   width: 100%;
+
+  max-width: 1200px;
   margin-bottom: 1rem;
 
   display: flex;
@@ -97,5 +99,12 @@ export const FilterItem = styled.h4`
 
   &:hover {
     color: grey;
+    cursor: pointer;
+    /* text-decoration: line-through; */
   }
+
+  ${props => props.selected && `
+    color: grey;
+    text-decoration: line-through;
+  `}
 `;

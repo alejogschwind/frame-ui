@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import PortfolioCard from '../PortfolioCard';
 import { PortfolioSectionWrapper, Filters, FilterItem, Grid } from './styles';
@@ -7,7 +7,17 @@ import DarkContext from '../../context/dark';
 
 const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
   const { dark } = useContext(DarkContext);
+  const [filterBy, setFilterBy] = useState(null);
 
+  const toggleFilter = (service) => {
+    if (service === filterBy) {
+      setFilterBy(null);
+    } else {
+      setFilterBy(service);
+    }
+  };
+
+  const services = new Set(projects.map(service => service.servicios).flat());
   return (
     <PortfolioSectionWrapper dark={dark}>
       <h1>PORTFOLIO</h1>
@@ -15,23 +25,22 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
       {
         displayFilter &&
         <Filters dark={dark}>
-          <FilterItem>Multiplataforma</FilterItem>
-          <FilterItem>Formatos</FilterItem>
-          <FilterItem>Marketing</FilterItem>
-          <FilterItem>Branding TV</FilterItem>
-          <FilterItem>Post Producción</FilterItem>
+          {[...services].map(service => (
+            <FilterItem selected={(filterBy === service)} onClick={() => toggleFilter(service)}>{service}</FilterItem>
+          ))}
         </Filters>
       }
 
       <Grid>
         {
-          projects.map((project) => (
-            <PortfolioCard {...project} key={project.url} />
-          ))
+          !filterBy ? (
+            projects.map((project) => (
+              <PortfolioCard {...project} key={project.url} />
+            ))) : (
+            projects.filter(project => project.servicios.includes(filterBy)).map(project => (
+              <PortfolioCard {...project} key={project.url} />
+            )))
         }
-        {/* <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" />
-        <PortfolioCard title="La Nacion +" subtitle="Desarrollo y produccion de formatos" /> */}
       </Grid>
       {!displayAll ?
         <span style={{
