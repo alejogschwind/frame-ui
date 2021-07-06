@@ -5,7 +5,7 @@ import { FooterWrapper, FrameLogoSquareStyled, SocialMediaItem, SocialMediaList,
 import FacebookLogo from "../../assets/svgs/face.svg";
 import InstagramLogo from "../../assets/svgs/insta.svg";
 import TwitterLogo from "../../assets/svgs/twitter.svg";
-import YoutubeLogo from "../../assets/svgs/youtube.svg";
+import YoutubeLogo from "../../assets/svgs/youtube.png";
 
 const Footer = () => {
   return (

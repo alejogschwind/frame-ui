@@ -9,7 +9,7 @@ export const HeroWrapper = styled.div`
   height: 100%;
   overflow: hidden;
   background-color: white;
-  ${props => props.dark && `
+  ${props => props.dark && !props.contact && `
     background: black;
   `}
 
@@ -83,7 +83,7 @@ export const Border = styled.div`
   `)}
   border-image-slice: 1;
 
-  ${props => props.dark && `
+  ${props => !props.dark && `
     & > svg > path {
       fill: #000;
     }

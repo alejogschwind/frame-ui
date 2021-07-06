@@ -4,15 +4,18 @@ import { ReactComponent as FrameLogo } from "../../assets/svgs/logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svgs/menu.svg";
 
 export const FrameLogoStyled = styled(FrameLogo)`
-  &:hover path {
+  & path {
     fill: black;
+  }
+  &:hover path {
+    fill: gray;
   }
   ${props => props.dark && `
     & path {
-      fill: black;
+      fill: white;
     }
     &:hover path {
-      fill: white;
+      fill: gray;
     }
   `}
 `;
@@ -23,10 +26,10 @@ export const HeaderWrapper = styled.header`
   /* padding: 0rem 2.4rem; */
   background: rgba(0,0,0,0);
   ${props => props.solid && props.dark && `
-    background: rgba(255,255,255, 1);
+    background: rgba(0,0,0, 1);
   `}
   ${props => props.solid && !props.dark && `
-    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,1);
   `}
   display: flex;
   justify-content: space-between;
@@ -56,9 +59,12 @@ export const MenuIconStyled = styled(MenuIcon)`
   display: ${props => props.menuOpen ? "none" : "block"};
   height: 24px;
   width: 24px;
+  & line {
+    stroke: black;
+  }
   ${props => props.dark && `
     & line {
-      stroke: black;
+      stroke: white;
     }
   `}
 `;
@@ -95,20 +101,34 @@ export const Menu = styled.div`
     margin: 0 1.5rem;
     cursor: pointer;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+
+    & img {
+      height: 30px;
+      width: 30px;
+      object-fit: cover;
+      border-radius: 30px;
+      margin-right: 1rem;
+    }
 
     &:hover {
       color: black;
     }
   }
 
+  & > ul > a > li, & > ul > div > li {
+    color: #000;
+    &:hover {
+      color: gray;
+    }
+  }
   ${props => props.dark && `
     & > ul > a > li, & > ul > div > li {
-      color: #000;
-      &:hover {
       color: #fff;
-    }
+      &:hover {
+        color: gray;
+      }
     }
   `}
 `;
@@ -146,14 +166,28 @@ export const SubMenu = styled.div`
     /* color: white; */
   }
 
+  & > a > li {
+    color: #fff;
+    background: black;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
   ${props => !props.dark && `
     & > a > li {
-      color: #000;
-      background: white;
+      color: #fff;
+      background: black;
       &:hover {
-        background: black;
-        color: white;
+        background: white;
+        color: black;
     }
+    }
+  `}
+
+  ${props => props.lan && `
+    & li {
+      width: 12rem;
     }
   `}
 `;
@@ -166,9 +200,12 @@ export const SwitchWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  & span {
+    color: #000;
+  }
   ${props => props.dark && `
     & span {
-      color: #000;
+      color: #fff;
     }
   `}
 

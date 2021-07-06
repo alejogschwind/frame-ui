@@ -12,7 +12,7 @@ export const ServiceBrandingTVWrapper = styled.div`
 export const Title = styled.h1`
   margin: 1rem 0;
   color: #323232;
-  font-size: 22px;
+  font-size: 28px;
   text-align: center;
 `;
 

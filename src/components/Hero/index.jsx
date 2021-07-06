@@ -24,7 +24,7 @@ import Header from '../Header';
 import DarkContext from '../../context/dark';
 import Spiner from '../Spiner';
 
-const Hero = ({ image, borderColor, loadingData = false }) => {
+const Hero = ({ image, borderColor, loadingData = false, contact = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ const Hero = ({ image, borderColor, loadingData = false }) => {
 
       {/* </ResponsiveMenuWrapper> */}
 
-      <HeroWrapper dark={dark}>
+      <HeroWrapper dark={dark} contact={contact}>
         <ResponsiveMenu
           menuOpen={menuOpen}
           openMenu={openMenu}

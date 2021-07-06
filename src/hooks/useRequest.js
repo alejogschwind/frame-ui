@@ -20,7 +20,11 @@ const useRequest = (url) => {
     requestData(url, setData, setError, setLoading);
   }, [url]);
 
-  return { data, error, loading };
+  const reRequest = () => {
+    requestData(url, setData, setError, setLoading);
+  };
+
+  return { data, error, loading, reRequest };
 };
 
 export default useRequest;

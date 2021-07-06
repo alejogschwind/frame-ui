@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SwitchWrapper = styled.label`
   position: relative;
   display: inline-block;
-  width: 4rem;
+  width: 3.8rem;
   height: 1.8rem;
 `;
 

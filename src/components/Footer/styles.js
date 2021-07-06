@@ -4,12 +4,21 @@ import { ReactComponent as FrameLogoSquare } from "../../assets/svgs/framelogo2.
 
 export const FooterWrapper = styled.div`
   background: transparent linear-gradient(209deg, #F27044 -50%, #A11E7D 100%) 0% 0% no-repeat padding-box;
-  background: transparent linear-gradient(210deg, #F27044 -50%, #A11E7D 100%) 0% 0% no-repeat padding-box;  padding: 2rem;
-  width: 100%;
+  background: transparent linear-gradient(209deg, #F27044 0%, #A11E7D 100%) 0% 0% no-repeat padding-box;  width: 100%;
+  height: 800px;
+  
+  position: relative;
+
+  top: -400px;
+  left: 0;
+  right: 0;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+
+  padding-bottom: 4rem;
 `;
 
 export const FrameLogoSquareStyled = styled(FrameLogoSquare)`

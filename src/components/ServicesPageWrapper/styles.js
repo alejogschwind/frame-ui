@@ -27,7 +27,7 @@ export const ContentWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    font-size: 20px;
+    font-size: 28px;
   }
 
   @media only screen and (min-width: 767px) {

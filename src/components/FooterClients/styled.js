@@ -20,7 +20,7 @@ export const FooterClientsWrapper = styled.section`
 
 export const TopSection = styled.div`
   /* border: 2px solid white; */
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   width: 100%;
   /* height: 100px; */
   background: transparent linear-gradient(180deg, #FFFFFF 0%, #80808000 100%) 0% 0% no-repeat padding-box;
@@ -40,15 +40,25 @@ export const TopSection = styled.div`
     text-align: center;
     margin: 8rem 0;
     opacity: 1;
-    font-size: 2em;
+    font-size: 48px;
   }
 
   & .slider-wrapper {
-    width: 80%;
+    width: 100%;
+  }
+
+  & .slide > div > div > img {
+    max-width: 8rem;
+    height: 100%;
   }
   @media only screen and (min-width: 767px) {
     & > div {
-      max-width: 50vw;
+      max-width: 80vw;
+    }
+  }
+  @media only screen and (max-width: 980px) {
+    & > h2 {
+      font-size: 38px;
     }
   }
 `;
@@ -68,19 +78,19 @@ export const CarouselItem = styled.div`
   grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
   @media only screen and (min-width: 767px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
 export const LogoWrapper = styled.div`
   object-fit: contain;
-  height: 90px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
   
   & > img {
-    height: 90px;
+    height: 180px;
     width: auto;
     object-fit: contain;
     /* width: 100%; */

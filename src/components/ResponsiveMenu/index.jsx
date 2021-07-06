@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import DarkContext from '../../context/dark';
+import LanguagesContext from '../../context/language';
 
 import Switch from "../Switch";
 
@@ -20,6 +21,7 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   const { dark, setDark } = useContext(DarkContext);
+  const { languages, lan, setLan } = useContext(LanguagesContext);
 
   return (
     <ResponsiveMenuWrapper dark={dark} menuOpen={menuOpen}>
@@ -106,7 +108,10 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
           </SwitchWrapper>
           <SwitchWrapper dark={dark}>
             <Span>ES</Span>
-            <Switch />
+            <Switch
+              isToggled={(lan === languages[1])}
+              onToggle={() => setLan(lan === languages[1] ? languages[0] : languages[1])}
+            />
             <Span>EN</Span>
           </SwitchWrapper>
         </TogglesGroup>
