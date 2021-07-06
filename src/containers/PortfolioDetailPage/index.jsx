@@ -1,4 +1,5 @@
-import React, { useContext, useLayoutEffect } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import Header from "../../components/Header";
@@ -23,19 +24,32 @@ import {
 import image from "../../assets/images/portfolioDetail.jpg";
 import DarkContext from '../../context/dark';
 import ReactPlayer from 'react-player';
+import LanguagesContext from '../../context/language';
 
 function PortfolioDetailPage({ match, history }) {
+  const { lan } = useContext(LanguagesContext);
   const { url } = match.params;
-  const { data, error, loading } = useRequest(generateURL(7, url));
+  const { data, error, loading, reRequest } = useRequest(generateURL(7, url, lan));
   const { dark } = useContext(DarkContext);
+
+  const { t } = useTranslation();
+
+  const firstUpdate = useRef(true);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  console.log(data);
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+    } else {
+      reRequest();
+    }
+  }, [lan]);
+
   if (!data) {
-    return <div>Loading</div>;
+    return <div></div>;
   }
   return (
     <PortfolioDetailPageWrapper dark={dark}>
@@ -68,7 +82,7 @@ function PortfolioDetailPage({ match, history }) {
           <Row>
             <Left>
               <Title>{data.proyecto?.titulo}</Title>
-              <Info><span>Cliente:</span>{data.proyecto?.cliente}</Info>
+              <Info><span>{t("Client")}:</span>{data.proyecto?.cliente}</Info>
               {/* <Info><span>Fecha:</span>12/03/2021</Info>
               <Info><span>Tarea:</span>Desarrollo de plataforma</Info> */}
             </Left>
@@ -79,11 +93,11 @@ function PortfolioDetailPage({ match, history }) {
           </Row>
 
           <LinksGroup dark={dark}>
-            <Link to={data.proyecto.anterior.url}>Anterior</Link>
+            <Link to={data.proyecto.anterior.url}>&lt; {t("Previous")}</Link>
             <Link onClick={() => {
               history.goBack();
-            }}>Volver</Link>
-            <Link to={data.proyecto.siguiente.url}>Siguiente</Link>
+            }}>{t("Go Back")}</Link>
+            <Link to={data.proyecto.siguiente.url}>{t("Next")} &gt;</Link>
           </LinksGroup>
         </ProjectDetail>
 

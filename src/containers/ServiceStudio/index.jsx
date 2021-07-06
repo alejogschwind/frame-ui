@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import ServicesPageWrapper from "../../components/ServicesPageWrapper";
 import DarkContext from '../../context/dark';
@@ -62,15 +62,9 @@ const ServiceStudio = () => {
             <StudioDescription style={{
               marginBottom: "4rem"
             }}>
-              Estudio de 480M2 <br />
-              (400M2 con parrilla) <br />
-              Sala de make up/vestuario <br />
-              3 camarines <br />
-              Oficina de producción<br />
-              Baño Hombres <br />
-              Baño Mujeres <br />
-              Cocina <br />
-              Espacio para Catering
+              <Trans components={{ br: <br /> }}>
+                530 square
+              </Trans>
             </StudioDescription>
           </StudioCard>
 
@@ -87,16 +81,9 @@ const ServiceStudio = () => {
             <StudioDescription style={{
               textAlign: "right"
             }}>
-              480M2 (400M2 CON PARRILLA)<br />
-              Parrilla: pasarela - cabreadas cada 2mts <br />
-              Altura a parrilla: 5,5mts<br />
-              Carga eléctrica hasta 40kilos<br />
-              Aire acondicionado / Calefacción central <br />
-              Tableros - 60 circuitos de doble boca vinculados a 60 dimmers. <br />
-              Dimmer y consola de 36 canales <br />
-              Entrada directa de camiones <br />
-              Depósito de 200m2 <br />
-              Generador de 100KVA <br />
+              <Trans components={{ br: <br /> }}>
+                Technical theatre
+              </Trans>
             </StudioDescription>
           </StudioCard>
         </StudioCardsWrapper>

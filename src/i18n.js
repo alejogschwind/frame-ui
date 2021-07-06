@@ -65,6 +65,33 @@ const resources = {
       "Tronador Studio": `
         Estudio Tronador
       `,
+      "530 square": `
+        Estudio de 480M2 <br />
+        (400M2 con parrilla) <br />
+        Sala de make up/vestuario <br />
+        3 camarines <br />
+        Oficina de producción<br />
+        Baño Hombres <br />
+        Baño Mujeres <br />
+        Cocina <br />
+        Espacio para Catering <br/>
+      `,
+      "Technical theatre": `
+        480M2 (400M2 CON PARRILLA)<br />
+        Parrilla: pasarela - cabreadas cada 2mts <br />
+        Altura a parrilla: 5,5mts<br />
+        Carga eléctrica hasta 40kilos<br />
+        Aire acondicionado / Calefacción central <br />
+        Tableros - 60 circuitos de doble boca vinculados a 60 dimmers. <br />
+        Dimmer y consola de 36 canales <br />
+        Entrada directa de camiones <br />
+        Depósito de 200m2 <br />
+        Generador de 100KVA <br />
+      `,
+      "Client": "Cliente",
+      "Previous": "Anterior",
+      "Next": "Siguiente",
+      "Go Back": "Volver",
     }
   },
   en: {
@@ -129,6 +156,28 @@ const resources = {
       "Tronador Studio": `
         Tronador Studio
       `,
+      "530 square": `
+        530 square yards TV studio<br />
+        Control Room<br />
+        Make up and dressing rooms (3)<br />
+        Production office<br />
+        Kitchen and bathrooms<br />
+        Catering area<br />
+      `,
+      "Technical theatre": `
+        Technical theatre grid - 18 feet tall<br />
+        Electric charge up to 40 kg<br />
+        Air conditioner / Central heat<br />
+        Electronic board - 60 double mouth circuits linked to 60 dimmers<br />
+        Dimmer and 36 channels console<br />
+        Direct truck entry<br />
+        220 square yards warehouse<br />
+        100KVA diesel generator<br />
+      `,
+      "Client": "Client",
+      "Previous": "Previous",
+      "Next": "Next",
+      "Go Back": "Go Back",
     }
   }
 };
