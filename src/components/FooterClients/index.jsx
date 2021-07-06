@@ -15,20 +15,22 @@ import {
 
 import DarkContext from '../../context/dark';
 
-import LNLogo from "../../assets/svgs/ln.png";
-import CocaColaLogo from "../../assets/svgs/cocacola.svg";
-import NationalGeographicLogo from "../../assets/svgs/nationalgeographic.svg";
-import Canal13Logo from "../../assets/svgs/canal13.png";
-import DiscoveryLogo from "../../assets/svgs/discovery.svg";
-import DisneyLogo from "../../assets/svgs/disney.svg";
-import LegoLogo from "../../assets/svgs/lego.svg";
-import HaH from "../../assets/svgs/hah.png";
-import NikeLogo from "../../assets/svgs/nike.svg";
-import PanaLogo from "../../assets/svgs/pana.svg";
-import SpaceLogo from "../../assets/svgs/space.svg";
-import StarLogo from "../../assets/svgs/star.svg";
-import WarnerLogo from "../../assets/svgs/warner.svg";
-import YouTubeLogo2 from "../../assets/svgs/youtube.svg";
+import LNLogo from "../../assets/images/LN.png";
+import CocaColaLogo from "../../assets/images/cocacola.png";
+import AnimalPlanetLogo from "../../assets/images/animalplanet.png";
+import Canal13Logo from "../../assets/images/canal13.png";
+import DiscoveryLogo from "../../assets/images/discovery.png";
+import DisneyLogo from "../../assets/images/disney.png";
+import NetflixLogo from "../../assets/images/netflix.png";
+import SonyLogo from "../../assets/images/sony.png";
+import NikeLogo from "../../assets/images/nike.png";
+import PanasonicLogo from "../../assets/images/panasonic.png";
+import SpaceLogo from "../../assets/images/space.png";
+import StarLogo from "../../assets/images/start.png";
+import WarnerLogo from "../../assets/images/warner.png";
+import YouTubeLogo2 from "../../assets/images/youtube.png";
+import ViacomLogo from "../../assets/images/viacom.png";
+import Instagram from "../../assets/images/ig.png";
 
 import FacebookLogo from "../../assets/svgs/face.svg";
 import InstagramLogo from "../../assets/svgs/insta.svg";
@@ -50,12 +52,12 @@ const FooterClients = () => {
         image: CocaColaLogo
       },
       {
-        title: "National Geographic Channel",
-        image: NationalGeographicLogo
+        title: "Animal Planet",
+        image: AnimalPlanetLogo
       },
       {
-        title: "H&H",
-        image: HaH
+        title: "Sony",
+        image: SonyLogo
       },
       {
         title: "Nike",
@@ -84,27 +86,27 @@ const FooterClients = () => {
         image: DisneyLogo
       },
       {
-        title: "Lego",
-        image: LegoLogo
+        title: "Netflix",
+        image: NetflixLogo
       },
       {
         title: "Instagram",
-        image: InstagramLogo
+        image: Instagram
       },
       {
         title: "Panasonic",
-        image: PanaLogo
+        image: PanasonicLogo
       },
       {
         title: "Space",
         image: SpaceLogo
       },
-      // {
-      //   title: "Lego",
-      //   image: Logo15
-      // },
       {
-        title: "WB",
+        title: "Viacom",
+        image: ViacomLogo
+      },
+      {
+        title: "Warner Media",
         image: WarnerLogo
       },
     ]

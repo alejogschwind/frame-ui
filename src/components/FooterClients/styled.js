@@ -49,7 +49,7 @@ export const TopSection = styled.div`
 
   & .slide > div > div > img {
     max-width: 8rem;
-    height: 3rem;
+    height: 100%;
   }
   @media only screen and (min-width: 767px) {
     & > div {
@@ -84,13 +84,13 @@ export const CarouselItem = styled.div`
 
 export const LogoWrapper = styled.div`
   object-fit: contain;
-  height: 90px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
   
   & > img {
-    height: 90px;
+    height: 180px;
     width: auto;
     object-fit: contain;
     /* width: 100%; */
