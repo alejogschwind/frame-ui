@@ -90,6 +90,16 @@ export const Border = styled.div`
   `}
 `;
 
+export const OverlayVideo = styled.div`
+  background: rgba(0,0,0,0.25);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 200;
+`;
+
 export const VideoPlayer = styled.div`
     /* position: absolute;
   top: 0;
@@ -99,6 +109,7 @@ export const VideoPlayer = styled.div`
   z-index: 1;
   overflow: hidden;
   z-index: 1; */
+
 
   & iframe {
     width: 100vw !important;

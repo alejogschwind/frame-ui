@@ -74,7 +74,7 @@ const HomePage = () => {
       </AboutUsSection>
 
       <ServiceSection dark={dark}>
-        <h1>{t("Servicies")}</h1>
+        <h1>{t("Servicies").toUpperCase()}</h1>
 
         <Grid>
           <Link to="/servicio/desarollo">

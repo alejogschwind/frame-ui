@@ -9,16 +9,16 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   es: {
     translation: {
-      "What it is Frame?": `<bold>Frame</bold> es una productora de contenido audiovisual con más de <bold>15 años</bold> en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
+      "What it is Frame?": `<bold>Frame</bold> es una productora de contenido audiovisual con más de <bold>20 años</bold> en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
       <break /> <break />Cubrimos en forma integrales las necesidades de nuestros clientes, ofreciendo servicios creativos, de producción, realización y postproducción.`,
       "English": "Ingles",
       "Spanish": "Español",
       "Home": "Inicio",
       "Servicies": "Servicios",
-      "Portfolio": "Portafolio",
+      "Portfolio": "Portfolio",
       "Contact": "Contacto",
-      "Light": "Claro",
-      "Dark": "Oscuro",
+      "Light": "Light",
+      "Dark": "Dark",
       "Development": "Desarrollo de contenido digital multiplataforma",
       "Branding": "Branding Tv",
       "Marketing": "Marketing digital",
@@ -41,7 +41,7 @@ const resources = {
         Nuestro equipo está a tu disposición para cualquier duda. Completá el formulario y nos pondremos en contacto contigo lo antes posible.
       `,
       "In Recents Years": `
-        Frame es una productora de contenido audiovisual con más de 15 años en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
+        Frame es una productora de contenido audiovisual con más de 20 años en el mercado, que brinda soluciones integrales de alta calidad en la realización de productos para cine, publicidad, televisión, video, dispositivos móviles e internet.
         <br /> <br />Cubrimos en forma integrales las necesidades de nuestros clientes, ofreciendo servicios creativos, de producción, realización y postproducción.
       `,
       "Frame is an audiovisual": `
@@ -56,8 +56,9 @@ const resources = {
       "Disney Channel": `
       Disney Channel, El Gourmet, Netflix, Canal Encuentro, LN+, son algunos de los importantes y variados clientes que confiaron en nosotros a la hora de desarrollar y producir formatos de manera integral. Contamos con profesionales de amplia experiencia en el medio en todas las áreas para llevar adelante la creatividad, la pre-producción, realización y post-producción.
       `,
-      "In recent years": `
-        En los últimos años hemos enfocado nuestra creatividad y estrategia de producción en la creación de contenidos short forms para medios digitales. Nuestro contenido original en YouTube alcanzó + de 11M de suscriptores y + de 200M de vistas en 3 años. Somos 1 de las 10 Youtube Network que existen en Argentina y service provider de Google en la región.
+      "Located in a strategic": `
+        Ubicado en una zona estratégica de la Ciudad de Buenos Aires, contamos con uno de los estudios más amplios del país. Grandes producciones y reconocidos artistas han pasado por nuestro lugar. 
+        Complementamos el servicio con la provisión de equipamiento técnico de avanzada, cubriendo de forma completa las necesidades y requerimientos para cualquier tipo de servicio de producción.
       `,
       "Our Facilities": `
         Nuestras instalaciones
@@ -88,7 +89,7 @@ const resources = {
         Depósito de 200m2 <br />
         Generador de 100KVA <br />
       `,
-      "Client": "Cliente",
+      "Clients": "Clientes",
       "Previous": "Anterior",
       "Next": "Siguiente",
       "Go Back": "Volver",
@@ -96,7 +97,7 @@ const resources = {
   },
   en: {
     translation: {
-      "What it is Frame?": `<bold>Frame</bold> is an audiovisual content production company with more than <bold>15 years</bold> in the market, which provides high quality comprehensive solutions in the realization of products for cinema, advertising, television, video, mobile devices and Internet.
+      "What it is Frame?": `<bold>Frame</bold> is an audiovisual content production company with more than <bold>20 years</bold> in the market, which provides high quality comprehensive solutions in the realization of products for cinema, advertising, television, video, mobile devices and Internet.
       <break /> <break />We fully cover the needs of our customers, offering creative, production and post production services.`,
       "English": "English",
       "Spanish": "Spanish",
@@ -135,7 +136,7 @@ const resources = {
         Disney LA trusted us to carry out the strategy and production of the digital content of the Disney Channel, XD, JR signals and especially all the transmedia content of its new Disney Channel TV series, Bia.
       `,
       "Frame is an audiovisual": `
-        Frame is an audiovisual content production company with more than 15 years in the market, which provides high quality comprehensive solutions in the realization of products for cinema, advertising, television, video, mobile devices and Internet.
+        Frame is an audiovisual content production company with more than 20 years in the market, which provides high quality comprehensive solutions in the realization of products for cinema, advertising, television, video, mobile devices and Internet.
         We fully cover the needs of our customers, offering creative, production and post production services.
       `,
       "Various brands": `
@@ -147,8 +148,9 @@ const resources = {
       "Disney Channel": `
         Disney Channel, Netflix, El Gourmet, LN+, they are some of the important and varied clients that trusted us for developing and producing formats in an integral way. We have professionals with extensive experience in the field in all areas to carry out creativity, pre-production, realization and post-production.
       `,
-      "In recent years": `
-        In recent years we have focused our creativity and production strategy on the creation of short forms content for digital media. Our original content on YouTube reached + 11M subscribers and + 200M views in 3 years. We are 1 of the 10 Youtube Networks that exist in Argentina and a Google service provider in the region.
+      "Located in a strategic": `
+        Located in a strategic area of ​​the City of Buenos Aires, we have one of the largest studios in the country. Great productions and renowned artists have passed through our place.
+        We complement the service with the provision of advanced technical equipment, fully solving the needs and requirements for any type of production service
       `,
       "Our Facilities": `
         Our Facilities
@@ -174,7 +176,7 @@ const resources = {
         220 square yards warehouse<br />
         100KVA diesel generator<br />
       `,
-      "Client": "Client",
+      "Clients": "Clients",
       "Previous": "Previous",
       "Next": "Next",
       "Go Back": "Go Back",

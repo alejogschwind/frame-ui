@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PortfolioCardWrapper = styled.div`
   /* margin-bottom: 1rem; */
-  opacity: 0.8;
+  /* opacity: 0.8; */
 
   &:hover {
     cursor: pointer;
@@ -13,12 +13,7 @@ export const PortfolioCardWrapper = styled.div`
     }
   }
 
-  & > img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    margin: 0.5rem 0;
-  }
+ 
 `;
 
 export const Title = styled.h3`
@@ -41,4 +36,49 @@ export const Subtitle = styled.h4`
     color: white
     `
   }
+`;
+
+export const ImageWapper = styled.div`
+  position: relative;
+  width: 100%;
+  /* height: 350px; */
+  
+  
+  /* margin: 0.5rem 0; */
+  & > img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    /* position: absolute;
+    bottom: 0; */
+  }
+  & > h1 {
+    width: 90%;
+    text-align: center;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover h1 {
+    color: white;
+  }
+  &:hover div {
+    opacity: 0.85;
+    ${props => props.overlay || ""}
+    /* mix-blend-mode: color; */
+    
+  }
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  /* top:0; */
+  bottom:0.25rem;
+  /* right:0;
+  left:0; */
+  height: 350px;
+  width: 100%;
+  
 `;
