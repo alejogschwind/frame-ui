@@ -13,7 +13,8 @@ import {
   PlayButton,
   PauseButton,
   SpinerWrapper,
-  ResponsiveMenuWrapper
+  ResponsiveMenuWrapper,
+  OverlayVideo
 } from './styles';
 
 import video from "../../assets/videos/test.mp4";
@@ -101,7 +102,7 @@ const Hero = ({ image, borderColor, loadingData = false, contact = false }) => {
           ) : null
         }
 
-        {/* <Overlay /> */}
+        <OverlayVideo />
 
         {
           !loadingData ? (

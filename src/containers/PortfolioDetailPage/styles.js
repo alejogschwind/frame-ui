@@ -55,7 +55,7 @@ export const Info = styled.h4`
 
 export const Description = styled.p`
   @media only screen and (min-width: 767px) {
-    width: 60%;
+    width: 48%;
     display: flex;
   }
 `;
@@ -85,6 +85,7 @@ export const LinksGroup = styled.div`
 
 export const Row = styled.div`
   display: flex;
+  justify-content: space-between;
   
   @media only screen and (max-width: 767px) {
     flex-direction: column;
@@ -93,8 +94,8 @@ export const Row = styled.div`
 
 export const Left = styled.div`
   @media only screen and (min-width: 767px) {
-    width: 30%;
-    margin-right: 10%;
+    width: 48%;
+    /* margin-right: 10%; */
     display: flex;
     flex-direction: column;
     justify-content: center;

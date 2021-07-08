@@ -32,6 +32,10 @@ export const StudioCardsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (max-width: 980px) {
+    /* margin: 6rem auto 0 auto; */
+  }
 `;
 
 export const StudioCard = styled.div`
@@ -41,6 +45,13 @@ export const StudioCard = styled.div`
   top: 0;
   left: -1rem;
   right: -1rem;
+
+  @media only screen and (max-width: 980px) {
+    width: calc(100%);
+    width: 100%;
+    left: 0rem;
+    right: 0rem;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -70,6 +81,7 @@ export const Border = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 6px solid white;
 
   ${props => props.borderColor ? (
     `

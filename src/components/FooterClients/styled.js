@@ -48,7 +48,7 @@ export const TopSection = styled.div`
   }
 
   & .slide > div > div > img {
-    max-width: 8rem;
+    /* max-width: 8rem; */
     height: 100%;
   }
   @media only screen and (min-width: 767px) {

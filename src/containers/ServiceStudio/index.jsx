@@ -47,7 +47,7 @@ const ServiceStudio = () => {
       <ServicesPageWrapper loading={loading}>
         <Title>{t("Studio").toUpperCase()}</Title>
         <Description>
-          {t("In recent years")}
+          {t("Located in a strategic")}
         </Description>
 
         <StudioCardsWrapper>

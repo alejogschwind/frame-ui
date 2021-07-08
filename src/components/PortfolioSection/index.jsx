@@ -18,6 +18,13 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
     }
   };
 
+  const overlays = [
+    `background: transparent linear-gradient(241deg, #DD1B3D 0%, #A43D8F 50%, #1D4194 100%) 0% 0% no-repeat padding-box;`,
+    `background: transparent linear-gradient(241deg, #6F2B8C 0%, #75C482 50%, #723F94 100%) 0% 0% no-repeat padding-box;`,
+    `background: transparent linear-gradient(241deg, #DD1B3D 0%, #A43D8F 50%, #1D4194 100%) 0% 0% no-repeat padding-box;`,
+    `background: transparent linear-gradient(241deg, #69C6C5 0%, #FCE504 52%, #A94787 100%) 0% 0% no-repeat padding-box;`,
+  ];
+
   const services = new Set(projects.map(service => service.servicios).flat());
   return (
     <PortfolioSectionWrapper dark={dark}>
@@ -35,11 +42,11 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
       <Grid>
         {
           !filterBy ? (
-            projects.map((project) => (
-              <PortfolioCard {...project} key={project.url} />
+            projects.map((project, index) => (
+              <PortfolioCard {...project} key={project.url} overlay={overlays[index % 4]} />
             ))) : (
-            projects.filter(project => project.servicios.includes(filterBy)).map(project => (
-              <PortfolioCard {...project} key={project.url} />
+            projects.filter(project => project.servicios.includes(filterBy)).map((project, index) => (
+              <PortfolioCard {...project} key={project.url} overlay={overlays[index % 4]} />
             )))
         }
       </Grid>

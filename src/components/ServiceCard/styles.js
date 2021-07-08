@@ -21,7 +21,9 @@ export const ServiceCardWrapper = styled.div`
     cursor: pointer;
     /* filter: grayscale(none); */
     & div {
-      /* background: rgba(255,255,255,0.9); */
+      border: 6px solid black;
+      height: 150px;
+      background: rgba(0,0,0,0.5);
       -moz-border-image: -moz-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
       -webkit-border-image: -webkit-linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
       border-image: linear-gradient(to right, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%);
@@ -29,7 +31,7 @@ export const ServiceCardWrapper = styled.div`
     }
 
     & > img {
-      opacity: 0.9;
+      filter: opacity(1);
     }
 
     & > div {
@@ -43,7 +45,7 @@ export const ServiceCardWrapper = styled.div`
       bottom: 5px;
       right: 5px;
       left: 5px;
-      /* color: #292853; */
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,7 +75,6 @@ export const ServiceCardWrapper = styled.div`
     if (props.position === 5) return "left";
     if (props.position === 6) return "right";
   }};
-    opacity: 0.2;
   }
 `;
 
@@ -98,6 +99,8 @@ export const TitleWrapper = styled.div`
     /* z-index: 200; */
   }
   @media only screen and (max-width: 980px) {
+    width: 100%;
+    margin: 0;
     &  > h2 {
       font-size: 22px;
     }
