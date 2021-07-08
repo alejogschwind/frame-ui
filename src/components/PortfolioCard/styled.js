@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PortfolioCardWrapper = styled.div`
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
   /* opacity: 0.8; */
 
   &:hover {
@@ -54,6 +54,7 @@ export const ImageWapper = styled.div`
   }
   & > h1 {
     width: 90%;
+    margin: 0;
     text-align: center;
     color: transparent;
     position: absolute;

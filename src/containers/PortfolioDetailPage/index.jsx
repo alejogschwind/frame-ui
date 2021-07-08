@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -25,16 +25,27 @@ import image from "../../assets/images/portfolioDetail.jpg";
 import DarkContext from '../../context/dark';
 import ReactPlayer from 'react-player';
 import LanguagesContext from '../../context/language';
+import ResponsiveMenu from '../../components/ResponsiveMenu';
 
 function PortfolioDetailPage({ match, history }) {
   const { lan } = useContext(LanguagesContext);
   const { url } = match.params;
   const { data, error, loading, reRequest } = useRequest(generateURL(7, url, lan));
   const { dark } = useContext(DarkContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const { t } = useTranslation();
 
   const firstUpdate = useRef(true);
+
+  const openMenu = () => {
+    setMenuOpen(true);
+    document.querySelector("body").style.setProperty("overflow", "hidden");
+  };
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.querySelector("body").style.setProperty("overflow", "initial");
+  };
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -54,7 +65,12 @@ function PortfolioDetailPage({ match, history }) {
   return (
     <PortfolioDetailPageWrapper dark={dark}>
 
-      <Header solid />
+      <Header solid menuOpen={menuOpen} openMenu={openMenu} />
+      <ResponsiveMenu
+        menuOpen={menuOpen}
+        openMenu={openMenu}
+        closeMenu={closeMenu}
+      />
 
       <MainSection dark={dark}>
         {/* <ImageWrapper> */}
@@ -82,7 +98,7 @@ function PortfolioDetailPage({ match, history }) {
           <Row>
             <Left>
               <Title>{data.proyecto?.titulo}</Title>
-              <Info><span>{t("Client")}:</span>{data.proyecto?.cliente}</Info>
+              <Info><span>{t("Clients")}:</span>{data.proyecto?.cliente}</Info>
               {/* <Info><span>Fecha:</span>12/03/2021</Info>
               <Info><span>Tarea:</span>Desarrollo de plataforma</Info> */}
             </Left>

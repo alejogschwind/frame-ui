@@ -106,10 +106,25 @@ export const Left = styled.div`
 export const VimeoWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
   & > div {
     width: 100% !important;
-    height: calc(100vh - 24px - 5.2rem) !important;
+    height: auto !important;
   }
+  & > div > div {
+    padding:56.25% 0 0 0;
+    position: relative;
+
+    & iframe,
+    & object,
+    & embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
 `;
