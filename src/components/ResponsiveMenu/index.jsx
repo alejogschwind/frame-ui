@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import DarkContext from '../../context/dark';
 import LanguagesContext from '../../context/language';
 
@@ -19,6 +20,7 @@ import {
 
 const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const { dark, setDark } = useContext(DarkContext);
   const { languages, lan, setLan } = useContext(LanguagesContext);
@@ -38,13 +40,13 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
             <MenuList dark={dark}>
               <MenuItem>
                 <StyledLink to="/" onClick={closeMenu}>
-                  Home
+                  {t("Home")}
                 </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/portfolio" onClick={closeMenu}>
-                  Portfolio
-          </StyledLink>
+                  {t("Portfolio")}
+                </StyledLink>
               </MenuItem>
               {/* <MenuItem>
                 <StyledLink to="/nosotros" onClick={closeMenu}>
@@ -53,46 +55,46 @@ const ResponsiveMenu = ({ menuOpen, closeMenu }) => {
               </MenuItem> */}
               <MenuItem>
                 <StyledLink onClick={() => setSubMenuOpen(true)}>
-                  Servicios
-          </StyledLink>
+                  {t("Servicies")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/contacto" onClick={closeMenu}>
-                  Contacto
-          </StyledLink>
+                  {t("Contact")}
+                </StyledLink>
               </MenuItem>
             </MenuList>
             :
             <MenuList dark={dark}>
               <MenuItem>
                 <StyledLink to="/servicio/desarollo" onClick={closeMenu}>
-                  Desarrollo
-              </StyledLink>
+                  {t("Dev")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/servicio/brandingTV" onClick={closeMenu}>
-                  Branding TV
-              </StyledLink>
+                  {t("Branding")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/servicio/marketing" onClick={closeMenu}>
-                  Marketing Digital
-              </StyledLink>
+                  {t("Marketing")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/servicio/post-produccion" onClick={closeMenu}>
-                  Post Producción
-              </StyledLink>
+                  {t("Pos")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/servicio/produccion" onClick={closeMenu}>
-                  Producción
-          </StyledLink>
+                  {t("Prod")}
+                </StyledLink>
               </MenuItem>
               <MenuItem>
                 <StyledLink to="/servicio/estudio" onClick={closeMenu}>
-                  Estudio
-              </StyledLink>
+                  {t("Stu")}
+                </StyledLink>
               </MenuItem>
             </MenuList>
         }
