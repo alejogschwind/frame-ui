@@ -78,12 +78,7 @@ const Hero = ({ image, borderColor, loadingData = false, contact = false }) => {
         {
           !image ? (
 
-            <Border dark={dark} borderColor={borderColor} onClick={() => {
-              if (!playing) {
-                setLoading(true);
-              }
-              setPlaying(!playing);
-            }}>
+            <Border dark={dark} borderColor={borderColor}>
               {
                 playing ?
                   <PauseButton onClick={() => setPlaying(false)} />
@@ -102,7 +97,13 @@ const Hero = ({ image, borderColor, loadingData = false, contact = false }) => {
           ) : null
         }
 
-        <OverlayVideo />
+        <OverlayVideo onClick={() => {
+          if (!playing) {
+            setLoading(true);
+          }
+          setPlaying(!playing);
+        }}
+        />
 
         {
           !loadingData ? (
