@@ -8,7 +8,7 @@ const PortfolioCard = ({ titulo, servicios, imagen, url, overlay }) => {
   const { dark } = useContext(DarkContext);
 
   return (
-    <Link to={`/portfolio/${url}`} style={{ textDecoration: "none" }}>
+    <Link to={`/portfolio/${url}`} style={{ textDecoration: "none", width: "100%" }}>
       <PortfolioCardWrapper>
         <ImageWapper overlay={overlay}>
           <Overlay />
