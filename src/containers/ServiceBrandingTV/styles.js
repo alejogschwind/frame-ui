@@ -10,14 +10,22 @@ export const ServiceBrandingTVWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin: 1rem 0;
+  margin: 2rem 0;
   color: #323232;
-  font-size: 28px;
+  font-size: 32px;
   text-align: center;
+
+  @media only screen and (max-width: 980px) {
+    font-size: 28px;
+  }
 `;
 
 export const Description = styled.p`
   color: #323232;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
+
+  @media only screen and (max-width: 980px) {
+    font-size: 18px;
+  }
 `;

@@ -24,7 +24,7 @@ export const PortfolioSectionWrapper = styled.div`
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-size: 48px;
-    margin-bottom: 4rem;
+    margin: 4rem 0;
   }
 
   & > span {

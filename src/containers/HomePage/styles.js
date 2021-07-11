@@ -99,6 +99,7 @@ export const Grid = styled.div`
 
   & .pos2 {
     top: 0;
+    /* margin: 4rem 0 0 0; */
   }
 
   @media only screen and (min-width: 767px) {
