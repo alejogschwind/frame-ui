@@ -16,7 +16,7 @@ export const AboutUsSection = styled.div`
   /* width: 100%; */
   color: #292853;
   text-align: center;
-  margin: 2rem 1rem;
+  margin: 4rem 1rem 0 1rem;
   /* Dark */
   ${props => props.dark && (
     `
@@ -27,13 +27,15 @@ export const AboutUsSection = styled.div`
   
   
   & > p {
-    font: normal 300 18px Montserrat;
+    font-weight: 300;
+    font-size: 22px;
     letter-spacing: 0px;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
   }
 
   & > span {
-    font: normal normal bold 14px Montserrat;
+    font-weight: bold;
+    font-size: 16px;
     
     &:hover {
       cursor: pointer;
@@ -41,14 +43,22 @@ export const AboutUsSection = styled.div`
     }
   }
 
+  @media only screen and (max-width: 980px) {
+    & > p {
+      font-weight: 300;
+      font-size: 18px;
+      padding-bottom: 40px;
+    }
+  }
+
   @media only screen and (min-width: 767px) {
-    margin: 2rem 10%;
+    margin: 4rem 10% 0 10%;
   }
 `;
 
 export const ServiceSection = styled.div`
   /* width: 100%; */
-  padding: 2rem 1rem;
+  padding: 4rem 1rem 0 1rem;
   background: white;
   display: flex;
   flex-direction: column;

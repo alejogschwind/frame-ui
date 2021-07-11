@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PortfolioSectionWrapper = styled.div`
-  padding: 2rem 0rem;
+  /* padding: 2rem 0rem; */
   background: white;
   border-bottom: 2px solid white;
   display: flex;
@@ -24,7 +24,7 @@ export const PortfolioSectionWrapper = styled.div`
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-size: 48px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   & > span {
