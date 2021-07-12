@@ -52,7 +52,9 @@ const PortfolioSection = ({ projects = [], displayFilter, displayAll }) => {
       </Grid>
       {!displayAll ?
         <span style={{
-          marginTop: "2rem"
+          marginTop: "2rem",
+          fontWeight: "bold",
+          fontSize: "16px",
         }}>
           <Link to="/portfolio">
             {t("See More").toUpperCase()} &gt;

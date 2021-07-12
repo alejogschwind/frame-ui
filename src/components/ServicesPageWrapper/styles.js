@@ -20,6 +20,7 @@ export const ContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background: transparent;
+  margin: 4rem 2rem 0 2rem;
 
   & > h3 {
     width: fit-content;
@@ -27,10 +28,10 @@ export const ContentWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    font-size: 28px;
+    font-size: 32px;
   }
 
   @media only screen and (min-width: 767px) {
-    margin: 2rem 10%;
+    margin: 4rem 10% 0 10%;
   }
 `;

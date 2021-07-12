@@ -16,9 +16,9 @@ import {
   MiddleSection
 } from './styles';
 
-import FacebookLogo from "../../assets/svgs/face.svg";
+import LinkedinLogo from "../../assets/svgs/in.png";
 import InstagramLogo from "../../assets/svgs/insta.svg";
-import TwitterLogo from "../../assets/svgs/twitter.svg";
+import VimeoLogo from "../../assets/svgs/vimeo.png";
 import YoutubeLogo from "../../assets/svgs/youtube.png";
 import DarkContext from '../../context/dark';
 
@@ -45,17 +45,17 @@ const FooterContact = () => {
 
           <FrameLogoSquareStyled />
           <SocialMediaList>
-            <SocialMediaItem href="#">
-              <img src={FacebookLogo} alt="Facebook" />
+            <SocialMediaItem href="https://www.linkedin.com/company/framezero/mycompany/" target="_blank">
+              <img src={LinkedinLogo} alt="LinkedIn" />
             </SocialMediaItem>
-            <SocialMediaItem href="#">
-              <img src={InstagramLogo} alt="Facebook" />
+            <SocialMediaItem href="https://www.instagram.com/frame.productora/?hl=es-la" target="_blank">
+              <img src={InstagramLogo} alt="Instagram" />
             </SocialMediaItem>
-            <SocialMediaItem href="#">
-              <img src={TwitterLogo} alt="Facebook" />
+            <SocialMediaItem href="https://vimeo.com/framezero" target="_blank">
+              <img src={VimeoLogo} alt="Vimeo" />
             </SocialMediaItem>
-            <SocialMediaItem href="#">
-              <img src={YoutubeLogo} alt="Facebook" />
+            <SocialMediaItem href="https://www.youtube.com/channel/UCggmU5TfwOo-Ahk4z5WfmBQ" target="_blank">
+              <img src={YoutubeLogo} alt="You Tube" />
             </SocialMediaItem>
           </SocialMediaList>
           <CopyRight>

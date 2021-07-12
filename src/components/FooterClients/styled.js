@@ -20,7 +20,7 @@ export const FooterClientsWrapper = styled.section`
 
 export const TopSection = styled.div`
   /* border: 2px solid white; */
-  padding: 3rem 1rem;
+  padding: 0rem 1rem 3rem 0;
   width: 100%;
   /* height: 100px; */
   background: transparent linear-gradient(180deg, #FFFFFF 0%, #80808000 100%) 0% 0% no-repeat padding-box;
@@ -38,7 +38,7 @@ export const TopSection = styled.div`
     background: transparent linear-gradient(90deg, #5CC3D6 0%, #95CF8A 13%, #C2D94F 25%, #E3E024 36%, #F7E409 43%, #FFE600 48%, #FADE06 54%, #EFC818 63%, #DBA536 74%, #C1745F 87%, #A33D8F 100%) 0% 0% no-repeat padding-box;    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    margin: 8rem 0;
+    margin: 4rem 0;
     opacity: 1;
     font-size: 48px;
   }

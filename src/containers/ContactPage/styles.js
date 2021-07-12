@@ -16,7 +16,7 @@ export const ContactPageWrapper = styled.div`
 
 export const ContactSection = styled.div`
   /* width: 100%; */
-  padding: 2rem 0;
+  padding: 4rem 0;
   background: white;
   display: flex;
   flex-direction: column;
@@ -35,13 +35,14 @@ export const ContactSection = styled.div`
 
 
 & > p {
-  margin-top: 1.5rem;
+  margin: 2rem 0 3rem 0;
   padding: 0 1rem;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
 }
 @media only screen and (min-width: 980px) {
   padding: 2rem 10%;
+
   & > p {
     font-size: 22px;
     text-align: center;
