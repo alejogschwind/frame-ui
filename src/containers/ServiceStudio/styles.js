@@ -106,11 +106,6 @@ export const ImageWrapper = styled.div`
     object-position: bottom;
   }
 
-  &::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
 `;
 
 export const Border = styled.div`

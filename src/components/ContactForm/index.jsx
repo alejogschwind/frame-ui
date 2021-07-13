@@ -6,13 +6,13 @@ const ContactForm = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = React.useState({
     subject: "",
-    body: ""
+    body: "",
+    from: ""
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // window.red(`mailto:geoff@geoffgraham.me`);
     window.open(`mailto:alejowind@gmail.com?subject=${formData.subject}&body=${formData.body}`);
   };
 
@@ -30,7 +30,7 @@ const ContactForm = () => {
       </InputWrapper>
 
       <InputWrapper>
-        <input placeholder={t("Email *")} required name="email" onChange={handleChange} />
+        <input placeholder={t("Email *")} required name="from" onChange={handleChange} />
       </InputWrapper>
 
       <TextareaWrapper>
