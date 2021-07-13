@@ -13,7 +13,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    window.open(`mailto:alejowind@gmail.com?subject=${formData.subject}&body=${formData.body}`);
+    window.open(`mailto:info@frame.com.ar?subject=${formData.subject}&body=${formData.body}`);
   };
 
   const handleChange = (e) => {
