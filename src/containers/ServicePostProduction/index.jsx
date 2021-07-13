@@ -10,7 +10,7 @@ import ProjectsContext from '../../context/projects';
 import useRequest from '../../hooks/useRequest';
 import generateURL from '../../urls';
 
-import { ServicePostProductionWrapper, Title, Description } from './styles';
+import { ServicePostProductionWrapper, Title, Description, Box, BoxWrapper, Grid } from './styles';
 
 const ServicePostProduction = () => {
   const { lan } = useContext(LanguagesContext);
@@ -39,10 +39,58 @@ const ServicePostProduction = () => {
         <Description>
           {t("We provide")}
         </Description>
+
+        <Grid>
+
+          <BoxWrapper dark={dark}>
+            <Box>
+              <h4>
+                9
+              </h4>
+            </Box>
+            <h2>
+              {t('4K-HD edit islands')}
+            </h2>
+          </BoxWrapper>
+
+          <BoxWrapper reverse dark={dark}>
+            <Box>
+              <h4>
+                4
+              </h4>
+            </Box>
+            <h2>
+              {t('On Line with color correction broadcast / Render Farm')}
+            </h2>
+          </BoxWrapper>
+
+          <BoxWrapper dark={dark}>
+            <Box>
+              <h4>
+                1
+              </h4>
+            </Box>
+            <h2>
+              {t('Recording studio')}
+            </h2>
+          </BoxWrapper>
+
+          <BoxWrapper reverse dark={dark}>
+            <Box>
+              <h4>
+                2
+              </h4>
+            </Box>
+            <h2>
+              Protools
+            </h2>
+          </BoxWrapper>
+        </Grid>
+
       </ServicesPageWrapper>
 
 
-    </ServicePostProductionWrapper>
+    </ServicePostProductionWrapper >
   );
 };
 
