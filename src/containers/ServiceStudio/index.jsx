@@ -13,7 +13,8 @@ import {
   StudioTitle,
   StudioDescription,
   Border,
-  StudioCardsWrapper
+  StudioCardsWrapper,
+  Info
 } from './styles';
 
 import estudio1 from "../../assets/images/estudio1.JPG";
@@ -51,40 +52,46 @@ const ServiceStudio = () => {
         </Description>
 
         <StudioCardsWrapper>
-          <StudioCard>
-            <Border />
-            <ImageWrapper>
-              <img src={estudio1} alt={"Nuestras instalaciones"} />
-            </ImageWrapper>
-            <StudioTitle dark={dark}>
-              {t("Our Facilities").toUpperCase()}
-            </StudioTitle>
-            <StudioDescription style={{
-              marginBottom: "4rem"
-            }}>
-              <Trans components={{ br: <br /> }}>
-                530 square
-              </Trans>
-            </StudioDescription>
-          </StudioCard>
 
           <StudioCard>
-            <Border />
             <ImageWrapper>
+              <Border />
+              <img src={estudio1} alt={"Nuestras instalaciones"} />
+            </ImageWrapper>
+            <Info>
+              <StudioTitle dark={dark}>
+                {t("Our Facilities").toUpperCase()}
+              </StudioTitle>
+              <StudioDescription style={{
+                marginBottom: "4rem"
+              }}>
+                <Trans components={{ br: <br /> }}>
+                  530 square
+              </Trans>
+              </StudioDescription>
+            </Info>
+          </StudioCard>
+
+          <StudioCard reverse>
+            <ImageWrapper>
+              <Border />
               <img src={estudio2} alt={"Estudio Tronador"} />
             </ImageWrapper>
-            <StudioTitle dark={dark} style={{
-              textAlign: "right"
-            }}>
-              {t("Tronador Studio").toUpperCase()}
-            </StudioTitle>
-            <StudioDescription style={{
-              textAlign: "right"
-            }}>
-              <Trans components={{ br: <br /> }}>
-                Technical theatre
+            <Info reverse>
+
+              <StudioTitle dark={dark} style={{
+                textAlign: "right"
+              }}>
+                {t("Tronador Studio").toUpperCase()}
+              </StudioTitle>
+              <StudioDescription style={{
+                textAlign: "right"
+              }}>
+                <Trans components={{ br: <br /> }}>
+                  Technical theatre
               </Trans>
-            </StudioDescription>
+              </StudioDescription>
+            </Info>
           </StudioCard>
         </StudioCardsWrapper>
 

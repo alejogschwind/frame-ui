@@ -34,25 +34,38 @@ export const Description = styled.p`
 export const StudioCardsWrapper = styled.div`
   margin: 6rem 0 0 0;
   width: 100%;
-  max-width: 1024px;
+  /* max-width: 1024px; */
   height: calc(100% + 50px);
-  /* position: relative; */
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: center;
 
+  position: relative;
+  left: 1rem;
   @media only screen and (max-width: 980px) {
     /* margin: 6rem auto 0 auto; */
   }
 `;
 
 export const StudioCard = styled.div`
-  width: calc(100% + 2rem);
-  height: 45%;
-  position: relative;
-  top: 0;
-  left: -1rem;
-  right: -1rem;
+  /* width: calc(100% + 2rem); */
+  /* height: 45%; */
+  margin: 4rem 0;
+  width: 100%;
+
+  display: flex;
+  ${props => props.reverse && `
+    flex-direction: row-reverse;
+  `}
+  justify-content: center;
+  
+  @media only screen and (max-width: 1224px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
 
   @media only screen and (max-width: 980px) {
     width: calc(100%);
@@ -63,21 +76,41 @@ export const StudioCard = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  height: 400px;
-  width: 100%;
+  /* height: 500px; */
+  height: 35vw;
+  width: 35vw;
   background: #323232;
+  position: relative;
+  top: 0;
+  left: -1rem;
+  right: -1rem;
 
+  @media only screen and (max-width: 1224px) {
+    height: 60vw;
+    width: 60vw;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    height: 80vw;
+    width: 80vw;
+  }
+  @media only screen and (max-width: 430px) {
+    height: 100vw;
+    width: 100vw;
+  }
   & img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
   }
+
 `;
 
 export const Border = styled.div`
   width: calc(100% - 2rem);
-  height: 450px;
+  height: calc(100% + 50px);
   position: absolute;
   top: -25px;
   left: 1rem;
@@ -106,13 +139,46 @@ export const Border = styled.div`
 `;
 
 export const StudioTitle = styled.h2`
-  margin: 4rem 1rem 0.5rem 1rem;
+  margin: 2rem 0;
   color: #323232;
+  font-size: 24px;
   ${props => props.dark && `
     color: #fff;
   `}
+   @media only screen and (max-width: 430px) {
+    font-size: 18px;
+  }
 `;
 
 export const StudioDescription = styled.p`
-  margin: 0rem 1rem 0rem 1rem;
+  /* margin: 0rem 1rem 0rem 1rem; */
+  width: 80%;
+  font-size: 16px;
+  @media only screen and (max-width: 430px) {
+    width: 100%;
+  }
+`;
+
+export const Info = styled.div`
+  margin: 2rem 4rem;
+  padding: 0 1rem;
+  /* width: ; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  ${props => props.reverse && `
+    align-items: flex-end;
+  `}
+
+  @media only screen and (max-width: 1224px) {
+    width: 60vw;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 80vw;
+  }
+  @media only screen and (max-width: 430px) {
+    width: 100%;
+    margin: 2rem 0;
+  }
 `;

@@ -97,6 +97,9 @@ const resources = {
       "Previous": "Anterior",
       "Next": "Siguiente",
       "Go Back": "Volver",
+      "4K-HD edit islands": "Islas de edición 4K-HD",
+      "On Line with color correction broadcast / Render Farm": "On Line con color correction broadcast / Render Farm",
+      "Recording studio": "Estudio de grabación"
     }
   },
   en: {
@@ -188,6 +191,9 @@ const resources = {
       "Previous": "Previous",
       "Next": "Next",
       "Go Back": "Go Back",
+      "4K-HD edit islands": "4K-HD edit islands",
+      "On Line with color correction broadcast / Render Farm": "On Line with color correction broadcast / Render Farm",
+      "Recording studio": "Recording studio"
     }
   }
 };
