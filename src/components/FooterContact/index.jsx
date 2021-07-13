@@ -13,7 +13,14 @@ import {
   SocialMediaItem,
   SocialMediaList,
   CopyRight,
-  MiddleSection
+  MiddleSection,
+  InfoCard,
+  WordIconStyled,
+  MailIconStyled,
+  PhoneIconStyled,
+  Left,
+  ContactFormWrapper,
+  P
 } from './styles';
 
 import LinkedinLogo from "../../assets/svgs/in.png";
@@ -21,6 +28,7 @@ import InstagramLogo from "../../assets/svgs/insta.svg";
 import VimeoLogo from "../../assets/svgs/vimeo.png";
 import YoutubeLogo from "../../assets/svgs/youtube.png";
 import DarkContext from '../../context/dark';
+// import { InfoCard, Left, MailIconStyled, PhoneIconStyled, WordIconStyled } from '../../containers/ContactPage/styles';
 
 const FooterContact = () => {
   const { dark } = useContext(DarkContext);
@@ -37,7 +45,38 @@ const FooterContact = () => {
       <Gradient>
         <MiddleSection dark={dark}>
 
-          <ContactForm />
+          <Left dark={dark}>
+
+            <P>
+              Nuestro equipo está a tu disposición para cualquier duda. Completá el formulario y nos pondremos en contacto contigo lo antes posible.
+            </P>
+
+            <InfoCard>
+              <WordIconStyled />
+              {/* <h3>{t("Our Addresses")}</h3> */}
+              <div>
+                <h5>Tronador 671, Buenos Aires.</h5>
+                <h5>Ruiz Huidobro 4365, Buenos Aires.</h5>
+                <h5>18459, Pines Blvd, Pembroke Pines, Miami.</h5>
+              </div>
+            </InfoCard>
+
+            <InfoCard>
+              <MailIconStyled />
+              {/* <h3>{t("Our Email")}</h3> */}
+              <h5>info@frame.com.ar</h5>
+            </InfoCard>
+
+            <InfoCard>
+              <PhoneIconStyled />
+              {/* <h3>{t("Our Phone Number")}</h3> */}
+              <h5>011 4553-7188</h5>
+            </InfoCard>
+          </Left>
+
+          <ContactFormWrapper>
+            <ContactForm />
+          </ContactFormWrapper>
 
         </MiddleSection>
 

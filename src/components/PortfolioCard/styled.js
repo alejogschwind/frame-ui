@@ -52,18 +52,19 @@ export const ImageWapper = styled.div`
     /* position: absolute;
     bottom: 0; */
   }
-  & > h1 {
+  & h1 {
     width: 90%;
     margin: 0;
     text-align: center;
-    color: transparent;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
   }
   &:hover h1 {
-    color: white;
+    display: initial;
   }
   &:hover div {
     opacity: 0.85;

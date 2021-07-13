@@ -99,11 +99,11 @@ export const BoxWrapper = styled.div`
 `;
 
 export const Grid = styled.div`
-  margin: 6rem 0 2rem 0;
+  margin: 10rem 0 2rem 0;
   display: grid;
 
   @media only screen and (max-width: 565px) {
-    margin: 4rem 0 0rem 0;
+    margin: 8rem 0 0rem 0;
     width: 100%;
   }
 `;
