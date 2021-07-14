@@ -21,6 +21,7 @@
     "styled-components": "^5.3.0",
     "web-vitals": "^1.0.1"
   },
+  "homepage": "http://www.frame.com.ar/webnueva",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
